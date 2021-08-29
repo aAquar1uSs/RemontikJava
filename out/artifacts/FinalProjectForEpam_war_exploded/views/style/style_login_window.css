@@ -128,6 +128,21 @@ form {
     transition: .2s ease-in-out;
 }
 
+.button_registration {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 30px;
+    margin: 10px 20px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #4d648d;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    color: #4d648d;
+    transition: .2s ease-in-out;
+}
+
+
 .shine-button:before {
     content: "";
     background: linear-gradient(90deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .5));
@@ -145,6 +160,27 @@ form {
 }
 
 .shine-button:hover:before {
+    left: 150px;
+    transition: .5s ease-in-out;
+}
+
+.button_registration:before {
+    content: "";
+    background: linear-gradient(90deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .5));
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: -8px;
+    left: -75px;
+    transform: skewX(-45deg);
+}
+
+.button_registration:hover {
+    color: #4d648d;
+    color: #fff;
+}
+
+.button_registration:hover:before {
     left: 150px;
     transition: .5s ease-in-out;
 }

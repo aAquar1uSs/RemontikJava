@@ -1,6 +1,4 @@
 
-a
-1src/main/java/com/project/managers/DBManager.java,e\5\e55edc6cb28bf52cfcbc62a029a237fa27ce29d5
 G
 FinalProjectForEpam.iml,c\4\c48f8bb853e92763cc917d239ef4061417d4aff7
 d
