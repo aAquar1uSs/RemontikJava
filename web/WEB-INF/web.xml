@@ -12,7 +12,7 @@
 
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
-        <url-pattern>/home-page</url-pattern>
+        <url-pattern>/login-page</url-pattern>
     </servlet-mapping>
     
 
