@@ -7,3 +7,13 @@ d
 -web/views/style/style_registration_window.css,3\c\3c66b47adc17a025cc5c9c5c218f40b35dafc2d4
 V
 &web/views/style/style_login_window.css,2\8\280e147653d4304de8d2ebc237c5e325ddca87e4
+_
+/.idea/libraries/mysql_connector_java_8_0_26.xml,7\2\72d94be5f5412938a1c43e823ac24f125624c93b
+w
+Gsrc/main/java/com/project/servlets/controllers/RegistrationServlet.java,2\7\272fa13e40ec793fc34b5682b2ace8449611d2ad
+U
+%web/views/style/style_main_window.css,e\1\e1692b6b8cd4d443f28a8d9ab3e391c174988618
+n
+>src/main/java/com/project/servlets/filtres/SecurityFilter.java,f\5\f52c7189d4b8370979e6bd89ac9c895cd9e22b10
+Y
+)src/main/java/com/project/db/dao/Dao.java,2\5\25d583bbd15807293ac0096197560bb448302f33
