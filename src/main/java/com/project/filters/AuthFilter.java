@@ -4,13 +4,12 @@ import javax.servlet.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebFilter(filterName = "SecurityFilter")
-public class SecurityFilter implements Filter {
+@WebFilter(filterName = "AuthFilter")
+public class AuthFilter implements Filter {
     public void init(FilterConfig config) throws ServletException {
     }
 
     public void destroy() {
-
     }
 
     @Override

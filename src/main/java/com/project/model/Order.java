@@ -1,16 +1,16 @@
-package com.project.entity;
+package com.project.model;
 
 import java.util.Objects;
 
 public class Order {
-    private int id;
+    private Long id;
     private String orderName;
     private double orderPrice;
     private String orderDate;
     private String orderStatus;
     private String paymantStatus;
 
-    public Order(int id, String orderName, double orderPrice,
+    public Order(Long id, String orderName, double orderPrice,
                  String orderDate, String orderStatus, String paymantStatus) {
         this.id = id;
         this.orderName = orderName;
@@ -20,11 +20,11 @@ public class Order {
         this.paymantStatus = paymantStatus;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 

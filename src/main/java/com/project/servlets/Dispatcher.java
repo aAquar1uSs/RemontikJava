@@ -1,19 +1,23 @@
 package com.project.servlets;
 
+import com.project.dao.UserDaoImpl;
+import com.project.model.User;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.io.PrintWriter;
 
-@WebServlet(name = "Dispatcher", value = "/Dispatcher")
+@WebServlet(name = "Dispetcher", value = "/Dispetcher")
 public class Dispatcher extends HttpServlet {
-
-    protected void forward(String address, HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(address);
-        dispatcher.forward(request, response);
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    }
 }

@@ -1,29 +1,35 @@
-package com.project.entity;
+package com.project.model;
 
 import javax.management.relation.Role;
 import java.util.Objects;
 
 public class User {
-    private int id;
+    private Long id;
     private String firstName;
     private String lastName;
     private String email;
     private String password;
+    private double cash_account;
     private Role role;
 
-    public User(String firstName, String secondName, String email, String password, Role role) {
+    public User(String firstName, String secondName, String email, String password, double cash_account, Role role) {
         this.firstName = firstName;
         this.lastName = secondName;
         this.email = email;
         this.password = password;
+        this.cash_account = cash_account;
         this.role = role;
     }
 
-    public void setId(int id) {
+    public User() {
+
+    }
+
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
@@ -59,6 +65,14 @@ public class User {
         return password;
     }
 
+    public void setCash_account(double cash_account) {
+        this.cash_account = cash_account;
+    }
+
+    public double getCash_account() {
+        return cash_account;
+    }
+
     public void setRole(Role role) {
         this.role = role;
     }
@@ -75,6 +89,7 @@ public class User {
         sb.append(", surname='").append(lastName).append('\'');
         sb.append(", email='").append(email).append('\'');
         sb.append(", password='").append(password).append('\'');
+        sb.append(", cash account='").append(cash_account).append('\'');
         sb.append('}');
         return sb.toString();
     }
@@ -88,11 +103,12 @@ public class User {
                 firstName.equals(user.firstName) &&
                 lastName.equals(user.lastName) &&
                 email.equals(user.email) &&
-                password.equals(user.password);
+                password.equals(user.password) &&
+                cash_account == cash_account;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName, email, password);
+        return Objects.hash(id, firstName, lastName, email, password, cash_account);
     }
 }

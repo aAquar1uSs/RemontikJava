@@ -3,12 +3,31 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+
+    <servlet>
+        <servlet-name>Dispatcher</servlet-name>
+        <servlet-class>com.project.servlets.Dispatcher</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Dispatcher</servlet-name>
+        <url-pattern>/main_window.html</url-pattern>
+    </servlet-mapping>
+    
+    <filter>
+        <filter-name>AuthFilter</filter-name>
+        <filter-class>com.project.filters.AuthFilter</filter-class>
+    </filter>
+    
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/secured/*</url-pattern>
+    </filter-mapping>
+
     <welcome-file-list>
         <welcome-file>main_window.html</welcome-file>
-        <welcome-file>/login.html</welcome-file>
-        <welcome-file>/registration.html</welcome-file>
+        <welcome-file>login.html</welcome-file>
+        <welcome-file>registration.html</welcome-file>
     </welcome-file-list>
-
-
 
 </web-app>
