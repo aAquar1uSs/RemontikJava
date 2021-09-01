@@ -1,7 +1,6 @@
 package com.project.filters;
 
 import javax.servlet.*;
-import javax.servlet.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -22,12 +21,13 @@ public class LoginFilter implements Filter {
         HttpSession session = req.getSession(false);
 
         String loginURI = req.getContextPath() + "/views/login.html";
+        String private_officeUrl = req.getContextPath() + "/views/user_view/private_office.jsp";
         boolean loggedIn = session != null && session.getAttribute("userName") != null &&
                 session.getAttribute("userRole") != null;
         boolean loginRequest = req.getRequestURI().equals(loginURI);
 
         if(loggedIn ||  loginRequest) {
-            chain.doFilter(req,res);
+            res.sendRedirect(private_officeUrl);
         } else {
             res.sendRedirect(loginURI);
         }

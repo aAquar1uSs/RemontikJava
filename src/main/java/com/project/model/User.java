@@ -1,6 +1,5 @@
 package com.project.model;
 
-import javax.management.relation.Role;
 import java.util.Objects;
 
 public class User {
@@ -81,6 +80,10 @@ public class User {
         return role;
     }
 
+    public String getFio_user() {
+        return getFirstName() + " " +  getLastName();
+    }
+
     @Override
     public String toString() {
         final StringBuffer sb = new StringBuffer("User{");
@@ -90,6 +93,7 @@ public class User {
         sb.append(", email='").append(email).append('\'');
         sb.append(", password='").append(password).append('\'');
         sb.append(", cash account='").append(cash_account).append('\'');
+        sb.append(", role =").append(role).append('\'');
         sb.append('}');
         return sb.toString();
     }
@@ -111,4 +115,5 @@ public class User {
     public int hashCode() {
         return Objects.hash(id, firstName, lastName, email, password, cash_account);
     }
+
 }

@@ -1,6 +1,5 @@
 package com.project.servlets;
 
-import com.project.dao.UserDaoImpl;
 import com.project.model.User;
 
 import javax.servlet.*;

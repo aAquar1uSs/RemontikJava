@@ -1,6 +1,5 @@
-package com.project.dao;
+package com.project.daobd;
 
-import java.sql.Connection;
 import java.util.List;
 
 /**

@@ -1,8 +1,7 @@
-package com.project.dao;
+package com.project.daobd;
 
 import com.project.constants.SqlConstants;
 import com.project.model.Role;
-import com.project.utils.WrapperConnector;
 import org.apache.log4j.Logger;
 
 import java.sql.Connection;
@@ -11,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-public class RoleDaoImpl implements RoleDao{
+public class RoleDaoImpl implements RoleDao {
     private static Logger LOGGER = Logger.getLogger(RoleDaoImpl.class.getName());
     private Connection connection;
 

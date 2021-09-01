@@ -1,11 +1,11 @@
-package com.project.dao;
+package com.project.daobd;
 
 import com.project.model.Order;
 
 import java.sql.Connection;
 import java.util.List;
 
-public class OrderDaoImpl implements OrderDao{
+public class OrderDaoImpl implements OrderDao {
     private Connection connection;
     public OrderDaoImpl(Connection connection) {
         this.connection = connection;
