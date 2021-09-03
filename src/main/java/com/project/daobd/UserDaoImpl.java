@@ -5,10 +5,7 @@ import com.project.model.Role;
 import com.project.model.User;
 import com.project.utils.WrapperConnector;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.List;
 
 public class UserDaoImpl implements UserDao<Integer> {
@@ -71,7 +68,35 @@ public class UserDaoImpl implements UserDao<Integer> {
 
     @Override
     public void insertUser(User user) {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet rs = null;
+        boolean result = false;
+        try {
+            connection = wrapperConnection.getConnection();
+            preparedStatement = connection.prepareStatement(SqlConstants.SQL_INSERT_NEW_USER,
+                    Statement.RETURN_GENERATED_KEYS);
 
+            preparedStatement.setString(1, user.getFirstName());
+            preparedStatement.setString(2, user.getLastName());
+            preparedStatement.setString(3, user.getEmail());
+            preparedStatement.setString(4, user.getPassword());
+            preparedStatement.setDouble(5, user.getCash_account());
+            preparedStatement.setString(4, user.getRole().getName());
+
+            if (preparedStatement.executeUpdate() > 0) {
+                rs = preparedStatement.getGeneratedKeys();
+                if (rs.next()) {
+                    user.setId(rs.getLong(1));
+                }
+            }
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.getMessage();
+        } finally {
+            wrapperConnection.close(rs);
+            wrapperConnection.close(preparedStatement);
+            wrapperConnection.close(connection);
+        }
     }
 
     @Override

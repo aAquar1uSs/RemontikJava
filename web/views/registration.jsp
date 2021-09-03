@@ -22,7 +22,7 @@
     <p>REGISTRATION</p>
 </div>
 <div class="registration">
-    <form id="signin" method="POST" action="/registration" autocomplete="off">
+    <form id="signin" method="POST" action="../signIn" autocomplete="off">
         <input
                 type="text"
                 id="firstname"
@@ -31,14 +31,22 @@
         />
         <input
                 type="text"
-                id="secondname"
+                id="lastname"
                 name="lastname"
                 placeholder="Lastname"
         />
-        <input type="text" id="email" name="email" placeholder="Email" />
-        <input type="password" id="pass" name="pass" placeholder="Password" />
-        <input type="submit" value="Sign in!"/>
+        <input
+                type="text"
+                id="email"
+                name="email"
+                placeholder="Email" />
+        <input
+                type="password"
+                id="pass"
+                name="pass"
+                placeholder="Password" />
 
+        <input type="submit" value="Sign in!"/>
     </form>
 </div>
 </body>

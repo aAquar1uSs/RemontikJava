@@ -12,4 +12,6 @@ public class SqlConstants {
     public static final String GET_ID_USERS = "SELECT id FROM users WHERE email = ? AND password =?";
 
     public static final String GET_USER_ROLE = "SELECT roles.name FROM roles JOIN users ON users.id = id_users where users.id = ?";
+
+    public static final String SET_NEW_ROLE_FOR_USER = "INSERT INTO roles (name,id_users) VALUES (?, ?)";
 }

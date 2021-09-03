@@ -4,6 +4,9 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+
+    <description>MySQL Test App</description>
+
     <servlet>
         <servlet-name>Dispatcher</servlet-name>
         <servlet-class>com.project.servlets.Dispatcher</servlet-class>
@@ -11,19 +14,11 @@
 
     <servlet-mapping>
         <servlet-name>Dispatcher</servlet-name>
-        <url-pattern>/main</url-pattern>
+        <url-pattern>/authorization</url-pattern>
+        <url-pattern>/registration_page</url-pattern>
+        <url-pattern>/signIn</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>AuthServlet</servlet-name>
-        <servlet-class>com.project.servlets.AuthServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>AuthServlet</servlet-name>
-        <url-pattern>/AuthServlet</url-pattern>
-    </servlet-mapping>
-    
     <filter>
         <filter-name>LoginFilter</filter-name>
         <filter-class>com.project.filters.LoginFilter</filter-class>

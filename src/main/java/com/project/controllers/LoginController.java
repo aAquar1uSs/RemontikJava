@@ -9,13 +9,16 @@ import javax.servlet.http.HttpSession;
 
 public class LoginController implements Controller {
     private UserService userService;
+
+    public LoginController() {
+        userService = new UserService();
+    }
+
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         String email = request.getParameter("email");
         String password = request.getParameter("pass");
         HttpSession session = request.getSession();
-
-        userService = new UserService();
 
         int userId = userService.getIdUser(email, password);
         String role = userService.getUserRoleById(userId);

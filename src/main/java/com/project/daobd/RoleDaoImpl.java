@@ -2,20 +2,18 @@ package com.project.daobd;
 
 import com.project.constants.SqlConstants;
 import com.project.model.Role;
+import com.project.utils.WrapperConnector;
 import org.apache.log4j.Logger;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.List;
 
 public class RoleDaoImpl implements RoleDao {
     private static Logger LOGGER = Logger.getLogger(RoleDaoImpl.class.getName());
-    private Connection connection;
+    private WrapperConnector wrapperConnection;
 
     public RoleDaoImpl(Connection connection) {
-        this.connection = connection;
+        wrapperConnection = WrapperConnector.getInstance();
     }
 
     @Override
@@ -46,9 +44,11 @@ public class RoleDaoImpl implements RoleDao {
     @Override
     public int getRoleIdByName(String roleName) {
         ResultSet resultSet = null;
+        Connection connection = null;
+        PreparedStatement statement = null;
         int result = 0;
-        try(PreparedStatement statement = connection.prepareStatement(
-                SqlConstants.GET_ROLE_ID_BY_NAME)){
+        try {
+            statement = connection.prepareStatement(SqlConstants.GET_ROLE_ID_BY_NAME);
             statement.setString(1, roleName);
             resultSet = statement.executeQuery();
             resultSet.next();
@@ -56,14 +56,11 @@ public class RoleDaoImpl implements RoleDao {
         }catch (SQLException e){
            LOGGER.error(e.getMessage());
         }finally {
-            if(resultSet != null) {
-                try {
-                    resultSet.close();
-                } catch (SQLException e) {
-                    LOGGER.error(e.getMessage());
-                }
-            }
+            wrapperConnection.close(resultSet);
+            wrapperConnection.close(statement);
+            wrapperConnection.close(connection);
         }
         return result;
     }
+
 }

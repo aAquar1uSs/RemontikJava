@@ -7,10 +7,19 @@ import java.util.Set;
 public class Role{
 
     private Long id;
+    private int id_users;
     private String name;
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public int getId_users() {
+        return id_users;
+    }
+
+    public void setId_users(int id_users) {
+        this.id_users = id_users;
     }
 
     public void setName(String name) {
