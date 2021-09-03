@@ -28,7 +28,7 @@ public class LoginFilter implements Filter {
         HttpServletResponse res = (HttpServletResponse) response;
         HttpSession session = req.getSession(false);
 
-        String loginURI = req.getContextPath() + "/views/login.html";
+        String loginURI = req.getContextPath() + "/views/login.jsp";
         String private_officeUrl = req.getContextPath() + "/views/user_view/private_office.jsp";
         String adminPageUrl = req.getContextPath() + "/views/admin_view/admin.jsp";
         String masterPageUrl = req.getContextPath() + "/views/master_view/master.jsp";

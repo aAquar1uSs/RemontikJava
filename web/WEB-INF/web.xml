@@ -35,9 +35,9 @@
     </filter-mapping>
 
     <welcome-file-list>
-        <welcome-file>main_window.html</welcome-file>
-        <welcome-file>login.html</welcome-file>
-        <welcome-file>registration.html</welcome-file>
+        <welcome-file>main_window.jsp</welcome-file>
+        <welcome-file>login.jsp</welcome-file>
+        <welcome-file>registration.jsp</welcome-file>
     </welcome-file-list>
 
 </web-app>

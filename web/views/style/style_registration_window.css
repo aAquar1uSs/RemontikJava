@@ -106,15 +106,8 @@ form {
     border-bottom: 1px solid;
 }
 
-.btn {
-    margin-top: 10px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.shine-button {
+#signin input[type=submit] {
+    background: rgb(28, 30, 33);
     text-decoration: none;
     display: inline-block;
     padding: 10px 30px;
@@ -128,9 +121,9 @@ form {
     transition: .2s ease-in-out;
 }
 
-.shine-button:before {
+#signin input[type="submit"]:before {
     content: "";
-    background: linear-gradient(90deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .5));
+    background: #011f38;
     height: 50px;
     width: 50px;
     position: absolute;
@@ -139,12 +132,24 @@ form {
     transform: skewX(-45deg);
 }
 
-.shine-button:hover {
-    color: #4d648d;
-    color: #fff;
+#signin input[type="submit"]:hover {
+    background-color: #4d648d;
+    background-color: #fff;
 }
 
-.shine-button:hover:before {
-    left: 150px;
-    transition: .5s ease-in-out;
+#signin p {
+    color: rgb(79, 85, 97);
+    padding: 0 20px;
+    font-weight: 700;
+    font-size: 12px;
+    margin: 5px 0 0 0;
+}
+
+#signin p>a {
+    color: rgb(111, 119, 135);
+    text-decoration: none;
+}
+
+#signin p>a:hover {
+    border-bottom: 1px solid;
 }

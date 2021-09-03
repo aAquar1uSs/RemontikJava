@@ -1,5 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<%--
+  Created by IntelliJ IDEA.
+  User: panch
+  Date: 03/09/2021
+  Time: 18:17
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -30,9 +37,8 @@
         />
         <input type="text" id="email" name="email" placeholder="Email" />
         <input type="password" id="pass" name="pass" placeholder="Password" />
-        <div class="btn">
-            <a href="" class="shine-button">Sign in!</a>
-        </div>
+        <input type="submit" value="Sign in!"/>
+
     </form>
 </div>
 </body>
