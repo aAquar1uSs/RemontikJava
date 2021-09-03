@@ -90,6 +90,8 @@ public class UserDaoImpl implements UserDao<Integer> {
                  id = rs.getInt("id");
              }
         } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.getMessage();
+        } finally {
             wrapperConnection.close(rs);
             wrapperConnection.close(preparedStatement);
             wrapperConnection.close(connection);
@@ -112,6 +114,8 @@ public class UserDaoImpl implements UserDao<Integer> {
                 role = rs.getString("name");
             }
         } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.getMessage();
+        } finally {
             wrapperConnection.close(rs);
             wrapperConnection.close(preparedStatement);
             wrapperConnection.close(connection);

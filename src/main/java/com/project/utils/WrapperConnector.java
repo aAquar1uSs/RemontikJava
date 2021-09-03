@@ -1,23 +1,16 @@
 package com.project.utils;
 
-import com.project.constants.SqlConstants;
-
+import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.sql.*;
 import java.util.Properties;
 
-
-
 public class WrapperConnector {
     private static WrapperConnector wrapperConnector;
-    private static String driverClassName;
-    private static String jdbcUrl;
-    private static String jdbcUsername;
-    private static String jdbcPassword;
+    private String driverClassName;
+    private String jdbcUrl;
+    private String jdbcUsername;
+    private String jdbcPassword;
 
     private WrapperConnector() {
 
@@ -32,30 +25,29 @@ public class WrapperConnector {
 
     private void readPropertiesFile() {
         Properties connectionProperties = new Properties();
-
-        try(InputStream inputStream = Files.newInputStream((Path) this.getClass().getResourceAsStream("resources/database.properties"))){
-            connectionProperties.load(inputStream);
+        FileInputStream fis = null;
+        try {
+            fis = new FileInputStream("D:\\Project\\FinalProjectForEpam\\src\\main\\resources\\database.properties");
+            connectionProperties.load(fis);
         } catch (IOException e) {
             e.getMessage();
         }
-
 
         driverClassName = connectionProperties.getProperty("jdbc.driverClassName");
         jdbcUrl = connectionProperties.getProperty("jdbc.url");
         jdbcUsername = connectionProperties.getProperty("jdbc.username");
         jdbcPassword = connectionProperties.getProperty("jdbc.password");
-
     }
 
     public Connection getConnection() throws SQLException, ClassNotFoundException {
 
-       // readPropertiesFile();
-        Class.forName("com.mysql.jdbc.Driver");
-        return DriverManager.getConnection(SqlConstants.URL_CONNECT_TO_DB);
+        readPropertiesFile();
+        Class.forName(driverClassName);
+        return DriverManager.getConnection(jdbcUrl, jdbcUsername, jdbcPassword);
     }
 
-    public  void close(AutoCloseable object) {
-        if(object != null) {
+    public void close(AutoCloseable object) {
+        if (object != null) {
             try {
                 object.close();
             } catch (Exception e) {
@@ -63,7 +55,6 @@ public class WrapperConnector {
             }
         }
     }
-
 
 
 }
