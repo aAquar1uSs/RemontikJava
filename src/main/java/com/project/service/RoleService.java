@@ -13,4 +13,8 @@ public class RoleService {
     public void setRoleForUser(int user_id) {
         roleDao.setUserRole(user_id);
     }
+
+    public String getUserRoleById(int id) {
+        return  roleDao.getUserRoleById(id);
+    }
 }

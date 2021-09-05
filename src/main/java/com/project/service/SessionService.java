@@ -1,0 +1,20 @@
+package com.project.service;
+
+import com.project.model.User;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+public class SessionService {
+
+    public static void setSessionForUser(int userId, UserService userService, HttpServletRequest request) {
+        HttpSession session = request.getSession();
+
+        User user = userService.getUserById(userId);
+        session.setAttribute("email", user.getEmail());
+        session.setAttribute("userRole", user.getRole());
+        session.setAttribute("userName", user.getFio_user());
+        session.setAttribute("id_user", userId);
+    }
+
+}

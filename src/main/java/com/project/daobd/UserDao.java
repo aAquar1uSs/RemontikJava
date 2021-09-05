@@ -7,8 +7,7 @@ public interface UserDao<K> extends AbstarctDao<K, User> {
 
     void insertUser(User user);
 
+    boolean searchUserByEmail(String email);
+
     int getUserId(String email, String password);
-
-    String getUserRoleById(int id);
-
 }

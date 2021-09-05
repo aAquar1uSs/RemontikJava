@@ -7,7 +7,9 @@ public class SqlConstants {
 
     public static final String GET_ROLE_ID_BY_NAME = "SELECT roles.id AS id FROM roles WHERE roles.name = ?";
 
-    public static final String SEARCH_USER_BY_LOGIN_AND_PASSWORD_AND_ROLE = "SELECT firstname, lastname, password, roles.name FROM users JOIN roles ON id_users = users.id WHERE firstname = ? AND lastname = ? AND password = ? AND roles.name = ?";
+    public static final String SEARCH_USER_BY_LOGIN_AND_EMAIL = "SELECT firstname, lastname, password, roles.name FROM users JOIN roles ON id_users = users.id WHERE firstname = ? AND lastname = ? AND password = ? AND roles.name = ?";
+
+    public static final String SEARCH_USER_BY_EMAIL = "SELECT email FROM users WHERE email= ?";
 
     public static final String GET_ID_USERS = "SELECT id FROM users WHERE email = ? AND password =?";
 

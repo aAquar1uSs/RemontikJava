@@ -15,6 +15,7 @@ public class UserDaoImpl implements UserDao<Integer> {
     public UserDaoImpl() {
         wrapperConnection = WrapperConnector.getInstance();
     }
+
     @Override
     public List<User> getAll() {
         return null;
@@ -45,7 +46,7 @@ public class UserDaoImpl implements UserDao<Integer> {
         try {
             connection = wrapperConnection.getConnection();
             preparedStatement = connection.prepareStatement(SqlConstants.SQL_FIND_USER_BY_ID);
-            preparedStatement.setLong(1,integer);
+            preparedStatement.setLong(1, integer);
             rs = preparedStatement.executeQuery();
             while (rs.next()) {
                 user = createUser(rs);
@@ -82,7 +83,6 @@ public class UserDaoImpl implements UserDao<Integer> {
             preparedStatement.setString(3, user.getEmail());
             preparedStatement.setString(4, user.getPassword());
             preparedStatement.setDouble(5, user.getCash_account());
-            preparedStatement.setString(4, user.getRole().getName());
 
             if (preparedStatement.executeUpdate() > 0) {
                 rs = preparedStatement.getGeneratedKeys();
@@ -102,43 +102,47 @@ public class UserDaoImpl implements UserDao<Integer> {
     }
 
     @Override
-    public int getUserId(String email, String password) {
+    public boolean searchUserByEmail(String email) {
         Connection connection = null;
-        PreparedStatement preparedStatement = null;
-        ResultSet rs= null;
-        int id = 0;
+        PreparedStatement statement = null;
+        ResultSet rs = null;
         try {
-             connection = wrapperConnection.getConnection();
-             preparedStatement = connection.prepareStatement(SqlConstants.GET_ID_USERS);
-             preparedStatement.setString(1,email);
-             preparedStatement.setString(2,password);
-             rs = preparedStatement.executeQuery();
-             while(rs.next()) {
-                 id = rs.getInt("id");
-             }
+            connection = wrapperConnection.getConnection();
+            statement = connection.prepareStatement(SqlConstants.SEARCH_USER_BY_EMAIL);
+
+            statement.setString(1,email);
+
+            rs = statement.executeQuery();
+
+            while (rs.next()) {
+              return true;
+            }
+
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.getMessage();
         } finally {
             wrapperConnection.close(rs);
-            wrapperConnection.close(preparedStatement);
+            wrapperConnection.close(statement);
             wrapperConnection.close(connection);
         }
-        return id;
+
+        return false;
     }
 
     @Override
-    public String getUserRoleById(int id) {
+    public int getUserId(String email, String password) {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
-        ResultSet rs= null;
-        String role = null;
+        ResultSet rs = null;
+        int id = 0;
         try {
             connection = wrapperConnection.getConnection();
-            preparedStatement = connection.prepareStatement(SqlConstants.GET_USER_ROLE);
-            preparedStatement.setInt(1,id);
+            preparedStatement = connection.prepareStatement(SqlConstants.GET_ID_USERS);
+            preparedStatement.setString(1, email);
+            preparedStatement.setString(2, password);
             rs = preparedStatement.executeQuery();
-            while(rs.next()) {
-                role = rs.getString("name");
+            while (rs.next()) {
+                id = rs.getInt("id");
             }
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.getMessage();
@@ -147,7 +151,7 @@ public class UserDaoImpl implements UserDao<Integer> {
             wrapperConnection.close(preparedStatement);
             wrapperConnection.close(connection);
         }
-        return role;
+        return id;
     }
 
     private User createUser(ResultSet rs) throws SQLException {

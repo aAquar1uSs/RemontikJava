@@ -31,11 +31,10 @@ public class Dispatcher extends HttpServlet {
             case "/signIn":
                 RegistrationController registrationController = new RegistrationController();
                 try {
-                    registrationController.execute(request,response);
+                    response.sendRedirect(registrationController.execute(request,response));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                response.sendRedirect(request.getContextPath() + "/views/main_window.jsp");
                 break;
         }
     }

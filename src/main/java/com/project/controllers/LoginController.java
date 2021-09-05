@@ -1,34 +1,33 @@
 package com.project.controllers;
 
-import com.project.model.User;
+import com.project.service.RoleService;
+import com.project.service.SessionService;
 import com.project.service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import java.io.IOException;
 
 public class LoginController implements Controller {
     private UserService userService;
+    private RoleService roleService;
 
     public LoginController() {
         userService = new UserService();
+        roleService = new RoleService();
     }
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         String email = request.getParameter("email");
         String password = request.getParameter("pass");
-        HttpSession session = request.getSession();
 
         int userId = userService.getIdUser(email, password);
-        String role = userService.getUserRoleById(userId);
+        String role = roleService.getUserRoleById(userId);
 
-        User user = userService.getUserById(userId);
-        session.setAttribute("email", user.getEmail());
-        session.setAttribute("userRole", user.getRole());
-        session.setAttribute("userName", user.getFio_user());
-        session.setAttribute("id_user", userId);
+        SessionService.setSessionForUser(userId,userService,request);
 
         return role;
     }
+
 }

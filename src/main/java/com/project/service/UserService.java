@@ -15,12 +15,12 @@ public class UserService {
         return  userDao.getUserId(email,password);
     }
 
-    public String getUserRoleById(int id) {
-        return  userDao.getUserRoleById(id);
-    }
-
     public User getUserById(int id){
         return userDao.getById(id);
+    }
+
+    public boolean searchUserByEmail(String email) {
+        return userDao.searchUserByEmail(email);
     }
 
     public User setNewUser(String firstName,String lastName,

@@ -32,7 +32,7 @@ public class RoleDaoImpl implements RoleDao {
 
     @Override
     public boolean create(Role entity) {
-        return false;
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -90,6 +90,30 @@ public class RoleDaoImpl implements RoleDao {
             wrapperConnection.close(connection);
         }
 
+        return role;
+    }
+
+    @Override
+    public String getUserRoleById(int id) {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet rs = null;
+        String role = null;
+        try {
+            connection = wrapperConnection.getConnection();
+            preparedStatement = connection.prepareStatement(SqlConstants.GET_USER_ROLE);
+            preparedStatement.setInt(1, id);
+            rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                role = rs.getString("name");
+            }
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.getMessage();
+        } finally {
+            wrapperConnection.close(rs);
+            wrapperConnection.close(preparedStatement);
+            wrapperConnection.close(connection);
+        }
         return role;
     }
 
