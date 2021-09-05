@@ -71,9 +71,9 @@ public class UserDaoImpl implements UserDao<Integer> {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet rs = null;
-        boolean result = false;
         try {
             connection = wrapperConnection.getConnection();
+            connection.setAutoCommit(false);
             preparedStatement = connection.prepareStatement(SqlConstants.SQL_INSERT_NEW_USER,
                     Statement.RETURN_GENERATED_KEYS);
 
@@ -90,7 +90,9 @@ public class UserDaoImpl implements UserDao<Integer> {
                     user.setId(rs.getLong(1));
                 }
             }
+            connection.commit();
         } catch (SQLException | ClassNotFoundException throwables) {
+            WrapperConnector.rollback(connection);
             throwables.getMessage();
         } finally {
             wrapperConnection.close(rs);

@@ -1,13 +1,14 @@
 package com.project.controllers;
 
+import com.project.service.RoleService;
 import com.project.service.UserService;
-import com.project.utils.PasswordHashManager;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class RegistrationController implements Controller{
+public class RegistrationController implements Controller {
     private UserService userService;
+    private RoleService roleService;
 
     public RegistrationController() {
         userService = new UserService();
@@ -21,9 +22,9 @@ public class RegistrationController implements Controller{
         String password = request.getParameter("firstname");
 
         userService.insertUser(userService.setNewUser(firstName,lastName,email,password,0.00));
+        int idUser = userService.getIdUser(email,password);
+        roleService.setRoleForUser(idUser);
 
-
-
-        return null;
+        return "";
     }
 }

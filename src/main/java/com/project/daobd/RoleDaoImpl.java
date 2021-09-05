@@ -9,10 +9,9 @@ import java.sql.*;
 import java.util.List;
 
 public class RoleDaoImpl implements RoleDao {
-    private static Logger LOGGER = Logger.getLogger(RoleDaoImpl.class.getName());
     private WrapperConnector wrapperConnection;
 
-    public RoleDaoImpl(Connection connection) {
+    public RoleDaoImpl() {
         wrapperConnection = WrapperConnector.getInstance();
     }
 
@@ -54,13 +53,44 @@ public class RoleDaoImpl implements RoleDao {
             resultSet.next();
             result = resultSet.getInt("id");
         }catch (SQLException e){
-           LOGGER.error(e.getMessage());
+           e.getMessage();
         }finally {
             wrapperConnection.close(resultSet);
             wrapperConnection.close(statement);
             wrapperConnection.close(connection);
         }
         return result;
+    }
+
+    @Override
+    public Role setUserRole(int id) {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet rs = null;
+        Role role = new Role();
+        try {
+            connection = wrapperConnection.getConnection();
+            preparedStatement = connection.prepareStatement(SqlConstants.SET_NEW_ROLE_FOR_USER,
+                    Statement.RETURN_GENERATED_KEYS);
+
+            preparedStatement.setString(1,"USER");
+            preparedStatement.setInt(2,id);
+
+            if (preparedStatement.executeUpdate() > 0) {
+                rs = preparedStatement.getGeneratedKeys();
+                if (rs.next()) {
+                    role.setId(rs.getLong(1));
+                }
+            }
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.getMessage();
+        } finally {
+            wrapperConnection.close(rs);
+            wrapperConnection.close(preparedStatement);
+            wrapperConnection.close(connection);
+        }
+
+        return role;
     }
 
 }

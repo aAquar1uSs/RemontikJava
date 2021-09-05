@@ -5,7 +5,7 @@ import com.project.daobd.UserDaoImpl;
 import com.project.model.User;
 
 public class UserService {
-    private UserDao<Integer> userDao;
+    private final UserDao<Integer> userDao;
 
     public UserService() {
         userDao = new UserDaoImpl();

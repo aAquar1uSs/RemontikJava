@@ -56,5 +56,13 @@ public class WrapperConnector {
         }
     }
 
-
+    public static void rollback(Connection con) {
+        if (con != null) {
+            try {
+                con.rollback();
+            } catch (SQLException e) {
+                e.getMessage();
+            }
+        }
+    }
 }

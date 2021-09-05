@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class Dispatcher extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException {
 
     }
 
@@ -35,7 +35,7 @@ public class Dispatcher extends HttpServlet {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
+                response.sendRedirect(request.getContextPath() + "/views/main_window.jsp");
                 break;
         }
     }
