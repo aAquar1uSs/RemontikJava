@@ -9,8 +9,6 @@ P
  web/views/master_view/master.jsp,c\4\c4433185293723712fe8c308045776716ea317ec
 U
 %web/views/style/style_main_window.css,e\1\e1692b6b8cd4d443f28a8d9ab3e391c174988618
-G
-FinalProjectForEpam.iml,c\4\c48f8bb853e92763cc917d239ef4061417d4aff7
 \
 ,.idea/inspectionProfiles/Project_Default.xml,4\9\496a238a6afa168dbaf6efd37bb459331589579c
 V
@@ -35,13 +33,7 @@ Y
 )src/main/java/com/project/model/User.java,0\e\0e19bc9de69dd22db3b65944bfbc7d68ed22eb7c
 Z
 *src/main/java/com/project/model/Order.java,9\3\9324b0297eddc97f10d2717e374f6b315b0e7f2f
-b
-2src/main/java/com/project/filters/LoginFilter.java,f\2\f2c71f5d0a21f804227f78b7fa066257ae585b78
 G
 web/views/aboutPage.jsp,a\0\a0c823bbc0e33d6333555b071adeb9ae401310a9
 e
 5src/main/java/com/project/controllers/Controller.java,4\f\4f1d92cea69236eb3d3b935471c288dae4edf0a0
-I
-web/views/main_window.jsp,3\b\3bf7ea76ed31b7816361486f4c13cfdcca09e5fd
-C
-web/WEB-INF/web.xml,c\d\cdcc12da5c4054f6995aab32914d7e0243194c05

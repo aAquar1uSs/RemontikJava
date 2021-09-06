@@ -41,7 +41,6 @@ public class LoginFilter implements Filter {
 
         Role role = (Role) req.getSession().getAttribute("userRole");
 
-
         if (loggedIn || loginRequest) {
             if(role.getName().equals("ADMIN")) {
                 req.getRequestDispatcher("/views/admin_view/admin.jsp").forward(req,res);

@@ -85,7 +85,7 @@
         </div>
         <div class="registration"></div>
         <div class ="set_order">
-            <a href="" class="pressed-button">Order repair</a>
+            <a href="../set_new_order_secured/*" class="pressed-button">Submit a request for repair</a>
         </div>
     </div>
 </header>
