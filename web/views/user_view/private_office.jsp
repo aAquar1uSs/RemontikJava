@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.mysql.cj.Session" %><%--
   Created by IntelliJ IDEA.
   User: panch
   Date: 01.09.2021
@@ -11,6 +11,13 @@
     <title>Private Office</title>
 </head>
 <body>
-        Hello user!!;
+Hello, <%=session.getAttribute("userName")%>
+
+<div class="buttons">
+    <form method="POST" action="../../logout">
+        <input type="submit" name="logout" value="Logout">
+    </form>
+</div>
+
 </body>
 </html>

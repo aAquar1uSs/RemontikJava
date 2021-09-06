@@ -1,6 +1,7 @@
 package com.project.servlets;
 
 import com.project.controllers.LoginController;
+import com.project.controllers.LogoutController;
 import com.project.controllers.RegistrationController;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -43,6 +44,14 @@ public class Dispatcher extends HttpServlet {
                 break;
             case "/contacts_page":
 
+                break;
+            case "/logout":
+                LogoutController logoutController = new LogoutController();
+                try {
+                    logoutController.execute(request,response);
+                } catch (Exception e) {
+                    logger.error(e.getMessage());
+                }
                 break;
         }
     }

@@ -52,8 +52,8 @@ public class LoginController implements Controller {
                 request.getRequestDispatcher("/views/master_view/master.jsp").forward(request,response);
                 break;
             default:
-                String notLogginedInUrl = request.getContextPath() + "/views/ErrorPages/ErrorNotLoggedIn.jsp";
-                response.sendRedirect(notLogginedInUrl);
+                String notLoggedInUrl = request.getContextPath() + "/views/ErrorPages/ErrorNotLoggedIn.jsp";
+                response.sendRedirect(notLoggedInUrl);
                 break;
         }
     }

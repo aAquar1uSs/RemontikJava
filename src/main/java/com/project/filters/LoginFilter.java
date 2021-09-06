@@ -3,6 +3,7 @@ package com.project.filters;
 import com.project.model.Role;
 
 import javax.servlet.*;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -32,7 +33,7 @@ public class LoginFilter implements Filter {
 
         String loginURI = req.getContextPath() + "/views/login.jsp";
         String private_officeUrl = req.getContextPath() + "/views/user_view/private_office.jsp";
-        String adminPageUrl = req.getContextPath() + "/views/admin_view/admin.jsp";
+        //String adminPageUrl = req.getContextPath() + "/views/admin_view/admin.jsp";
         String masterPageUrl = req.getContextPath() + "/views/master_view/master.jsp";
 
 

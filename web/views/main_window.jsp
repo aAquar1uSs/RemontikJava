@@ -47,7 +47,7 @@
         </nav>
         <div class="buttons">
             <div class="info">
-                <form method="GET" action="">
+                <form method="POST" action="">
                     <a
                             href="../about_page"
                             class="btn btn-sm animated-button thar-two"
@@ -56,7 +56,7 @@
                 </form>
             </div>
             <div class="contacts">
-                <form method="get" action="">
+                <form method="POST" action="">
                     <a
                             href="../contacts_page"
                             class="btn btn-sm animated-button thar-two"
@@ -64,7 +64,7 @@
                 </form>
             </div>
             <div class="feedback">
-                <form method="GET" action="ServletName">
+                <form method="POST" action="ServletName">
                     <a
                             href="http://google.com"
                             class="btn btn-sm animated-button thar-two"

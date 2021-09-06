@@ -19,6 +19,7 @@
         <url-pattern>/signIn</url-pattern>
         <url-pattern>/about_page</url-pattern>
         <url-pattern>/contacts_page</url-pattern>
+        <url-pattern>/logout</url-pattern>
     </servlet-mapping>
 
     <filter>
