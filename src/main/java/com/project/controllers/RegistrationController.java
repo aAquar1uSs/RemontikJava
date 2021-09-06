@@ -4,6 +4,7 @@ import com.project.service.RoleService;
 import com.project.service.SessionService;
 import com.project.service.UserService;
 import com.project.utils.ValidationManager;
+import com.sun.istack.internal.NotNull;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -22,20 +23,17 @@ public class RegistrationController implements Controller {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        String firstName = request.getParameter("firstname");
-        String lastName = request.getParameter("lastname");
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
+        @NotNull String firstName = request.getParameter("firstname");
+        @NotNull String lastName = request.getParameter("lastname");
+        @NotNull String email = request.getParameter("email");
+        @NotNull String password = request.getParameter("pass");
 
         String mainUrl = request.getContextPath() + "/views/main_window.jsp";
 
-        if (firstName == null || lastName == null ||
-                email == null || password == null ||
-                !validationManager.validateEmail(email) ||
-                !validationManager.validateNameUser(firstName) ||
-                !validationManager.validateNameUser(lastName) ||
+        if (!validationManager.isValidEmail(email) ||
+                !validationManager.isValidName(firstName) ||
+                !validationManager.isValidName(lastName) ||
                 userService.searchUserByEmail(email)) {
-
 
             Cookie message = new Cookie("message", "Error");
             response.addCookie(message);

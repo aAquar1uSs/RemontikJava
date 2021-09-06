@@ -27,7 +27,7 @@ public class LoginController implements Controller {
         String email = request.getParameter("email");
         String password = request.getParameter("pass");
 
-        if(email == null || !validationManager.validateEmail(email) || !userService.searchUserByEmail(email) ||
+        if(email == null || !validationManager.isValidEmail(email) || !userService.searchUserByEmail(email) ||
                 password == null) {
             Cookie message = new Cookie("message", "Error");
             response.addCookie(message);
