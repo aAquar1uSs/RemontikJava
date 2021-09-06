@@ -47,18 +47,18 @@
         </nav>
         <div class="buttons">
             <div class="info">
-                <form method="GET" action="ServletName">
+                <form method="GET" action="">
                     <a
-                            href="http://google.com"
+                            href="../about_page"
                             class="btn btn-sm animated-button thar-two"
                     >About us</a
                     >
                 </form>
             </div>
             <div class="contacts">
-                <form method="get" action="ServletName">
+                <form method="get" action="">
                     <a
-                            href="http://google.com"
+                            href="../contacts_page"
                             class="btn btn-sm animated-button thar-two"
                     >Contacts</a>
                 </form>

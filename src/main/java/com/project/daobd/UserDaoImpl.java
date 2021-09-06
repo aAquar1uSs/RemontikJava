@@ -4,12 +4,14 @@ import com.project.constants.SqlConstants;
 import com.project.model.Role;
 import com.project.model.User;
 import com.project.utils.WrapperConnector;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.*;
 import java.util.List;
 
 public class UserDaoImpl implements UserDao<Integer> {
-
+    private static Logger logger = LogManager.getLogger(UserDaoImpl.class.getName());
     private WrapperConnector wrapperConnection;
 
     public UserDaoImpl() {
@@ -53,7 +55,7 @@ public class UserDaoImpl implements UserDao<Integer> {
             }
 
         } catch (SQLException | ClassNotFoundException throwables) {
-            throwables.printStackTrace();
+            logger.error(throwables.getMessage());
         } finally {
             wrapperConnection.close(rs);
             wrapperConnection.close(preparedStatement);
@@ -93,7 +95,7 @@ public class UserDaoImpl implements UserDao<Integer> {
             connection.commit();
         } catch (SQLException | ClassNotFoundException throwables) {
             WrapperConnector.rollback(connection);
-            throwables.getMessage();
+            logger.error(throwables.getMessage());
         } finally {
             wrapperConnection.close(rs);
             wrapperConnection.close(preparedStatement);
@@ -119,7 +121,7 @@ public class UserDaoImpl implements UserDao<Integer> {
             }
 
         } catch (SQLException | ClassNotFoundException throwables) {
-            throwables.getMessage();
+            logger.error(throwables.getMessage());
         } finally {
             wrapperConnection.close(rs);
             wrapperConnection.close(statement);
@@ -145,7 +147,7 @@ public class UserDaoImpl implements UserDao<Integer> {
                 id = rs.getInt("id");
             }
         } catch (SQLException | ClassNotFoundException throwables) {
-            throwables.getMessage();
+            logger.error(throwables.getMessage());
         } finally {
             wrapperConnection.close(rs);
             wrapperConnection.close(preparedStatement);

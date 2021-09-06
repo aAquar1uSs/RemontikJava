@@ -22,7 +22,7 @@ public class RegistrationController implements Controller {
     }
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         @NotNull String firstName = request.getParameter("firstname");
         @NotNull String lastName = request.getParameter("lastname");
         @NotNull String email = request.getParameter("email");
@@ -47,8 +47,6 @@ public class RegistrationController implements Controller {
         SessionService.setSessionForUser(idUser, userService, request);
 
         response.sendRedirect(mainUrl);
-
-        return "";
     }
 
 }

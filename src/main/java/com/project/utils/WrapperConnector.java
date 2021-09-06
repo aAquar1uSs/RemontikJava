@@ -1,11 +1,16 @@
 package com.project.utils;
 
+import com.project.servlets.Dispatcher;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.*;
 import java.util.Properties;
 
 public class WrapperConnector {
+    private static Logger logger = LogManager.getLogger(WrapperConnector.class.getName());
     private static WrapperConnector wrapperConnector;
     private String driverClassName;
     private String jdbcUrl;
@@ -30,7 +35,7 @@ public class WrapperConnector {
             fis = new FileInputStream("D:\\Project\\FinalProjectForEpam\\src\\main\\resources\\database.properties");
             connectionProperties.load(fis);
         } catch (IOException e) {
-            e.getMessage();
+            logger.error(e.getMessage());
         }
 
         driverClassName = connectionProperties.getProperty("jdbc.driverClassName");
@@ -51,7 +56,7 @@ public class WrapperConnector {
             try {
                 object.close();
             } catch (Exception e) {
-                e.getMessage();
+                logger.error(e.getMessage());
             }
         }
     }
@@ -61,7 +66,7 @@ public class WrapperConnector {
             try {
                 con.rollback();
             } catch (SQLException e) {
-                e.getMessage();
+                logger.error(e.getMessage());
             }
         }
     }

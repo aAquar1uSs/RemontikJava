@@ -2,6 +2,8 @@ package com.project.servlets;
 
 import com.project.controllers.LoginController;
 import com.project.controllers.RegistrationController;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -9,6 +11,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 
 public class Dispatcher extends HttpServlet {
+    private static Logger logger = LogManager.getLogger(Dispatcher.class.getName());
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException {
 
@@ -32,8 +35,13 @@ public class Dispatcher extends HttpServlet {
                 try {
                     registrationController.execute(request,response);
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    logger.error(e.getMessage());
                 }
+                break;
+            case "/about_page":
+                response.sendRedirect(request.getContextPath() + "/views/aboutPage.jsp");
+                break;
+            case "/contacts_page":
 
                 break;
         }

@@ -24,7 +24,7 @@ public class LoginController implements Controller {
     }
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         @NotNull String email = request.getParameter("email");
         @NotNull String password = request.getParameter("pass");
 
@@ -54,8 +54,6 @@ public class LoginController implements Controller {
                 response.sendRedirect(notLogginedInUrl);
                 break;
         }
-
-        return "";
     }
 
 }

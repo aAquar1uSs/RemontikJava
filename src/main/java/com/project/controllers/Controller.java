@@ -6,5 +6,5 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 //Strategy pattern
 public interface Controller {
-    String execute(HttpServletRequest request, HttpServletResponse response) throws Exception;
+    void execute(HttpServletRequest request, HttpServletResponse response) throws Exception;
 }

@@ -3,12 +3,14 @@ package com.project.daobd;
 import com.project.constants.SqlConstants;
 import com.project.model.Role;
 import com.project.utils.WrapperConnector;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.*;
 import java.util.List;
 
 public class RoleDaoImpl implements RoleDao {
+    private static Logger logger = LogManager.getLogger(RoleDaoImpl.class.getName());
     private WrapperConnector wrapperConnection;
 
     public RoleDaoImpl() {
@@ -53,7 +55,7 @@ public class RoleDaoImpl implements RoleDao {
             resultSet.next();
             result = resultSet.getInt("id");
         }catch (SQLException e){
-           e.getMessage();
+           logger.error(e.getMessage());
         }finally {
             wrapperConnection.close(resultSet);
             wrapperConnection.close(statement);
@@ -83,7 +85,7 @@ public class RoleDaoImpl implements RoleDao {
                 }
             }
         } catch (SQLException | ClassNotFoundException throwables) {
-            throwables.getMessage();
+            logger.error(throwables.getMessage());
         } finally {
             wrapperConnection.close(rs);
             wrapperConnection.close(preparedStatement);
@@ -108,7 +110,7 @@ public class RoleDaoImpl implements RoleDao {
                 role = rs.getString("name");
             }
         } catch (SQLException | ClassNotFoundException throwables) {
-            throwables.getMessage();
+            logger.error(throwables.getMessage());
         } finally {
             wrapperConnection.close(rs);
             wrapperConnection.close(preparedStatement);
