@@ -1,5 +1,7 @@
 package com.project.filters;
 
+import com.project.model.Role;
+
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -34,18 +36,21 @@ public class LoginFilter implements Filter {
         String masterPageUrl = req.getContextPath() + "/views/master_view/master.jsp";
 
 
-        boolean loggedIn = session != null && session.getAttribute("userName") != null &&
-                session.getAttribute("userRole") != null;
+        boolean loggedIn = session != null && session.getAttribute("userRole") != null;
         boolean loginRequest = req.getRequestURI().equals(loginURI);
+
+        Role role = (Role) req.getSession().getAttribute("userRole");
 
 
         if (loggedIn || loginRequest) {
-            if(session.getAttribute("userRole").equals("ADMIN")) {
-                res.sendRedirect(adminPageUrl);
-            } else if(session.getAttribute("userRole").equals("MASTER")) {
+            if(role.getName().equals("ADMIN")) {
+                req.getRequestDispatcher("/views/admin_view/admin.jsp").forward(req,res);
+            } else if(role.getName().equals("MASTER")) {
                 res.sendRedirect(masterPageUrl);
-            } else {
+            } else if (role.getName().equals("USER")) {
                 res.sendRedirect(private_officeUrl);
+            } else {
+                chain.doFilter(request, response);
             }
         } else {
             res.sendRedirect(loginURI);

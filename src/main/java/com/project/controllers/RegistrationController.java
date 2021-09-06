@@ -5,7 +5,7 @@ import com.project.service.SessionService;
 import com.project.service.UserService;
 import com.project.utils.ValidationManager;
 
-import javax.security.auth.login.CredentialException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -28,22 +28,27 @@ public class RegistrationController implements Controller {
         String password = request.getParameter("password");
 
         String mainUrl = request.getContextPath() + "/views/main_window.jsp";
-        String errorPageUrl = request.getContextPath() + "/views/ErrorPages/registrationError.jsp";
 
-        if(!validationManager.validateEmail(email)) {
-            return errorPageUrl;
-        }
-        if (userService.searchUserByEmail(email)) {
-            return errorPageUrl;
+        if (firstName == null || lastName == null ||
+                email == null || password == null || !validationManager.validateEmail(email)) {
+            request.getRequestDispatcher("/views/ErrorPages/registrationError.jsp").forward(request, response);
         }
 
-        userService.insertUser(userService.setNewUser(firstName,lastName,email,password,0.00));
-        int idUser = userService.getIdUser(email,password);
+        if (!validationManager.validateEmail(email) && userService.searchUserByEmail(email)) {
+            Cookie message = new Cookie("message", "Error");
+            response.addCookie(message);
+            response.sendRedirect(request.getContextPath() + "/views/ErrorPages/registrationError.jsp");
+        }
+
+        userService.insertUser(userService.setNewUser(firstName, lastName, email, password, 0.00));
+        int idUser = userService.getIdUser(email, password);
         roleService.setRoleForUser(idUser);
 
-        SessionService.setSessionForUser(idUser,userService,request);
+        SessionService.setSessionForUser(idUser, userService, request);
 
-        return mainUrl;
+        response.sendRedirect(mainUrl);
+
+        return "";
     }
 
 }
