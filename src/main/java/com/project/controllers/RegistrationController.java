@@ -3,6 +3,7 @@ package com.project.controllers;
 import com.project.service.RoleService;
 import com.project.service.SessionService;
 import com.project.service.UserService;
+import com.project.utils.PasswordHashManager;
 import com.project.utils.ValidationManager;
 import com.sun.istack.internal.NotNull;
 
@@ -40,9 +41,12 @@ public class RegistrationController implements Controller {
             request.getRequestDispatcher("/views/ErrorPages/registrationError.jsp").forward(request, response);
         }
 
-        userService.insertUser(userService.setNewUser(firstName, lastName, email, password, 0.00));
-        int idUser = userService.getIdUser(email, password);
+        String hashPassword = PasswordHashManager.passwordEncryption(password);
+
+        userService.insertUser(userService.setNewUser(firstName, lastName, email, hashPassword, 0.00));
+        int idUser = userService.getIdUser(email, hashPassword);
         roleService.setRoleForUser(idUser);
+
 
         SessionService.setSessionForUser(idUser, userService, request);
 

@@ -3,6 +3,7 @@ package com.project.controllers;
 import com.project.service.RoleService;
 import com.project.service.SessionService;
 import com.project.service.UserService;
+import com.project.utils.PasswordHashManager;
 import com.project.utils.ValidationManager;
 import com.sun.istack.internal.NotNull;
 
@@ -33,8 +34,9 @@ public class LoginController implements Controller {
             response.addCookie(message);
             request.getRequestDispatcher("/views/ErrorPages/ErrorNotLoggedIn.jsp").forward(request,response);
         }
+        String hashPassword = PasswordHashManager.passwordEncryption(password);
 
-        int userId = userService.getIdUser(email, password);
+        int userId = userService.getIdUser(email, hashPassword);
         String role = roleService.getUserRoleById(userId);
 
         SessionService.setSessionForUser(userId,userService,request);

@@ -1,1 +1,4 @@
 
+15:35:55.851 [http-nio-8080-exec-10] ERROR com.project.daobd.RoleDaoImpl - Cannot add or update a child row: a foreign key constraint fails (`repair_shopdb`.`roles`, CONSTRAINT `fk_Roles_Users1` FOREIGN KEY (`id_users`) REFERENCES `users` (`id`))
+15:42:49.588 [http-nio-8080-exec-10] ERROR com.project.daobd.RoleDaoImpl - Cannot add or update a child row: a foreign key constraint fails (`repair_shopdb`.`roles`, CONSTRAINT `fk_Roles_Users1` FOREIGN KEY (`id_users`) REFERENCES `users` (`id`))
+15:49:13.735 [http-nio-8080-exec-9] ERROR com.project.daobd.RoleDaoImpl - Cannot add or update a child row: a foreign key constraint fails (`repair_shopdb`.`roles`, CONSTRAINT `fk_Roles_Users1` FOREIGN KEY (`id_users`) REFERENCES `users` (`id`))
