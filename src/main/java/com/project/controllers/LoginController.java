@@ -4,6 +4,7 @@ import com.project.service.RoleService;
 import com.project.service.SessionService;
 import com.project.service.UserService;
 import com.project.utils.ValidationManager;
+import com.sun.istack.internal.NotNull;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
@@ -24,11 +25,10 @@ public class LoginController implements Controller {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        String email = request.getParameter("email");
-        String password = request.getParameter("pass");
+        @NotNull String email = request.getParameter("email");
+        @NotNull String password = request.getParameter("pass");
 
-        if(email == null || !validationManager.isValidEmail(email) || !userService.searchUserByEmail(email) ||
-                password == null) {
+        if(!validationManager.isValidEmail(email) || !userService.searchUserByEmail(email)) {
             Cookie message = new Cookie("message", "Error");
             response.addCookie(message);
             request.getRequestDispatcher("/views/ErrorPages/ErrorNotLoggedIn.jsp").forward(request,response);
