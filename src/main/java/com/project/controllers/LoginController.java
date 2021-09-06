@@ -3,8 +3,10 @@ package com.project.controllers;
 import com.project.service.RoleService;
 import com.project.service.SessionService;
 import com.project.service.UserService;
+import com.project.utils.ValidationManager;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -12,10 +14,12 @@ import java.io.IOException;
 public class LoginController implements Controller {
     private UserService userService;
     private RoleService roleService;
+    private ValidationManager validationManager;
 
     public LoginController() {
         userService = new UserService();
         roleService = new RoleService();
+        validationManager = new ValidationManager();
     }
 
     @Override
@@ -23,9 +27,11 @@ public class LoginController implements Controller {
         String email = request.getParameter("email");
         String password = request.getParameter("pass");
 
-        if(email == null || !userService.searchUserByEmail(email) ||
+        if(email == null || !validationManager.validateEmail(email) || !userService.searchUserByEmail(email) ||
                 password == null) {
-            request.getRequestDispatcher("/views/ErrorPages/registrationError.jsp");
+            Cookie message = new Cookie("message", "Error");
+            response.addCookie(message);
+            request.getRequestDispatcher("/views/ErrorPages/ErrorNotLoggedIn.jsp").forward(request,response);
         }
 
         int userId = userService.getIdUser(email, password);
@@ -38,7 +44,7 @@ public class LoginController implements Controller {
                 request.getRequestDispatcher("/views/admin_view/admin.jsp").forward(request,response);
                 break;
             case "USER":
-                request.getRequestDispatcher("/views/main_window.jsp").forward(request,response);
+                response.sendRedirect(request.getContextPath() + "/views/main_window.jsp");
                 break;
             case "MASTER":
                 request.getRequestDispatcher("/views/master_view/master.jsp").forward(request,response);

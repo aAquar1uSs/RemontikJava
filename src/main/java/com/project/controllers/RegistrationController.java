@@ -30,14 +30,16 @@ public class RegistrationController implements Controller {
         String mainUrl = request.getContextPath() + "/views/main_window.jsp";
 
         if (firstName == null || lastName == null ||
-                email == null || password == null || !validationManager.validateEmail(email)) {
-            request.getRequestDispatcher("/views/ErrorPages/registrationError.jsp").forward(request, response);
-        }
+                email == null || password == null ||
+                !validationManager.validateEmail(email) ||
+                !validationManager.validateNameUser(firstName) ||
+                !validationManager.validateNameUser(lastName) ||
+                userService.searchUserByEmail(email)) {
 
-        if (!validationManager.validateEmail(email) && userService.searchUserByEmail(email)) {
+
             Cookie message = new Cookie("message", "Error");
             response.addCookie(message);
-            response.sendRedirect(request.getContextPath() + "/views/ErrorPages/registrationError.jsp");
+            request.getRequestDispatcher("/views/ErrorPages/registrationError.jsp").forward(request, response);
         }
 
         userService.insertUser(userService.setNewUser(firstName, lastName, email, password, 0.00));

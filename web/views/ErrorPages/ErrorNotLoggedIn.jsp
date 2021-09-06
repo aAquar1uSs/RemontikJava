@@ -17,5 +17,21 @@
 </head>
 <body>
         <h1>COULD NOT LOG IN</h1>
+
+        <%
+            String message = null;
+            String sessionID = null;
+            Cookie[] cookies = request.getCookies();
+            if(cookies != null){
+                for(Cookie cookie : cookies){
+                    if(cookie.getName().equals("message")) message = cookie.getValue();
+                    if(cookie.getName().equals("JSESSIONID")) sessionID = cookie.getValue();
+                }
+            }
+        %>
+
+        <h3>LogIn failed</h3>
+        <h4><%=message%></h4>
+        <h4>Session ID = <%=sessionID %></h4>
 </body>
 </html>

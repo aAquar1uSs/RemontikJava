@@ -8,10 +8,17 @@ public class ValidationManager {
     private Matcher matcher;
 
     private static final String EMAIL_PATTERN = "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$";
+    private static final String FIRSTNAME_PATTER = "^[a-zA-Zа-яюА-ЯЮ]+$";
 
     public boolean validateEmail(final String email) {
         pattern = Pattern.compile(EMAIL_PATTERN);
         matcher = pattern.matcher(email);
         return matcher.matches();
     }
-}
+
+    public boolean validateNameUser(final String firstName) {
+        pattern = Pattern.compile(FIRSTNAME_PATTER);
+        matcher = pattern.matcher(firstName);
+        return matcher.matches();
+    }
+ }
