@@ -9,8 +9,6 @@ P
  web/views/master_view/master.jsp,c\4\c4433185293723712fe8c308045776716ea317ec
 \
 ,.idea/inspectionProfiles/Project_Default.xml,4\9\496a238a6afa168dbaf6efd37bb459331589579c
-V
-&web/views/style/style_login_window.css,2\8\280e147653d4304de8d2ebc237c5e325ddca87e4
 ]
 -web/views/style/style_registration_window.css,3\c\3c66b47adc17a025cc5c9c5c218f40b35dafc2d4
 ]
@@ -23,3 +21,17 @@ Z
 *web/views/ErrorPages/registrationError.jsp,d\d\ddf0f5500827b2d9214c67e421e12687e2d264e6
 Z
 *src/main/java/com/project/model/Order.java,9\3\9324b0297eddc97f10d2717e374f6b315b0e7f2f
+`
+0src/main/java/com/project/daobd/RoleDaoImpl.java,c\d\cdb7a89633b033285a467f7c8b0008a7c2f80bd0
+`
+0src/main/java/com/project/daobd/UserDaoImpl.java,f\7\f7d899c046005949311d55b1683596d0b9cfd22e
+U
+%web/views/style/style_main_window.css,e\1\e1692b6b8cd4d443f28a8d9ab3e391c174988618
+I
+web/views/main_window.jsp,3\b\3bf7ea76ed31b7816361486f4c13cfdcca09e5fd
+C
+web/views/login.jsp,9\e\9e33621fa7729950406b51ad97569bec698b7d77
+G
+web/views/aboutPage.jsp,a\0\a0c823bbc0e33d6333555b071adeb9ae401310a9
+k
+;src/main/java/com/project/controllers/LogoutController.java,5\a\5a2c0cbaeaf1c86dfe2826ff7df22a4dbde716b4
