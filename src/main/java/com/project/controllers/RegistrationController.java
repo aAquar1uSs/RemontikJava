@@ -24,6 +24,7 @@ public class RegistrationController implements Controller {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        request.setCharacterEncoding("UTF-8");
         @NotNull String firstName = request.getParameter("firstname");
         @NotNull String lastName = request.getParameter("lastname");
         @NotNull String email = request.getParameter("email");

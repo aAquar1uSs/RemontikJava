@@ -2,3 +2,8 @@
 15:35:55.851 [http-nio-8080-exec-10] ERROR com.project.daobd.RoleDaoImpl - Cannot add or update a child row: a foreign key constraint fails (`repair_shopdb`.`roles`, CONSTRAINT `fk_Roles_Users1` FOREIGN KEY (`id_users`) REFERENCES `users` (`id`))
 15:42:49.588 [http-nio-8080-exec-10] ERROR com.project.daobd.RoleDaoImpl - Cannot add or update a child row: a foreign key constraint fails (`repair_shopdb`.`roles`, CONSTRAINT `fk_Roles_Users1` FOREIGN KEY (`id_users`) REFERENCES `users` (`id`))
 15:49:13.735 [http-nio-8080-exec-9] ERROR com.project.daobd.RoleDaoImpl - Cannot add or update a child row: a foreign key constraint fails (`repair_shopdb`.`roles`, CONSTRAINT `fk_Roles_Users1` FOREIGN KEY (`id_users`) REFERENCES `users` (`id`))
+17:28:32.264 [http-nio-8080-exec-5] ERROR com.project.daobd.OrderDaoImpl - No value specified for parameter 6
+17:32:04.047 [http-nio-8080-exec-6] ERROR com.project.daobd.OrderDaoImpl - No value specified for parameter 6
+17:34:04.381 [http-nio-8080-exec-4] ERROR com.project.daobd.OrderDaoImpl - No value specified for parameter 6
+17:35:12.939 [http-nio-8080-exec-10] ERROR com.project.daobd.OrderDaoImpl - No value specified for parameter 6
+17:36:57.456 [http-nio-8080-exec-2] ERROR com.project.daobd.OrderDaoImpl - No value specified for parameter 6

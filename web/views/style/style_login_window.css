@@ -88,7 +88,7 @@ form {
     color: rgb(255, 255, 255);
 }
 
-#signin input[type=submit] {
+#signin input[type="submit"] {
     background: rgb(28, 30, 33);
     text-decoration: none;
     display: inline-block;

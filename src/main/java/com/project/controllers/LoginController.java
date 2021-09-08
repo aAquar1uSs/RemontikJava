@@ -26,6 +26,7 @@ public class LoginController implements Controller {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        request.setCharacterEncoding("UTF-8");
         @NotNull String email = request.getParameter("email");
         @NotNull String password = request.getParameter("pass");
 
@@ -50,6 +51,9 @@ public class LoginController implements Controller {
                 break;
             case "MASTER":
                 request.getRequestDispatcher("/views/master_view/master.jsp").forward(request,response);
+                break;
+            case "MANAGER":
+                //to do something
                 break;
             default:
                 String notLoggedInUrl = request.getContextPath() + "/views/ErrorPages/ErrorNotLoggedIn.jsp";

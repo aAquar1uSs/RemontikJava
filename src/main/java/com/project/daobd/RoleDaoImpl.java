@@ -49,12 +49,16 @@ public class RoleDaoImpl implements RoleDao {
         PreparedStatement statement = null;
         int result = 0;
         try {
+            connection = wrapperConnection.getConnection();
+            connection.setAutoCommit(false);
             statement = connection.prepareStatement(SqlConstants.GET_ROLE_ID_BY_NAME);
             statement.setString(1, roleName);
             resultSet = statement.executeQuery();
             resultSet.next();
             result = resultSet.getInt("id");
-        }catch (SQLException e){
+            connection.commit();
+        }catch (SQLException | ClassNotFoundException e){
+            WrapperConnector.rollback(connection);
            logger.error(e.getMessage());
         }finally {
             wrapperConnection.close(resultSet);
@@ -72,11 +76,14 @@ public class RoleDaoImpl implements RoleDao {
         Role role = new Role();
         try {
             connection = wrapperConnection.getConnection();
+            connection.setAutoCommit(false);
             preparedStatement = connection.prepareStatement(SqlConstants.SET_NEW_ROLE_FOR_USER,
                     Statement.RETURN_GENERATED_KEYS);
 
             preparedStatement.setString(1,"USER");
             preparedStatement.setInt(2,id);
+
+            connection.commit();
 
             if (preparedStatement.executeUpdate() > 0) {
                 rs = preparedStatement.getGeneratedKeys();
@@ -85,6 +92,7 @@ public class RoleDaoImpl implements RoleDao {
                 }
             }
         } catch (SQLException | ClassNotFoundException throwables) {
+            WrapperConnector.rollback(connection);
             logger.error(throwables.getMessage());
         } finally {
             wrapperConnection.close(rs);

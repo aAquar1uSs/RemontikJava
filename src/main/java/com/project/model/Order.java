@@ -1,23 +1,29 @@
 package com.project.model;
 
+import java.sql.Date;
 import java.util.Objects;
 
 public class Order {
     private Long id;
     private String orderName;
     private double orderPrice;
-    private String orderDate;
+    private Date orderDate;
     private String orderStatus;
     private String paymantStatus;
+    private int userid;
 
     public Order(Long id, String orderName, double orderPrice,
-                 String orderDate, String orderStatus, String paymantStatus) {
+                 Date orderDate, String orderStatus, String paymantStatus) {
         this.id = id;
         this.orderName = orderName;
         this.orderPrice = orderPrice;
         this.orderDate = orderDate;
         this.orderStatus = orderStatus;
         this.paymantStatus = paymantStatus;
+    }
+
+    public Order() {
+
     }
 
     public void setId(Long id) {
@@ -44,11 +50,11 @@ public class Order {
         return orderPrice;
     }
 
-    public void setOrderDate(String orderDate) {
+    public void setOrderDate(Date orderDate) {
         this.orderDate = orderDate;
     }
 
-    public String getOrderDate() {
+    public Date getOrderDate() {
         return orderDate;
     }
 
@@ -66,6 +72,14 @@ public class Order {
 
     public String getPaymantStatus() {
         return paymantStatus;
+    }
+
+    public void setUserid(int userid) {
+        this.userid = userid;
+    }
+
+    public int getUserid() {
+        return userid;
     }
 
     @Override

@@ -20,6 +20,7 @@
         <url-pattern>/about_page</url-pattern>
         <url-pattern>/contacts_page</url-pattern>
         <url-pattern>/logout</url-pattern>
+        <url-pattern>/set_order</url-pattern>
     </servlet-mapping>
 
     <filter>

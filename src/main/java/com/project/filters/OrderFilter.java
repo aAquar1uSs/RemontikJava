@@ -19,8 +19,6 @@ public class OrderFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
         HttpSession session = req.getSession(false);
-
-
         boolean loggedIn = session != null && session.getAttribute("userRole") != null;
 
         if(loggedIn) {

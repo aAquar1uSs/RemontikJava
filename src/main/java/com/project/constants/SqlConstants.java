@@ -1,6 +1,7 @@
 package com.project.constants;
 
 public class SqlConstants {
+
     public static final String SQL_INSERT_NEW_USER = "INSERT INTO users (firstname,lastname,email,password," +
             "cash_accounts) VALUES (?, ?, ?, ?, ?)";
 
@@ -21,4 +22,9 @@ public class SqlConstants {
             "WHERE users.id = ?";
 
     public static final String SET_NEW_ROLE_FOR_USER = "INSERT INTO roles (name,id_users) VALUES (?, ?)";
+
+    public static final String INSERT_NEW_ORDER = "INSERT INTO orders(order_name, order_price, order_date, " +
+            "order_status, paymant_status, id_user) VALUES (?, ?, ?, ?, ?, ?)";
+
+
 }

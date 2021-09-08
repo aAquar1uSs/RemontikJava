@@ -17,6 +17,7 @@ public class SessionService {
         session.setMaxInactiveInterval(5*60);
 
         User user = userService.getUserById(userId);
+        session.setAttribute("user", user);
         session.setAttribute("email", user.getEmail());
         session.setAttribute("userRole", user.getRole());
         session.setAttribute("userName", user.getFio_user());

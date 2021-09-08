@@ -9,7 +9,7 @@
 <html>
 <link
         rel="stylesheet"
-        href= "../style/style_order_window.css"
+        href= "../../views/style/style_order_window.css"
 />
 
 <head>
@@ -18,8 +18,8 @@
 <body>
 <h2>Important</h2>
 <div class="order">
-    <form id="set_order" method="POST" action="" autocomplete="off">
-        <p><textarea name="Describe"></textarea></p>
+    <form id="set_order" method="POST" action="../../set_order" autocomplete="off">
+        <p><textarea name="describe" placeholder="Describe your problem"></textarea></p>
         <p><input type="submit" value="Enter"/></p>
     </form>
 </div>
