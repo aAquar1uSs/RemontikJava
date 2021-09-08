@@ -7,16 +7,30 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<link
+        rel="stylesheet"
+        href= "../style/style_private_office.css"
+/>
+
 <head>
     <title>Private Office</title>
 </head>
 <body>
-Hello, <%=session.getAttribute("userName")%>
 
+<h2>Hello, <%=session.getAttribute("userName")%> </h2>
+<h3> Cash account: <%=session.getAttribute("cashAcc")%></h3>
 <div class="buttons">
+    <form method="POST" action="">
+        <input type="submit" name="ReplenishCash" value="Replenish your account">
+    </form>
     <form method="POST" action="../../logout">
         <input type="submit" name="logout" value="Logout">
     </form>
+</div>
+
+<div class="orders">
+
+
 </div>
 
 </body>

@@ -35,3 +35,5 @@ G
 web/views/aboutPage.jsp,a\0\a0c823bbc0e33d6333555b071adeb9ae401310a9
 k
 ;src/main/java/com/project/controllers/LogoutController.java,5\a\5a2c0cbaeaf1c86dfe2826ff7df22a4dbde716b4
+q
+Asrc/main/java/com/project/controllers/RegistrationController.java,c\0\c0c5e86db349f83729294aa77f02e14a112c7c16

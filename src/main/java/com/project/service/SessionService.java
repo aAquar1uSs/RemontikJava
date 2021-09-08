@@ -14,13 +14,13 @@ public class SessionService {
         }
 
         HttpSession session = request.getSession(true);
-
         session.setMaxInactiveInterval(5*60);
 
         User user = userService.getUserById(userId);
         session.setAttribute("email", user.getEmail());
         session.setAttribute("userRole", user.getRole());
         session.setAttribute("userName", user.getFio_user());
+        session.setAttribute("cashAcc",user.getCash_account());
         session.setAttribute("id_user", userId);
     }
 
