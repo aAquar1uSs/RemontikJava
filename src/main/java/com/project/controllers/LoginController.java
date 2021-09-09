@@ -1,5 +1,6 @@
 package com.project.controllers;
 
+import com.project.service.OrderService;
 import com.project.service.RoleService;
 import com.project.service.SessionService;
 import com.project.service.UserService;
@@ -16,11 +17,13 @@ import java.io.IOException;
 public class LoginController implements Controller {
     private UserService userService;
     private RoleService roleService;
+    private OrderService orderService;
     private ValidationManager validationManager;
 
     public LoginController() {
         userService = new UserService();
         roleService = new RoleService();
+        orderService = new OrderService();
         validationManager = new ValidationManager();
     }
 
@@ -39,7 +42,6 @@ public class LoginController implements Controller {
 
         int userId = userService.getIdUser(email, hashPassword);
         String role = roleService.getUserRoleById(userId);
-
         SessionService.setSessionForUser(userId,userService,request);
 
         switch (role) {
@@ -53,7 +55,7 @@ public class LoginController implements Controller {
                 request.getRequestDispatcher("/views/master_view/master.jsp").forward(request,response);
                 break;
             case "MANAGER":
-                //to do something
+                request.getRequestDispatcher("/views/manager_view/manager_page.jsp").forward(request,response);
                 break;
             default:
                 String notLoggedInUrl = request.getContextPath() + "/views/ErrorPages/ErrorNotLoggedIn.jsp";

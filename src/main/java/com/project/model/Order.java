@@ -1,9 +1,10 @@
 package com.project.model;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.Objects;
 
-public class Order {
+public class Order implements Serializable {
     private Long id;
     private String orderName;
     private double orderPrice;

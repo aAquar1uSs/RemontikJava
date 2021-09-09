@@ -49,7 +49,7 @@
             <div class="info">
                 <form method="POST" action="">
                     <a
-                            href="../about_page"
+                            href="${pageContext.request.contextPath}/about_page"
                             class="btn btn-sm animated-button thar-two"
                     >About us</a
                     >
@@ -58,7 +58,7 @@
             <div class="contacts">
                 <form method="POST" action="">
                     <a
-                            href="../contacts_page"
+                            href="${pageContext.request.contextPath}/contacts_page"
                             class="btn btn-sm animated-button thar-two"
                     >Contacts</a>
                 </form>
@@ -74,7 +74,7 @@
 
         </div>
         <div class="account">
-            <a href="../secured/*"><i class="fas fa-user-circle"></i></a></button>
+            <a href="${pageContext.request.contextPath}/secured/*"><i class="fas fa-user-circle"></i></a></button>
         </div>
     </div>
 
@@ -85,7 +85,7 @@
         </div>
         <div class="registration"></div>
         <div class ="set_order">
-            <a href="../set_new_order_secured/*" class="pressed-button">Submit a request for repair</a>
+            <a href="${pageContext.request.contextPath}/set_new_order_secured/*" class="pressed-button">Submit a request for repair</a>
         </div>
     </div>
 </header>

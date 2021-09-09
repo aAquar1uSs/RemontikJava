@@ -22,7 +22,7 @@
     <p>REGISTRATION</p>
 </div>
 <div class="registration">
-    <form id="signin" method="POST" action="../signIn" autocomplete="off">
+    <form id="signin" method="POST" action="${pageContext.request.contextPath}/signIn" autocomplete="off">
         <input
                 type="text"
                 id="firstname"
@@ -47,6 +47,10 @@
                 placeholder="Password" />
 
         <input type="submit" value="Sign in!"/>
+    </form>
+
+    <form id ="back" method="POST" action="" autocomplete="off">
+        <input type="submit" value="Back" onclick="history.back()"/>
     </form>
 </div>
 </body>

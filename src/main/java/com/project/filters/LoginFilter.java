@@ -31,14 +31,13 @@ public class LoginFilter implements Filter {
         HttpServletResponse res = (HttpServletResponse) response;
         HttpSession session = req.getSession(false);
 
-        String loginURI = req.getContextPath() + "/views/login.jsp";
-        String private_officeUrl = req.getContextPath() + "/views/user_view/private_office.jsp";
-        //String adminPageUrl = req.getContextPath() + "/views/admin_view/admin.jsp";
+        String loginURL = req.getContextPath() + "/views/login.jsp";
+        String privateAccountURL = req.getContextPath() + "/views/user_view/private_office.jsp";
         String masterPageUrl = req.getContextPath() + "/views/master_view/master.jsp";
 
 
         boolean loggedIn = session != null && session.getAttribute("userRole") != null;
-        boolean loginRequest = req.getRequestURI().equals(loginURI);
+        boolean loginRequest = req.getRequestURI().equals(loginURL);
 
         Role role = (Role) req.getSession().getAttribute("userRole");
 
@@ -48,12 +47,12 @@ public class LoginFilter implements Filter {
             } else if(role.getName().equals("MASTER")) {
                 res.sendRedirect(masterPageUrl);
             } else if (role.getName().equals("USER")) {
-                res.sendRedirect(private_officeUrl);
+               res.sendRedirect(privateAccountURL);
             } else {
                 chain.doFilter(request, response);
             }
         } else {
-            res.sendRedirect(loginURI);
+            res.sendRedirect(loginURL);
         }
     }
 }

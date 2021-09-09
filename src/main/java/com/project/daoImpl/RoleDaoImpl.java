@@ -1,6 +1,7 @@
-package com.project.daobd;
+package com.project.daoImpl;
 
 import com.project.constants.SqlConstants;
+import com.project.daobd.RoleDao;
 import com.project.model.Role;
 import com.project.utils.WrapperConnector;
 import org.apache.logging.log4j.LogManager;

@@ -21,6 +21,7 @@
         <url-pattern>/contacts_page</url-pattern>
         <url-pattern>/logout</url-pattern>
         <url-pattern>/set_order</url-pattern>
+        <url-pattern>/private_account</url-pattern>
     </servlet-mapping>
 
     <filter>
@@ -47,6 +48,13 @@
         <welcome-file>main_window.jsp</welcome-file>
         <welcome-file>login.jsp</welcome-file>
         <welcome-file>registration.jsp</welcome-file>
+        <welcome-file>admin.jsp</welcome-file>
+        <welcome-file>manager_page.jsp</welcome-file>
+        <welcome-file>syntaxError.jsp</welcome-file>
+        <welcome-file>ErrorNotLoggedIn.jsp</welcome-file>
+        <welcome-file>aboutPage.jsp</welcome-file>
+        <welcome-file>order_window.jsp</welcome-file>
+        <welcome-file>private_office.jsp</welcome-file>
     </welcome-file-list>
 
 </web-app>

@@ -94,7 +94,7 @@ form {
     display: inline-block;
     padding: 10px 30px;
     margin: 10px 20px;
-    margin-left: 35%;
+    margin-left: 36%;
     position: relative;
     overflow: hidden;
     border: 2px solid #4d648d;
@@ -184,4 +184,7 @@ form {
 #registration p>a:hover {
     border-bottom: 1px solid;
 }
+
+
+
 

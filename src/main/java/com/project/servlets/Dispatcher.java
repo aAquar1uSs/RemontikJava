@@ -14,7 +14,7 @@ public class Dispatcher extends HttpServlet {
 
 
     public void init(ServletConfig config) throws ServletException {
-       controllerService = new ControllerService(new LoginController(),
+        controllerService = new ControllerService(new LoginController(),
                 new LogoutController(),
                 new RegistrationController(),
                 new OrderController());
@@ -47,7 +47,7 @@ public class Dispatcher extends HttpServlet {
 
                 break;
             case "/set_order":
-                controllerService.causeOrderController(request,response);
+                controllerService.causeOrderController(request, response);
                 break;
             case "/logout":
                 controllerService.causeLogoutController(request, response);

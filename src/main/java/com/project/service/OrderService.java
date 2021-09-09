@@ -1,10 +1,11 @@
 package com.project.service;
 
 import com.project.daobd.OrderDao;
-import com.project.daobd.OrderDaoImpl;
+import com.project.daoImpl.OrderDaoImpl;
 import com.project.model.Order;
 
 import java.sql.Date;
+import java.util.List;
 
 public class OrderService {
 
@@ -17,6 +18,14 @@ public class OrderService {
 
     public void insertNewOrder(Order order) {
         orderDao.insertNewOrder(order);
+    }
+
+    public List findAllOrders() {
+        return orderDao.findAllOrders();
+    }
+
+    public List findUserOrders(int id) {
+        return orderDao.findUserOrders(id);
     }
 
     public Order setNewOrder(String describe, int idUser, Date date) {

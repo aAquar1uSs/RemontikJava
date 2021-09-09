@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.sql.Date;
 import java.util.Calendar;
+import java.util.Objects;
 
 public class OrderController implements Controller{
     private OrderService orderService;
@@ -20,6 +21,12 @@ public class OrderController implements Controller{
     public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         request.setCharacterEncoding("UTF-8");
         @NotNull String describeOrder = request.getParameter("describe");
+
+        if(Objects.equals(describeOrder, "")) {
+            request.getRequestDispatcher("/views/ErrorPages/syntaxError.jsp").forward(request,response);
+            return;
+        }
+
         HttpSession session = request.getSession(false);
 
         int idUser = (int) session.getAttribute("id_user");

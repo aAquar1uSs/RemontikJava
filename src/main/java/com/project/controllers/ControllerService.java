@@ -23,25 +23,25 @@ public class ControllerService {
         this.orderController = orderController;
     }
 
-    public void causeLoginController(HttpServletRequest request, HttpServletResponse response){
+    public void causeLoginController(HttpServletRequest request, HttpServletResponse response) {
         try {
-            loginController.execute(request,response);
+            loginController.execute(request, response);
         } catch (Exception e) {
             logger.error(e.getMessage());
         }
     }
 
-    public void causeLogoutController(HttpServletRequest request, HttpServletResponse response){
+    public void causeLogoutController(HttpServletRequest request, HttpServletResponse response) {
         try {
-            logoutController.execute(request,response);
+            logoutController.execute(request, response);
         } catch (Exception e) {
             logger.error(e.getMessage());
         }
     }
 
-    public void causeRegistrationController(HttpServletRequest request, HttpServletResponse response){
+    public void causeRegistrationController(HttpServletRequest request, HttpServletResponse response) {
         try {
-            loginController.execute(request,response);
+            loginController.execute(request, response);
         } catch (Exception e) {
             logger.error(e.getMessage());
         }
@@ -49,7 +49,7 @@ public class ControllerService {
 
     public void causeOrderController(HttpServletRequest request, HttpServletResponse response) {
         try {
-            orderController.execute(request,response);
+            orderController.execute(request, response);
         } catch (Exception e) {
             logger.error(e.getMessage());
         }

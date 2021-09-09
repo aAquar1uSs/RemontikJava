@@ -23,7 +23,7 @@
     <p>LOGIN</p>
 </div>
 <div class="login">
-    <form id="signin" method="POST" action="../authorization" autocomplete="off">
+    <form id="signin" method="POST" action="${pageContext.request.contextPath}/authorization" autocomplete="off">
         <input
                 type="text"
                 id="email"
@@ -33,7 +33,7 @@
         <input type="password" id="pass" name="pass" placeholder="Password"/>
         <input type="submit" value="Enter"/>
     </form>
-    <form id="registration" method="POST" action="../registration_page" autocomplete="off">
+    <form id="registration" method="POST" action="${pageContext.request.contextPath}/registration_page" autocomplete="off">
         <input type="submit" value="Registration"/>
     </form>
 </div>

@@ -1,9 +1,23 @@
 
-15:35:55.851 [http-nio-8080-exec-10] ERROR com.project.daobd.RoleDaoImpl - Cannot add or update a child row: a foreign key constraint fails (`repair_shopdb`.`roles`, CONSTRAINT `fk_Roles_Users1` FOREIGN KEY (`id_users`) REFERENCES `users` (`id`))
-15:42:49.588 [http-nio-8080-exec-10] ERROR com.project.daobd.RoleDaoImpl - Cannot add or update a child row: a foreign key constraint fails (`repair_shopdb`.`roles`, CONSTRAINT `fk_Roles_Users1` FOREIGN KEY (`id_users`) REFERENCES `users` (`id`))
-15:49:13.735 [http-nio-8080-exec-9] ERROR com.project.daobd.RoleDaoImpl - Cannot add or update a child row: a foreign key constraint fails (`repair_shopdb`.`roles`, CONSTRAINT `fk_Roles_Users1` FOREIGN KEY (`id_users`) REFERENCES `users` (`id`))
-17:28:32.264 [http-nio-8080-exec-5] ERROR com.project.daobd.OrderDaoImpl - No value specified for parameter 6
-17:32:04.047 [http-nio-8080-exec-6] ERROR com.project.daobd.OrderDaoImpl - No value specified for parameter 6
-17:34:04.381 [http-nio-8080-exec-4] ERROR com.project.daobd.OrderDaoImpl - No value specified for parameter 6
-17:35:12.939 [http-nio-8080-exec-10] ERROR com.project.daobd.OrderDaoImpl - No value specified for parameter 6
-17:36:57.456 [http-nio-8080-exec-2] ERROR com.project.daobd.OrderDaoImpl - No value specified for parameter 6
+15:35:55.851 [http-nio-8080-exec-10] ERROR com.project.daoImpl.RoleDaoImpl - Cannot add or update a child row: a foreign key constraint fails (`repair_shopdb`.`roles`, CONSTRAINT `fk_Roles_Users1` FOREIGN KEY (`id_users`) REFERENCES `users` (`id`))
+15:42:49.588 [http-nio-8080-exec-10] ERROR com.project.daoImpl.RoleDaoImpl - Cannot add or update a child row: a foreign key constraint fails (`repair_shopdb`.`roles`, CONSTRAINT `fk_Roles_Users1` FOREIGN KEY (`id_users`) REFERENCES `users` (`id`))
+15:49:13.735 [http-nio-8080-exec-9] ERROR com.project.daoImpl.RoleDaoImpl - Cannot add or update a child row: a foreign key constraint fails (`repair_shopdb`.`roles`, CONSTRAINT `fk_Roles_Users1` FOREIGN KEY (`id_users`) REFERENCES `users` (`id`))
+17:28:32.264 [http-nio-8080-exec-5] ERROR com.project.daoImpl.OrderDaoImpl - No value specified for parameter 6
+17:32:04.047 [http-nio-8080-exec-6] ERROR com.project.daoImpl.OrderDaoImpl - No value specified for parameter 6
+17:34:04.381 [http-nio-8080-exec-4] ERROR com.project.daoImpl.OrderDaoImpl - No value specified for parameter 6
+17:35:12.939 [http-nio-8080-exec-10] ERROR com.project.daoImpl.OrderDaoImpl - No value specified for parameter 6
+17:36:57.456 [http-nio-8080-exec-2] ERROR com.project.daoImpl.OrderDaoImpl - No value specified for parameter 6
+17:45:06.907 [http-nio-8080-exec-7] ERROR com.project.controllers.ControllerService - null
+17:45:38.822 [http-nio-8080-exec-9] ERROR com.project.controllers.ControllerService - null
+17:47:17.768 [http-nio-8080-exec-5] ERROR com.project.controllers.ControllerService - null
+18:22:54.439 [http-nio-8080-exec-4] ERROR com.project.controllers.ControllerService - null
+18:23:00.802 [http-nio-8080-exec-6] ERROR com.project.controllers.ControllerService - null
+18:23:21.123 [http-nio-8080-exec-2] ERROR com.project.controllers.ControllerService - null
+18:24:23.613 [http-nio-8080-exec-3] ERROR com.project.controllers.ControllerService - null
+18:25:18.249 [http-nio-8080-exec-3] ERROR com.project.controllers.ControllerService - null
+18:32:56.847 [http-nio-8080-exec-4] ERROR com.project.controllers.ControllerService - null
+18:33:51.666 [http-nio-8080-exec-3] ERROR com.project.controllers.ControllerService - null
+18:34:57.959 [http-nio-8080-exec-3] ERROR com.project.controllers.ControllerService - null
+22:56:20.446 [http-nio-8080-exec-6] ERROR com.project.controllers.ControllerService - null
+23:26:39.768 [http-nio-8080-exec-2] ERROR com.project.controllers.ControllerService - Cannot call sendRedirect() after the response has been committed
+23:29:16.562 [http-nio-8080-exec-2] ERROR com.project.controllers.ControllerService - Cannot call sendRedirect() after the response has been committed

@@ -26,5 +26,9 @@ public class SqlConstants {
     public static final String INSERT_NEW_ORDER = "INSERT INTO orders(order_name, order_price, order_date, " +
             "order_status, paymant_status, id_user) VALUES (?, ?, ?, ?, ?, ?)";
 
+    public static final String SQL_FIND_ALL_ORDERS = "SELECT * FROM orders";
+
+    public static final String SQL_FIND_USER_ORDERS = "SELECT order_name, order_price, order_date, order_status, paymant_status, id_user FROM orders JOIN users WHERE users.id = ?";
+
 
 }

@@ -23,13 +23,13 @@
     <form method="POST" action="">
         <input type="submit" name="ReplenishCash" value="Replenish your account">
     </form>
-    <form method="POST" action="../../logout">
+    <form method="POST" action="${pageContext.request.contextPath}/logout">
         <input type="submit" name="logout" value="Logout">
     </form>
 </div>
 
 <div class="orders">
-
+    <%=request.getAttribute("listOrders")%>
 
 </div>
 

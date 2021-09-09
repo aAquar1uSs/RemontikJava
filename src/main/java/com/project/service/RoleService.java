@@ -1,7 +1,7 @@
 package com.project.service;
 
 import com.project.daobd.RoleDao;
-import com.project.daobd.RoleDaoImpl;
+import com.project.daoImpl.RoleDaoImpl;
 
 public class RoleService {
     RoleDao roleDao;
