@@ -17,7 +17,8 @@ public class Dispatcher extends HttpServlet {
         controllerService = new ControllerService(new LoginController(),
                 new LogoutController(),
                 new RegistrationController(),
-                new OrderController());
+                new OrderController(),
+                new AccountController());
     }
 
     @Override
@@ -45,6 +46,9 @@ public class Dispatcher extends HttpServlet {
                 break;
             case "/contacts_page":
 
+                break;
+            case "/private_account":
+                controllerService.causeAccountController(request,response);
                 break;
             case "/set_order":
                 controllerService.causeOrderController(request, response);

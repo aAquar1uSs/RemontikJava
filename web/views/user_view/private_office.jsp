@@ -9,7 +9,8 @@
 <html>
 <link
         rel="stylesheet"
-        href= "../style/style_private_office.css"
+        href= "../style_private_office.css"
+        type="text/css"
 />
 
 <head>

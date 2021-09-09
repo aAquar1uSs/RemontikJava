@@ -1,9 +1,10 @@
 package com.project.filters;
 
 import com.project.model.Role;
+import com.project.service.OrderService;
+import com.sun.istack.internal.NotNull;
 
 import javax.servlet.*;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -19,6 +20,7 @@ public class LoginFilter implements Filter {
 
     /**
      * This filer monitors user's,master's and admin's rights
+     *
      * @param request
      * @param response
      * @param chain
@@ -42,12 +44,18 @@ public class LoginFilter implements Filter {
         Role role = (Role) req.getSession().getAttribute("userRole");
 
         if (loggedIn || loginRequest) {
-            if(role.getName().equals("ADMIN")) {
-                req.getRequestDispatcher("/views/admin_view/admin.jsp").forward(req,res);
-            } else if(role.getName().equals("MASTER")) {
+            if (role.getName().equals("ADMIN")) {
+                req.getRequestDispatcher("/views/admin_view/admin.jsp").forward(req, res);
+            } else if (role.getName().equals("MASTER")) {
                 res.sendRedirect(masterPageUrl);
             } else if (role.getName().equals("USER")) {
-               res.sendRedirect(privateAccountURL);
+                //req.getRequestDispatcher("/views/user_view/private_office.jsp").forward(req,res);
+                //res.sendRedirect(req.getContextPath() + "/private_account");
+               // OrderService orderService = new OrderService();
+               // @NotNull int idUser = (int) session.getAttribute("id_user");
+               // req.setAttribute("listOrders", orderService.findUserOrders(idUser));
+
+                req.getRequestDispatcher("/private_account").forward(req,res);
             } else {
                 chain.doFilter(request, response);
             }

@@ -14,13 +14,15 @@ public class ControllerService {
     Controller logoutController;
     Controller registrationController;
     Controller orderController;
+    Controller accountController;
 
     public ControllerService(Controller loginController, Controller logoutController, Controller registrationController,
-                             Controller orderController) {
+                             Controller orderController,Controller accountController) {
         this.loginController = loginController;
         this.logoutController = logoutController;
         this.registrationController = registrationController;
         this.orderController = orderController;
+        this.accountController = accountController;
     }
 
     public void causeLoginController(HttpServletRequest request, HttpServletResponse response) {
@@ -48,6 +50,14 @@ public class ControllerService {
     }
 
     public void causeOrderController(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            orderController.execute(request, response);
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+        }
+    }
+
+    public void causeAccountController(HttpServletRequest request, HttpServletResponse response) {
         try {
             orderController.execute(request, response);
         } catch (Exception e) {
