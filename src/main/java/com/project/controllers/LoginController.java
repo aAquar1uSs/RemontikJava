@@ -1,5 +1,6 @@
 package com.project.controllers;
 
+import com.project.model.Order;
 import com.project.service.OrderService;
 import com.project.service.RoleService;
 import com.project.service.SessionService;
@@ -49,6 +50,7 @@ public class LoginController implements Controller {
                 request.getRequestDispatcher("/views/admin_view/admin.jsp").forward(request,response);
                 break;
             case "USER":
+               // SessionService.setOrdersToSession(request);
                 response.sendRedirect(request.getContextPath() + "/views/main_window.jsp");
                 break;
             case "MASTER":
@@ -63,5 +65,4 @@ public class LoginController implements Controller {
                 break;
         }
     }
-
 }

@@ -1,9 +1,12 @@
 package com.project.service;
 
+import com.project.model.Order;
 import com.project.model.User;
+import com.sun.istack.internal.NotNull;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 public class SessionService {
 
@@ -23,6 +26,14 @@ public class SessionService {
         session.setAttribute("userName", user.getFio_user());
         session.setAttribute("cashAcc",user.getCash_account());
         session.setAttribute("id_user", userId);
+    }
+
+    public static void setOrdersToSession(HttpServletRequest request) {
+
+        HttpSession session = request.getSession(true);
+        OrderService orderService = new OrderService();
+        @NotNull int idUser = (int) session.getAttribute("id_user");
+        session.setAttribute("listOrders", orderService.findUserOrders(idUser));
     }
 
 }

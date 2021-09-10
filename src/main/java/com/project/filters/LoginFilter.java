@@ -41,23 +41,26 @@ public class LoginFilter implements Filter {
         boolean loggedIn = session != null && session.getAttribute("userRole") != null;
         boolean loginRequest = req.getRequestURI().equals(loginURL);
 
-        Role role = (Role) req.getSession().getAttribute("userRole");
-
         if (loggedIn || loginRequest) {
-            if (role.getName().equals("ADMIN")) {
-                req.getRequestDispatcher("/views/admin_view/admin.jsp").forward(req, res);
-            } else if (role.getName().equals("MASTER")) {
-                res.sendRedirect(masterPageUrl);
-            } else if (role.getName().equals("USER")) {
-                //req.getRequestDispatcher("/views/user_view/private_office.jsp").forward(req,res);
-                //res.sendRedirect(req.getContextPath() + "/private_account");
-               // OrderService orderService = new OrderService();
-               // @NotNull int idUser = (int) session.getAttribute("id_user");
-               // req.setAttribute("listOrders", orderService.findUserOrders(idUser));
+            Role role = (Role) req.getSession().getAttribute("userRole");
+            switch (role.getName()) {
+                case "ADMIN":
+                    req.getRequestDispatcher("/views/admin_view/admin.jsp").forward(req, res);
+                    break;
+                case "MASTER":
+                    res.sendRedirect(masterPageUrl);
+                    break;
+                case "MANAGER":
 
-                req.getRequestDispatcher("/private_account").forward(req,res);
-            } else {
-                chain.doFilter(request, response);
+                    break;
+                case "USER":
+                    //res.sendRedirect(privateAccountURL);
+                    res.sendRedirect(req.getContextPath() + "/private_account");
+                    //req.getRequestDispatcher("/secured/private_profile").forward(req,res);
+                    break;
+                default:
+                    chain.doFilter(request, response);
+                    break;
             }
         } else {
             res.sendRedirect(loginURL);

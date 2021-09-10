@@ -22,12 +22,7 @@ public class Dispatcher extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException {
-
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         String path = request.getServletPath();
 
@@ -55,6 +50,18 @@ public class Dispatcher extends HttpServlet {
                 break;
             case "/logout":
                 controllerService.causeLogoutController(request, response);
+                break;
+        }
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        String path = request.getServletPath();
+
+        switch (path) {
+            case "/private_account":
+
                 break;
         }
     }

@@ -12,6 +12,6 @@
 </head>
 <body>
 <h1>Error!!</h1>
-Enter the value
+Enter the values
 </body>
 </html>

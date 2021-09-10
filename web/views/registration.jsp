@@ -22,7 +22,7 @@
     <p>REGISTRATION</p>
 </div>
 <div class="registration">
-    <form id="signin" method="POST" action="${pageContext.request.contextPath}/signIn" autocomplete="off">
+    <form id="signin" method="GET" action="${pageContext.request.contextPath}/signIn" autocomplete="off">
         <input
                 type="text"
                 id="firstname"
@@ -49,7 +49,7 @@
         <input type="submit" value="Sign in!"/>
     </form>
 
-    <form id ="back" method="POST" action="" autocomplete="off">
+    <form id ="back" method="GET" action="" autocomplete="off">
         <input type="submit" value="Back" onclick="history.back()"/>
     </form>
 </div>

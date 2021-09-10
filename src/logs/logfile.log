@@ -21,3 +21,15 @@
 22:56:20.446 [http-nio-8080-exec-6] ERROR com.project.controllers.ControllerService - null
 23:26:39.768 [http-nio-8080-exec-2] ERROR com.project.controllers.ControllerService - Cannot call sendRedirect() after the response has been committed
 23:29:16.562 [http-nio-8080-exec-2] ERROR com.project.controllers.ControllerService - Cannot call sendRedirect() after the response has been committed
+20:12:11.502 [http-nio-8080-exec-9] ERROR com.project.daoImpl.OrderDaoImpl - Column 'order_name' cannot be null
+20:12:13.084 [http-nio-8080-exec-6] ERROR com.project.daoImpl.OrderDaoImpl - Column 'order_name' cannot be null
+20:12:13.724 [http-nio-8080-exec-1] ERROR com.project.daoImpl.OrderDaoImpl - Column 'order_name' cannot be null
+20:12:14.183 [http-nio-8080-exec-5] ERROR com.project.daoImpl.OrderDaoImpl - Column 'order_name' cannot be null
+20:12:14.426 [http-nio-8080-exec-3] ERROR com.project.daoImpl.OrderDaoImpl - Column 'order_name' cannot be null
+20:12:14.809 [http-nio-8080-exec-9] ERROR com.project.daoImpl.OrderDaoImpl - Column 'order_name' cannot be null
+20:12:15.204 [http-nio-8080-exec-6] ERROR com.project.daoImpl.OrderDaoImpl - Column 'order_name' cannot be null
+20:12:15.599 [http-nio-8080-exec-1] ERROR com.project.daoImpl.OrderDaoImpl - Column 'order_name' cannot be null
+20:12:15.819 [http-nio-8080-exec-5] ERROR com.project.daoImpl.OrderDaoImpl - Column 'order_name' cannot be null
+20:12:41.635 [http-nio-8080-exec-7] ERROR com.project.daoImpl.OrderDaoImpl - Column 'order_name' cannot be null
+20:12:42.383 [http-nio-8080-exec-3] ERROR com.project.daoImpl.OrderDaoImpl - Column 'order_name' cannot be null
+20:13:37.908 [http-nio-8080-exec-9] ERROR com.project.daoImpl.OrderDaoImpl - Column 'order_name' cannot be null
