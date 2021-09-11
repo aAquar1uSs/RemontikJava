@@ -33,3 +33,6 @@
 20:12:41.635 [http-nio-8080-exec-7] ERROR com.project.daoImpl.OrderDaoImpl - Column 'order_name' cannot be null
 20:12:42.383 [http-nio-8080-exec-3] ERROR com.project.daoImpl.OrderDaoImpl - Column 'order_name' cannot be null
 20:13:37.908 [http-nio-8080-exec-9] ERROR com.project.daoImpl.OrderDaoImpl - Column 'order_name' cannot be null
+15:55:07.383 [http-nio-8080-exec-1] ERROR com.project.controllers.ControllerService - null
+16:06:14.152 [http-nio-8080-exec-1] ERROR com.project.controllers.ControllerService - null
+18:44:19.264 [http-nio-8080-exec-1] ERROR com.project.controllers.ControllerService - null

@@ -1,9 +1,111 @@
+@font-face {
+    font-family: Ubuntu-Medium;
+    src: url(fonts/Ubuntu-Medium.ttf);
+}
+
 body {
     padding: 0;
     margin: 0;
-    background-color: #58b1e0;
+    background-color: #14141b;
 }
 
 .buttons {
-    margin-top: 10%;
+    margin-top: 5%;
+}
+
+.user h2{
+    font-family: Ubuntu-Medium;
+    font-size: 25px;
+    display: flex;
+    justify-content: left;
+    color: #4d648d;
+}
+
+.user h3{
+    font-family: Ubuntu-Medium;
+    font-size: 20px;
+    display: flex;
+    justify-content: left;
+    color: #4d648d;
+}
+
+.orders {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.orders h1 {
+    font-family: Ubuntu-Medium;
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    color: #4d648d;
+}
+
+.orders table {
+    width: 100%;
+    margin-bottom: 20px;
+    border: 5px solid #fff;
+    border-top: 5px solid #fff;
+    border-bottom: 3px solid #fff;
+    border-collapse: collapse;
+    outline: 3px solid #ffd300;
+    font-size: 15px;
+    background: #fff!important;
+
+}
+
+.orders table th {
+    font-weight: bold;
+    padding: 7px;
+    background: #ffd300;
+    border: none;
+    text-align: left;
+    font-size: 15px;
+    border-top: 3px solid #fff;
+    border-bottom: 3px solid #ffd300;
+}
+
+.orders td {
+    padding: 7px;
+    border: none;
+    border-top: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    font-size: 15px;
+}
+
+.orders tbody tr:nth-child(even){
+    background: #f8f8f8!important;
+}
+
+
+.buttons input[type="submit"] {
+    background: rgb(28, 30, 33);
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 30px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #4d648d;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    color: #4d648d;
+    transition: .2s ease-in-out;
+}
+
+.buttons input[type="submit"]:before {
+    content: "";
+    background: #011f38;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: -8px;
+    left: -75px;
+    transform: skewX(-45deg);
+}
+
+.buttons input[type="submit"]:hover {
+    background-color: #4d648d;
+    background-color: #fff;
 }

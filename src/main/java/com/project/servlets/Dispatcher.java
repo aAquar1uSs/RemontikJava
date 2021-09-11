@@ -48,6 +48,9 @@ public class Dispatcher extends HttpServlet {
             case "/set_order":
                 controllerService.causeOrderController(request, response);
                 break;
+            case "/delete_order":
+
+                break;
             case "/logout":
                 controllerService.causeLogoutController(request, response);
                 break;
@@ -59,10 +62,6 @@ public class Dispatcher extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String path = request.getServletPath();
 
-        switch (path) {
-            case "/private_account":
 
-                break;
-        }
     }
 }
