@@ -43,7 +43,7 @@ public class ControllerService {
 
     public void causeRegistrationController(HttpServletRequest request, HttpServletResponse response) {
         try {
-            loginController.execute(request, response);
+            registrationController.execute(request, response);
         } catch (Exception e) {
             logger.error(e.getMessage());
         }

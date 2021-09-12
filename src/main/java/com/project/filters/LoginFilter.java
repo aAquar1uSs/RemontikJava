@@ -34,7 +34,6 @@ public class LoginFilter implements Filter {
         HttpSession session = req.getSession(false);
 
         String loginURL = req.getContextPath() + "/views/login.jsp";
-        String privateAccountURL = req.getContextPath() + "/views/user_view/private_office.jsp";
         String masterPageUrl = req.getContextPath() + "/views/master_view/master.jsp";
 
 
@@ -51,12 +50,10 @@ public class LoginFilter implements Filter {
                     res.sendRedirect(masterPageUrl);
                     break;
                 case "MANAGER":
-
+                    req.getRequestDispatcher("views/manager_view/manager_page.jsp").forward(req, res);
                     break;
                 case "USER":
-                    //res.sendRedirect(privateAccountURL);
                     res.sendRedirect(req.getContextPath() + "/private_account");
-                    //req.getRequestDispatcher("/secured/private_profile").forward(req,res);
                     break;
                 default:
                     chain.doFilter(request, response);

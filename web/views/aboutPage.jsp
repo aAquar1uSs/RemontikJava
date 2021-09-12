@@ -8,9 +8,23 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>About</title>
+    <link
+            rel="stylesheet"
+            href="style/style_about_us_page.css"
+
+    />
+
+    <title>About Us</title>
 </head>
 <body>
+    <div class = "text_about_us">
+        <h3><p>We are a repair company for computer, mobile and household appliances.</p>
+            <p>Our branches in almost all cities of Ukraine.</p>
+        </h3>
+    </div>
 
+    <form id ="back" method="GET" action="" autocomplete="off">
+        <input type="submit" value="Back" onclick="history.back()"/>
+    </form>
 </body>
 </html>
