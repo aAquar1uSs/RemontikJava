@@ -11,6 +11,6 @@
     <title>ADMIN-Title</title>
 </head>
 <body>
-    HELLO ADMIN!
+
 </body>
 </html>

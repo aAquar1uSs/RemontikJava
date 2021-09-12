@@ -5,6 +5,8 @@ _
 /.idea/libraries/mysql_connector_java_8_0_26.xml,7\2\72d94be5f5412938a1c43e823ac24f125624c93b
 P
  web/views/master_view/master.jsp,c\4\c4433185293723712fe8c308045776716ea317ec
+\
+,.idea/inspectionProfiles/Project_Default.xml,4\9\496a238a6afa168dbaf6efd37bb459331589579c
 `
 0src/main/java/com/project/daobd/AbstarctDao.java,a\4\a4a0db82dc05864bcf79e902ba0ba0224292c731
 \
@@ -21,8 +23,6 @@ k
 ;src/main/java/com/project/controllers/LogoutController.java,5\a\5a2c0cbaeaf1c86dfe2826ff7df22a4dbde716b4
 Y
 )web/views/ErrorPages/ErrorNotLoggedIn.jsp,d\7\d77a408d446a27275d71e02de568a959e51c23f4
-N
-web/views/admin_view/admin.jsp,b\2\b2d7daeb85dd26c9813feb3b8f73ac47fa48a108
 Z
 *web/views/ErrorPages/registrationError.jsp,d\d\ddf0f5500827b2d9214c67e421e12687e2d264e6
 b

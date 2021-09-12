@@ -6,6 +6,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+
 <html>
 <head>
     <meta charset="UTF-8"/>
@@ -43,6 +47,7 @@
                         <li>Show me more</li>
                     </a>
                 </ul>
+
             </div>
         </nav>
         <div class="buttons">
@@ -72,6 +77,13 @@
             </div>
 
         </div>
+        <form id = "listLanguage" method="GET" action="">
+            <select id="language" name="language" onchange="submit()">
+                <option value="en">English</option>
+                <option value="nl">Russian</option>
+                <option value="es">Ukrainian</option>
+            </select>
+        </form>
         <div class="account">
             <a href="${pageContext.request.contextPath}/secured/*"><i class="fas fa-user-circle"></i></a></button>
         </div>

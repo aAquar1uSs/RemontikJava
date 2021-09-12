@@ -90,10 +90,17 @@ body {
     overflow: hidden;
 }
 
+#listLanguage {
+    margin-right: 4%;
+    margin-top: 10px;
+}
+
+
+
 .name-company {
     text-align: left;
     padding-top: 20%;
-    padding-left: 5%;
+    padding-left: 0.5%;
 }
 
 .name-company h1 {

@@ -36,3 +36,5 @@
 15:55:07.383 [http-nio-8080-exec-1] ERROR com.project.controllers.ControllerService - null
 16:06:14.152 [http-nio-8080-exec-1] ERROR com.project.controllers.ControllerService - null
 18:44:19.264 [http-nio-8080-exec-1] ERROR com.project.controllers.ControllerService - null
+12:16:28.536 [http-nio-8080-exec-5] ERROR com.project.utils.WrapperConnector - D:\Project\Java\FinalProjectForEpam\src\main\resources\database.properties (The system cannot find the path specified)
+12:16:28.555 [http-nio-8080-exec-5] ERROR com.project.controllers.ControllerService - null

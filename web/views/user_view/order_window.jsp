@@ -26,6 +26,7 @@
     <form id="set_order" method="GET" action="${pageContext.request.contextPath}/set_order" autocomplete="off">
         <p><textarea name="describe" placeholder="Describe your problem"></textarea></p>
         <p><input type="submit" value="Enter"/></p>
+        <input type="submit" value="Back" onclick="history.back()"/>
     </form>
 </div>
 </body>
