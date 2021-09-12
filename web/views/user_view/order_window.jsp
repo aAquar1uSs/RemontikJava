@@ -16,7 +16,12 @@
     <title>ORDER</title>
 </head>
 <body>
-<h2>Important</h2>
+<div class="inf">
+    <h1>Important!</h1>
+    <h3>Please describe briefly your problem
+        and the manager will answer you!</h3>
+
+</div>
 <div class="order">
     <form id="set_order" method="GET" action="${pageContext.request.contextPath}/set_order" autocomplete="off">
         <p><textarea name="describe" placeholder="Describe your problem"></textarea></p>

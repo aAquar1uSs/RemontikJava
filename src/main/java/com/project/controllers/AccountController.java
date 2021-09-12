@@ -22,8 +22,6 @@ public class AccountController implements Controller{
         @NotNull int idUser = (int) session.getAttribute("id_user");
 
         request.setAttribute("listOrders", orderService.findUserOrders(idUser));
-
-        //response.sendRedirect(request.getContextPath() + "/views/user_view/private_office.jsp");
         request.getRequestDispatcher("/views/user_view/private_office.jsp").forward(request,response);
     }
 }

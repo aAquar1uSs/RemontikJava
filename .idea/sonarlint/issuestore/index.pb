@@ -5,8 +5,6 @@ _
 /.idea/libraries/mysql_connector_java_8_0_26.xml,7\2\72d94be5f5412938a1c43e823ac24f125624c93b
 P
  web/views/master_view/master.jsp,c\4\c4433185293723712fe8c308045776716ea317ec
-\
-,.idea/inspectionProfiles/Project_Default.xml,4\9\496a238a6afa168dbaf6efd37bb459331589579c
 `
 0src/main/java/com/project/daobd/AbstarctDao.java,a\4\a4a0db82dc05864bcf79e902ba0ba0224292c731
 \
@@ -17,8 +15,6 @@ e
 5src/main/java/com/project/constants/SqlConstants.java,9\b\9b71dc515adf4b29b115089425cacde55d03cd70
 G
 web/views/aboutPage.jsp,a\0\a0c823bbc0e33d6333555b071adeb9ae401310a9
-V
-&web/views/style/style_order_window.css,c\e\ce931424b82be0dbb84108d3888d0bd27cee3c49
 q
 Asrc/main/java/com/project/controllers/RegistrationController.java,c\0\c0c5e86db349f83729294aa77f02e14a112c7c16
 k
@@ -34,13 +30,9 @@ b
 T
 $web/views/ErrorPages/syntaxError.jsp,3\0\30452229b2ba449b9aec48b324ca1cf87d1e14f1
 e
-5src/main/java/com/project/utils/WrapperConnector.java,7\6\7680674c6add67ba28ee68e023db951fc669dc2e
-e
 5src/main/java/com/project/controllers/Controller.java,4\f\4f1d92cea69236eb3d3b935471c288dae4edf0a0
 e
 5src/main/java/com/project/service/SessionService.java,2\6\26a12ea7ba3575fec7950c258c3cd6d37cfb44a0
-b
-2src/main/java/com/project/filters/LoginFilter.java,f\2\f2c71f5d0a21f804227f78b7fa066257ae585b78
 ]
 -src/main/java/com/project/daobd/OrderDao.java,d\3\d3b3ade7a3a254992ae9b644ca99668d63f92c57
 c
