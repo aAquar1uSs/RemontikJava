@@ -39,3 +39,64 @@
 12:16:28.536 [http-nio-8080-exec-5] ERROR com.project.utils.WrapperConnector - D:\Project\Java\FinalProjectForEpam\src\main\resources\database.properties (The system cannot find the path specified)
 12:16:28.555 [http-nio-8080-exec-5] ERROR com.project.controllers.ControllerService - null
 17:26:40.416 [http-nio-8080-exec-4] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+19:27:00.725 [http-nio-8080-exec-4] ERROR com.project.controllers.ControllerService - Cannot call sendRedirect() after the response has been committed
+19:40:02.292 [http-nio-8080-exec-6] ERROR com.project.controllers.ControllerService - null
+19:42:19.938 [http-nio-8080-exec-5] ERROR com.project.controllers.ControllerService - null
+19:44:09.943 [http-nio-8080-exec-10] ERROR com.project.controllers.ControllerService - null
+19:45:11.923 [http-nio-8080-exec-7] ERROR com.project.daoImpl.RoleDaoImpl - Column Index out of range, 2 > 1. 
+19:48:37.523 [http-nio-8080-exec-7] ERROR com.project.daoImpl.RoleDaoImpl - Column Index out of range, 2 > 1. 
+19:52:24.879 [http-nio-8080-exec-4] ERROR com.project.daoImpl.RoleDaoImpl - Column Index out of range, 2 > 1. 
+15:27:39.107 [http-nio-8080-exec-2] ERROR com.project.controllers.ControllerService - An exception occurred processing [/views/admin_view/admin.jsp] at line [71]
+
+68:                     <td>${manager.email}</td>
+69:                     <td>
+70:                         <form method="POST" action="${pageContext.request.contextPath}/delete_users_controller">
+71:                             ${requestScope("emailForDelete",manager.email)}
+72:                             <input type="submit" name="Delete" value="Delete">
+73:                         </form>
+74:                     </td>
+
+
+Stacktrace:
+15:27:43.966 [http-nio-8080-exec-8] ERROR com.project.controllers.ControllerService - An exception occurred processing [/views/admin_view/admin.jsp] at line [71]
+
+68:                     <td>${manager.email}</td>
+69:                     <td>
+70:                         <form method="POST" action="${pageContext.request.contextPath}/delete_users_controller">
+71:                             ${requestScope("emailForDelete",manager.email)}
+72:                             <input type="submit" name="Delete" value="Delete">
+73:                         </form>
+74:                     </td>
+
+
+Stacktrace:
+17:41:15.926 [http-nio-8080-exec-3] ERROR com.project.controllers.ControllerService - null
+17:42:22.157 [http-nio-8080-exec-2] ERROR com.project.controllers.ControllerService - null
+17:44:38.221 [http-nio-8080-exec-2] ERROR com.project.controllers.ControllerService - null
+17:45:05.908 [http-nio-8080-exec-3] ERROR com.project.daoImpl.UserDaoImpl - Column 'id' not found.
+17:45:05.930 [http-nio-8080-exec-3] ERROR com.project.daoImpl.RoleDaoImpl - Can not issue data manipulation statements with executeQuery().
+17:45:05.947 [http-nio-8080-exec-3] ERROR com.project.daoImpl.UserDaoImpl - Can not issue data manipulation statements with executeQuery().
+17:45:21.719 [http-nio-8080-exec-8] ERROR com.project.daoImpl.UserDaoImpl - Column 'id' not found.
+17:45:21.735 [http-nio-8080-exec-8] ERROR com.project.daoImpl.RoleDaoImpl - Can not issue data manipulation statements with executeQuery().
+17:45:21.751 [http-nio-8080-exec-8] ERROR com.project.daoImpl.UserDaoImpl - Can not issue data manipulation statements with executeQuery().
+17:45:30.030 [http-nio-8080-exec-6] ERROR com.project.daoImpl.UserDaoImpl - Column 'id' not found.
+17:45:30.046 [http-nio-8080-exec-6] ERROR com.project.daoImpl.RoleDaoImpl - Can not issue data manipulation statements with executeQuery().
+17:45:30.060 [http-nio-8080-exec-6] ERROR com.project.daoImpl.UserDaoImpl - Can not issue data manipulation statements with executeQuery().
+17:46:15.152 [http-nio-8080-exec-3] ERROR com.project.daoImpl.UserDaoImpl - Column 'id' not found.
+17:46:24.900 [http-nio-8080-exec-3] ERROR com.project.daoImpl.RoleDaoImpl - Can not issue data manipulation statements with executeQuery().
+17:46:24.918 [http-nio-8080-exec-3] ERROR com.project.daoImpl.UserDaoImpl - Can not issue data manipulation statements with executeQuery().
+17:48:51.243 [http-nio-8080-exec-3] ERROR com.project.daoImpl.RoleDaoImpl - Can not issue data manipulation statements with executeQuery().
+17:48:51.263 [http-nio-8080-exec-3] ERROR com.project.daoImpl.UserDaoImpl - Can not issue data manipulation statements with executeQuery().
+17:51:08.961 [http-nio-8080-exec-2] ERROR com.project.daoImpl.RoleDaoImpl - Can not issue data manipulation statements with executeQuery().
+17:51:08.994 [http-nio-8080-exec-2] ERROR com.project.daoImpl.UserDaoImpl - Can not issue data manipulation statements with executeQuery().
+17:55:05.184 [http-nio-8080-exec-5] ERROR com.project.daoImpl.RoleDaoImpl - Can not issue data manipulation statements with executeQuery().
+17:55:05.214 [http-nio-8080-exec-5] ERROR com.project.daoImpl.UserDaoImpl - Can not issue data manipulation statements with executeQuery().
+17:55:57.057 [http-nio-8080-exec-2] ERROR com.project.daoImpl.RoleDaoImpl - Can not issue data manipulation statements with executeQuery().
+17:55:57.080 [http-nio-8080-exec-2] ERROR com.project.daoImpl.UserDaoImpl - Can not issue data manipulation statements with executeQuery().
+17:59:36.439 [http-nio-8080-exec-8] ERROR com.project.daoImpl.RoleDaoImpl - Can not issue data manipulation statements with executeQuery().
+17:59:36.466 [http-nio-8080-exec-8] ERROR com.project.daoImpl.UserDaoImpl - Can not issue data manipulation statements with executeQuery().
+18:07:15.461 [http-nio-8080-exec-3] ERROR com.project.daoImpl.RoleDaoImpl - Can not issue data manipulation statements with executeQuery().
+18:07:15.489 [http-nio-8080-exec-3] ERROR com.project.daoImpl.UserDaoImpl - Can not issue data manipulation statements with executeQuery().
+18:13:22.224 [http-nio-8080-exec-3] ERROR com.project.daoImpl.RoleDaoImpl - Parameter index out of range (1 > number of parameters, which is 0).
+18:13:22.263 [http-nio-8080-exec-3] ERROR com.project.daoImpl.UserDaoImpl - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?37' at line 1
+18:26:20.631 [http-nio-8080-exec-2] ERROR com.project.controllers.ControllerService - null

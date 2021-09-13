@@ -1,9 +1,8 @@
 package com.project.controllers;
 
-import com.project.model.Order;
 import com.project.service.OrderService;
 import com.project.service.RoleService;
-import com.project.service.SessionService;
+import com.project.service.SessionAndRequestService;
 import com.project.service.UserService;
 import com.project.utils.PasswordHashManager;
 import com.project.utils.ValidationManager;
@@ -18,13 +17,11 @@ import java.io.IOException;
 public class LoginController implements Controller {
     private UserService userService;
     private RoleService roleService;
-    private OrderService orderService;
     private ValidationManager validationManager;
 
     public LoginController() {
         userService = new UserService();
         roleService = new RoleService();
-        orderService = new OrderService();
         validationManager = new ValidationManager();
     }
 
@@ -43,14 +40,11 @@ public class LoginController implements Controller {
 
         int userId = userService.getIdUser(email, hashPassword);
         String role = roleService.getUserRoleById(userId);
-        SessionService.setSessionForUser(userId,userService,request);
+        SessionAndRequestService.setSessionForUser(userId,userService,request);
 
         switch (role) {
             case "ADMIN":
-                request.getRequestDispatcher("/views/admin_view/admin.jsp").forward(request,response);
-                break;
             case "USER":
-               // SessionService.setOrdersToSession(request);
                 response.sendRedirect(request.getContextPath() + "/views/main_window.jsp");
                 break;
             case "MASTER":

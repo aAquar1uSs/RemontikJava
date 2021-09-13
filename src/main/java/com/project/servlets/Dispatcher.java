@@ -18,7 +18,8 @@ public class Dispatcher extends HttpServlet {
                 new LogoutController(),
                 new RegistrationController(),
                 new OrderController(),
-                new AccountController());
+                new AccountController(),
+                new DeleteUserController());
     }
 
     @Override
@@ -33,23 +34,14 @@ public class Dispatcher extends HttpServlet {
             case "/registration_page":
                 response.sendRedirect(request.getContextPath() + "/views/registration.jsp");
                 break;
-            case "/signIn":
-                controllerService.causeRegistrationController(request, response);
-                break;
             case "/about_page":
                 response.sendRedirect(request.getContextPath() + "/views/aboutPage.jsp");
                 break;
             case "/contacts_page":
-
+                controllerService.causeDeleteUserController(request,response);
                 break;
             case "/private_account":
                 controllerService.causeAccountController(request,response);
-                break;
-            case "/set_order":
-                controllerService.causeOrderController(request, response);
-                break;
-            case "/delete_order":
-
                 break;
             case "/logout":
                 controllerService.causeLogoutController(request, response);
@@ -61,7 +53,17 @@ public class Dispatcher extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         String path = request.getServletPath();
-
+        switch (path) {
+            case "/signIn":
+                controllerService.causeRegistrationController(request, response);
+                break;
+            case "/set_order":
+                controllerService.causeOrderController(request, response);
+                break;
+            case "/delete_users":
+                controllerService.causeDeleteUserController(request,response);
+                break;
+        }
 
     }
 }

@@ -1,14 +1,15 @@
 package com.project.service;
 
-import com.project.model.Order;
+
 import com.project.model.User;
 import com.sun.istack.internal.NotNull;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.List;
 
-public class SessionService {
+public class SessionAndRequestService {
 
     public static void setSessionForUser(int userId, UserService userService, HttpServletRequest request) {
         HttpSession oldSession = request.getSession(false);
@@ -34,6 +35,18 @@ public class SessionService {
         OrderService orderService = new OrderService();
         @NotNull int idUser = (int) session.getAttribute("id_user");
         session.setAttribute("listOrders", orderService.findUserOrders(idUser));
+    }
+
+    public static void setManagersToRequest(HttpServletRequest request) {
+        RoleService roleService = new RoleService();
+        UserService userService = new UserService();
+
+        List<Integer> lstIdUsers = roleService.findUsersIdByRole("MANAGER");
+        List<User> userList = new ArrayList<>();
+        for(Integer id: lstIdUsers) {
+            userList.add(userService.getUserById(id));
+        }
+        request.setAttribute("listManagers",userList);
     }
 
 }

@@ -1,5 +1,7 @@
 package com.project.filters;
 
+import com.project.model.Role;
+
 import javax.servlet.*;
 import javax.servlet.annotation.*;
 import javax.servlet.http.HttpServletRequest;
@@ -20,10 +22,14 @@ public class OrderFilter implements Filter {
         HttpServletResponse res = (HttpServletResponse) response;
         HttpSession session = req.getSession(false);
         boolean loggedIn = session != null && session.getAttribute("userRole") != null;
+        Role role = (Role) session.getAttribute("userRole");
 
-        if(loggedIn) {
+        if(loggedIn && role.getName().equals("USER")) {
             res.sendRedirect(req.getContextPath() + "/views/user_view/order_window.jsp");
-        } else {
+        } else if(loggedIn && role.getName().equals("ADMIN")) {
+            res.sendRedirect(req.getContextPath() + "/private_account");
+        }
+        else {
             res.sendRedirect(req.getContextPath() + "/views/login.jsp");
         }
 

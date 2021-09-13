@@ -22,7 +22,7 @@
     <p>REGISTRATION</p>
 </div>
 <div class="registration">
-    <form id="signin" method="GET" action="${pageContext.request.contextPath}/signIn" autocomplete="off">
+    <form id="signin" method="POST" action="${pageContext.request.contextPath}/signIn" autocomplete="off">
         <input
                 type="text"
                 id="firstname"

@@ -30,8 +30,14 @@
                 name="email"
                 placeholder="Email"
         />
-        <input type="password" id="pass" name="pass" placeholder="Password"/>
-        <input type="submit" value="Enter"/>
+        <input
+                type="password"
+                id="pass"
+                name="pass"
+                placeholder="Password"/>
+        <input
+                type="submit"
+                value="Enter"/>
     </form>
     <form id="registration" method="GET" action="${pageContext.request.contextPath}/registration_page" autocomplete="off">
         <input type="submit" value="Registration"/>

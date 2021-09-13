@@ -8,6 +8,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class RoleDaoImpl implements RoleDao {
@@ -70,7 +72,7 @@ public class RoleDaoImpl implements RoleDao {
     }
 
     @Override
-    public Role setUserRole(int id) {
+    public Role setUserRole(int id, String userRole) {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet rs = null;
@@ -81,10 +83,8 @@ public class RoleDaoImpl implements RoleDao {
             preparedStatement = connection.prepareStatement(SqlConstants.SET_NEW_ROLE_FOR_USER,
                     Statement.RETURN_GENERATED_KEYS);
 
-            preparedStatement.setString(1,"USER");
+            preparedStatement.setString(1,userRole);
             preparedStatement.setInt(2,id);
-
-            connection.commit();
 
             if (preparedStatement.executeUpdate() > 0) {
                 rs = preparedStatement.getGeneratedKeys();
@@ -92,6 +92,7 @@ public class RoleDaoImpl implements RoleDao {
                     role.setId(rs.getLong(1));
                 }
             }
+            connection.commit();
         } catch (SQLException | ClassNotFoundException throwables) {
             WrapperConnector.rollback(connection);
             logger.error(throwables.getMessage());
@@ -126,6 +127,53 @@ public class RoleDaoImpl implements RoleDao {
             wrapperConnection.close(connection);
         }
         return role;
+    }
+
+    @Override
+    public void deleteUserRoleById(int userId) {
+        Connection connection = null;
+        Statement statement = null;
+        try {
+            connection = wrapperConnection.getConnection();
+            connection.setAutoCommit(false);
+            connection = wrapperConnection.getConnection();
+            connection.setAutoCommit(false);
+            statement = connection.createStatement();
+            statement.execute(SqlConstants.DELETE_USER_ROLE_BY_ID + userId);
+            connection.commit();
+        } catch (SQLException | ClassNotFoundException throwables) {
+            WrapperConnector.rollback(connection);
+            logger.error(throwables.getMessage());
+        } finally {
+            wrapperConnection.close(statement);
+            wrapperConnection.close(connection);
+        }
+    }
+
+    @Override
+    public List<Integer> findUsersIdByRole(String role) {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet rs = null;
+        List<Integer> idUsersArray = new ArrayList<>();
+        try {
+            connection = wrapperConnection.getConnection();
+            connection.setAutoCommit(false);
+            preparedStatement = connection.prepareStatement(SqlConstants.FIND_USERS_ID_BY_ROLES);
+            preparedStatement.setString(1, role);
+            rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                idUsersArray.add(rs.getInt("id_users"));
+            }
+            connection.commit();
+        } catch (SQLException | ClassNotFoundException throwables) {
+            logger.error(throwables.getMessage());
+        } finally {
+            wrapperConnection.close(rs);
+            wrapperConnection.close(preparedStatement);
+            wrapperConnection.close(connection);
+        }
+        return idUsersArray;
     }
 
 }

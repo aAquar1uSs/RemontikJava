@@ -44,16 +44,14 @@ public class LoginFilter implements Filter {
             Role role = (Role) req.getSession().getAttribute("userRole");
             switch (role.getName()) {
                 case "ADMIN":
-                    req.getRequestDispatcher("/views/admin_view/admin.jsp").forward(req, res);
+                case "USER":
+                    res.sendRedirect(req.getContextPath() + "/private_account");
                     break;
                 case "MASTER":
                     res.sendRedirect(masterPageUrl);
                     break;
                 case "MANAGER":
                     req.getRequestDispatcher("views/manager_view/manager_page.jsp").forward(req, res);
-                    break;
-                case "USER":
-                    res.sendRedirect(req.getContextPath() + "/private_account");
                     break;
                 default:
                     chain.doFilter(request, response);

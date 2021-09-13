@@ -94,7 +94,6 @@
             <h1>Remontik</h1>
             <h3>Repair of computer, mobile and household equipment.</h3>
         </div>
-        <div class="registration"></div>
         <div class ="set_order">
             <a href="${pageContext.request.contextPath}/set_new_order_secured/*" class="pressed-button">Submit a request for repair</a>
         </div>

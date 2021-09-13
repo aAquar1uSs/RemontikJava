@@ -23,6 +23,10 @@ public class UserService {
         return userDao.searchUserByEmail(email);
     }
 
+    public int getUserIdByEmail(String email) {
+        return userDao.getUserIdByEmail(email);
+    }
+
     public User setNewUser(String firstName,String lastName,
                            String email, String password, double cashBalance) {
         User user = new User();
@@ -37,6 +41,10 @@ public class UserService {
 
     public void insertUser(User user) {
         userDao.insertUser(user);
+    }
+
+    public void deleteUserById(int id) {
+        userDao.deleteUserById(id);
     }
 
 }

@@ -28,7 +28,15 @@ public class SqlConstants {
 
     public static final String SQL_FIND_ALL_ORDERS = "SELECT * FROM orders";
 
-    public static final String SQL_FIND_USER_ORDERS = "SELECT order_name, order_price, order_date, order_status, paymant_status, id_user FROM orders JOIN users WHERE users.id = ?";
+    public static final String SQL_FIND_USER_ORDERS = "SELECT order_name, order_price, order_date, order_status, " +
+            "paymant_status, id_user FROM orders JOIN users WHERE users.id = ?";
 
+    public static final String FIND_USERS_ID_BY_ROLES = "SELECT * FROM roles WHERE name = ?";
+
+    public static final String DELETE_USER_ROLE_BY_ID = "DELETE FROM roles WHERE id_users =";
+
+    public static final String DELETE_USER_BY_ID = "DELETE FROM users WHERE id =";
+
+    public static final String FIND_USER_BY_EMAIL = "SELECT * FROM users WHERE email = ?";
 
 }

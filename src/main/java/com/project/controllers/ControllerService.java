@@ -15,14 +15,16 @@ public class ControllerService {
     Controller registrationController;
     Controller orderController;
     Controller accountController;
+    Controller deleteUserController;
 
     public ControllerService(Controller loginController, Controller logoutController, Controller registrationController,
-                             Controller orderController,Controller accountController) {
+                             Controller orderController,Controller accountController,Controller deleteUserController) {
         this.loginController = loginController;
         this.logoutController = logoutController;
         this.registrationController = registrationController;
         this.orderController = orderController;
         this.accountController = accountController;
+        this.deleteUserController = deleteUserController;
     }
 
     public void causeLoginController(HttpServletRequest request, HttpServletResponse response) {
@@ -60,6 +62,14 @@ public class ControllerService {
     public void causeAccountController(HttpServletRequest request, HttpServletResponse response) {
         try {
             accountController.execute(request, response);
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+        }
+    }
+
+    public void causeDeleteUserController(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            deleteUserController.execute(request, response);
         } catch (Exception e) {
             logger.error(e.getMessage());
         }

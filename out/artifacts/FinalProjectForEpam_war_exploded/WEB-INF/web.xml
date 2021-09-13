@@ -22,7 +22,7 @@
         <url-pattern>/logout</url-pattern>
         <url-pattern>/set_order</url-pattern>
         <url-pattern>/private_account</url-pattern>
-        <url-pattern>/delete_order</url-pattern>
+        <url-pattern>/delete_users</url-pattern>
     </servlet-mapping>
 
     <filter>

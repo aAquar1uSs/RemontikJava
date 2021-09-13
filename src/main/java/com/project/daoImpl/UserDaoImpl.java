@@ -140,6 +140,7 @@ public class UserDaoImpl implements UserDao<Integer> {
         int id = 0;
         try {
             connection = wrapperConnection.getConnection();
+            connection.setAutoCommit(false);
             preparedStatement = connection.prepareStatement(SqlConstants.GET_ID_USERS);
             preparedStatement.setString(1, email);
             preparedStatement.setString(2, password);
@@ -147,7 +148,9 @@ public class UserDaoImpl implements UserDao<Integer> {
             while (rs.next()) {
                 id = rs.getInt("id");
             }
+            connection.commit();
         } catch (SQLException | ClassNotFoundException throwables) {
+            WrapperConnector.rollback(connection);
             logger.error(throwables.getMessage());
         } finally {
             wrapperConnection.close(rs);
@@ -155,6 +158,61 @@ public class UserDaoImpl implements UserDao<Integer> {
             wrapperConnection.close(connection);
         }
         return id;
+    }
+
+    @Override
+    public int getUserIdByEmail(String email) {
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet rs = null;
+        int id = 0;
+        try {
+            connection = wrapperConnection.getConnection();
+            connection.setAutoCommit(false);
+            statement = connection.prepareStatement(SqlConstants.FIND_USER_BY_EMAIL);
+
+            statement.setString(1,email);
+
+            rs = statement.executeQuery();
+
+            while (rs.next()) {
+                id = rs.getInt("id");
+            }
+            connection.commit();
+        } catch (SQLException | ClassNotFoundException throwables) {
+            WrapperConnector.rollback(connection);
+            logger.error(throwables.getMessage());
+        } finally {
+            wrapperConnection.close(rs);
+            wrapperConnection.close(statement);
+            wrapperConnection.close(connection);
+        }
+        return id;
+    }
+
+    @Override
+    public void deleteUserById(int id) {
+        Connection connection = null;
+        Statement statement = null;
+        try {
+            connection = wrapperConnection.getConnection();
+            connection.setAutoCommit(false);
+            statement = connection.createStatement();
+            statement.execute(SqlConstants.DELETE_USER_BY_ID + id);
+            connection.commit();
+        } catch (SQLException | ClassNotFoundException throwables) {
+            logger.error(throwables.getMessage());
+        } finally {
+            wrapperConnection.close(statement);
+            wrapperConnection.close(connection);
+        }
+    }
+
+    @Override
+    public List<User> findAllUserWithManagerRole() {
+
+
+        return null;
     }
 
     private User createUser(ResultSet rs) throws SQLException {
