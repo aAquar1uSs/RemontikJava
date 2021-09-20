@@ -1,7 +1,6 @@
 package com.project.controllers;
 
 import com.project.model.Role;
-import com.project.model.User;
 import com.project.service.OrderService;
 import com.project.service.RoleService;
 import com.project.service.SessionAndRequestService;
@@ -11,8 +10,6 @@ import com.sun.istack.internal.NotNull;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
-import java.util.List;
 
 public class AccountController implements Controller {
 
@@ -26,6 +23,12 @@ public class AccountController implements Controller {
         userService = new UserService();
     }
 
+    /**
+     * If button "Account" is pressed and this controller will redirect to private account for role.
+     * @param request
+     * @param response
+     * @throws Exception
+     */
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         HttpSession session = request.getSession(true);
@@ -45,6 +48,9 @@ public class AccountController implements Controller {
 
                 break;
             case "MASTER":
+
+                break;
+            default:
 
                 break;
         }

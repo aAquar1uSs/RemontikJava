@@ -42,7 +42,7 @@ public class RegistrationController implements Controller {
 
             Cookie message = new Cookie("message", "Error");
             response.addCookie(message);
-            request.getRequestDispatcher("/views/ErrorPages/registrationError.jsp").forward(request, response);
+            request.getRequestDispatcher("/views/error_pages/registrationError.jsp").forward(request, response);
         }
         Role role = (Role) session.getAttribute("userRole");
 

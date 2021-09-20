@@ -16,6 +16,7 @@
     </style>
 </head>
 <body>
+<div class = "text_content">
         <h1>COULD NOT LOG IN</h1>
 
         <%
@@ -33,5 +34,6 @@
         <h3>LogIn failed</h3>
         <h4><%=message%></h4>
         <h4>Session ID = <%=sessionID %></h4>
+</div>
 </body>
 </html>

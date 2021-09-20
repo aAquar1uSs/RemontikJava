@@ -42,12 +42,10 @@
                     <a href="#">
                         <li>Leave Feedback</li>
                     </a>
-
                     <a href="https://erikterwan.com/" target="_blank">
                         <li>Show me more</li>
                     </a>
                 </ul>
-
             </div>
         </nav>
         <div class="buttons">
@@ -85,7 +83,7 @@
             </select>
         </form>
         <div class="account">
-            <a href="${pageContext.request.contextPath}/secured/*"><i class="fas fa-user-circle"></i></a></button>
+            <a href="${pageContext.request.contextPath}/secured/private_account"><i class="fas fa-user-circle"></i></a></button>
         </div>
     </div>
 

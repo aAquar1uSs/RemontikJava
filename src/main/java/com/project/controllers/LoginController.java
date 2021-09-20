@@ -1,6 +1,5 @@
 package com.project.controllers;
 
-import com.project.service.OrderService;
 import com.project.service.RoleService;
 import com.project.service.SessionAndRequestService;
 import com.project.service.UserService;
@@ -31,32 +30,19 @@ public class LoginController implements Controller {
         @NotNull String email = request.getParameter("email");
         @NotNull String password = request.getParameter("pass");
 
+        final String notLoggedInUrl = "/views/error_pages/ErrorNotLoggedIn.jsp";
+        final String urlMainWindow = request.getContextPath() + "/views/main_window.jsp";
+
         if(!validationManager.isValidEmail(email) || !userService.searchUserByEmail(email)) {
             Cookie message = new Cookie("message", "Error");
             response.addCookie(message);
-            request.getRequestDispatcher("/views/ErrorPages/ErrorNotLoggedIn.jsp").forward(request,response);
+            request.getRequestDispatcher(notLoggedInUrl).forward(request,response);
         }
         String hashPassword = PasswordHashManager.passwordEncryption(password);
 
         int userId = userService.getIdUser(email, hashPassword);
-        String role = roleService.getUserRoleById(userId);
         SessionAndRequestService.setSessionForUser(userId,userService,request);
 
-        switch (role) {
-            case "ADMIN":
-            case "USER":
-                response.sendRedirect(request.getContextPath() + "/views/main_window.jsp");
-                break;
-            case "MASTER":
-                request.getRequestDispatcher("/views/master_view/master.jsp").forward(request,response);
-                break;
-            case "MANAGER":
-                request.getRequestDispatcher("/views/manager_view/manager_page.jsp").forward(request,response);
-                break;
-            default:
-                String notLoggedInUrl = request.getContextPath() + "/views/ErrorPages/ErrorNotLoggedIn.jsp";
-                response.sendRedirect(notLoggedInUrl);
-                break;
-        }
+        response.sendRedirect(urlMainWindow);
     }
 }

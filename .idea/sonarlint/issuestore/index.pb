@@ -7,10 +7,6 @@ P
  web/views/master_view/master.jsp,c\4\c4433185293723712fe8c308045776716ea317ec
 \
 ,.idea/inspectionProfiles/Project_Default.xml,4\9\496a238a6afa168dbaf6efd37bb459331589579c
-`
-0src/main/java/com/project/daobd/AbstarctDao.java,a\4\a4a0db82dc05864bcf79e902ba0ba0224292c731
-Y
-)web/views/ErrorPages/ErrorNotLoggedIn.jsp,d\7\d77a408d446a27275d71e02de568a959e51c23f4
 Z
 *web/views/ErrorPages/registrationError.jsp,d\d\ddf0f5500827b2d9214c67e421e12687e2d264e6
 T
@@ -21,8 +17,6 @@ c
 3src/main/java/com/project/daoImpl/OrderDaoImpl.java,7\c\7c76aa77e488c8af486e2a7e2bafe5979481f2e6
 V
 &web/views/style/style_admin_window.css,d\6\d6302a01b64992736176d309db15ee6196bd5172
-U
-%web/views/style/style_main_window.css,e\1\e1692b6b8cd4d443f28a8d9ab3e391c174988618
 h
 8src/main/java/com/project/utils/PasswordHashManager.java,5\a\5a38f3ee5cd61dc8eadde910294434c0322fcc6e
 f
@@ -47,3 +41,13 @@ G
 FinalProjectForEpam.iml,c\4\c48f8bb853e92763cc917d239ef4061417d4aff7
 V
 &web/views/style/style_order_window.css,c\e\ce931424b82be0dbb84108d3888d0bd27cee3c49
+l
+<src/main/java/com/project/controllers/ControllerService.java,7\6\766bdabf1993a10e04c8246493285655e5fb5bc1
+J
+web/views/registration.jsp,6\9\692e3fc199221fa8256efbb54126003d1030548a
+\
+,src/main/java/com/project/daobd/RoleDao.java,5\6\5616131a11f3f6f0754c13fcfd4dfc981df469de
+b
+2src/main/java/com/project/daoImpl/RoleDaoImpl.java,5\e\5e8609724e4e95ed1af4479c19ad41f685c9ab3a
+b
+2src/main/java/com/project/service/RoleService.java,3\8\38b06dfb0d50d98f87bffef6912aa7bee9a88a1a
