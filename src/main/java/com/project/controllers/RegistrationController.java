@@ -35,11 +35,7 @@ public class RegistrationController implements Controller {
 
         String mainUrl = request.getContextPath() + "/views/main_window.jsp";
 
-        if (!validationManager.isValidEmail(email) ||
-                !validationManager.isValidName(firstName) ||
-                !validationManager.isValidName(lastName) ||
-                userService.searchUserByEmail(email)) {
-
+        if (checkValidation(email,firstName,lastName)) {
             Cookie message = new Cookie("message", "Error");
             response.addCookie(message);
             request.getRequestDispatcher("/views/error_pages/registrationError.jsp").forward(request, response);
@@ -58,6 +54,13 @@ public class RegistrationController implements Controller {
             roleService.setRoleForUser(idUser, "MANAGER");
             response.sendRedirect(request.getContextPath() + "/private_account");
         }
+    }
+
+    private boolean checkValidation(String email,String firstName,String lastName) {
+         return !validationManager.isValidEmail(email) ||
+                !validationManager.isValidName(firstName) ||
+                !validationManager.isValidName(lastName) ||
+                userService.searchUserByEmail(email);
     }
 
 }

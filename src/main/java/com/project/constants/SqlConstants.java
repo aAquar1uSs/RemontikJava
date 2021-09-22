@@ -39,4 +39,6 @@ public class SqlConstants {
 
     public static final String FIND_USER_BY_EMAIL = "SELECT * FROM users WHERE email = ?";
 
+    public static final String SQL_PASSWORD_VERIFICATION = "SELECT * FROM users WHERE email = ? AND password = ?";
+
 }

@@ -1,6 +1,5 @@
 package com.project.controllers;
 
-import com.project.service.RoleService;
 import com.project.service.SessionAndRequestService;
 import com.project.service.UserService;
 import com.project.utils.PasswordHashManager;
@@ -14,13 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class LoginController implements Controller {
-    private UserService userService;
-    private RoleService roleService;
-    private ValidationManager validationManager;
+    private final UserService userService;
+    private final ValidationManager validationManager;
 
     public LoginController() {
         userService = new UserService();
-        roleService = new RoleService();
         validationManager = new ValidationManager();
     }
 
@@ -33,15 +30,17 @@ public class LoginController implements Controller {
         final String notLoggedInUrl = "/views/error_pages/ErrorNotLoggedIn.jsp";
         final String urlMainWindow = request.getContextPath() + "/views/main_window.jsp";
 
-        if(!validationManager.isValidEmail(email) || !userService.searchUserByEmail(email)) {
-            Cookie message = new Cookie("message", "Error");
-            response.addCookie(message);
-            request.getRequestDispatcher(notLoggedInUrl).forward(request,response);
-        }
         String hashPassword = PasswordHashManager.passwordEncryption(password);
 
+        if (!validationManager.isValidEmail(email) || !userService.searchUserByEmail(email)
+                || !userService.userPasswordVerification(email,hashPassword)) {
+            Cookie message = new Cookie("message", "Error");
+            response.addCookie(message);
+            request.getRequestDispatcher(notLoggedInUrl).forward(request, response);
+        }
+
         int userId = userService.getIdUser(email, hashPassword);
-        SessionAndRequestService.setSessionForUser(userId,userService,request);
+        SessionAndRequestService.setSessionForUser(userId, userService, request);
 
         response.sendRedirect(urlMainWindow);
     }

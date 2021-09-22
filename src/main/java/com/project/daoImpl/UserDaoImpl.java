@@ -12,8 +12,8 @@ import java.sql.*;
 import java.util.List;
 
 public class UserDaoImpl implements UserDao<Integer> {
-    private static Logger logger = LogManager.getLogger(UserDaoImpl.class.getName());
-    private WrapperConnector wrapperConnection;
+    private static final Logger logger = LogManager.getLogger(UserDaoImpl.class.getName());
+    private final WrapperConnector wrapperConnection;
 
     public UserDaoImpl() {
         wrapperConnection = WrapperConnector.getInstance();
@@ -133,6 +133,31 @@ public class UserDaoImpl implements UserDao<Integer> {
     }
 
     @Override
+    public boolean verificationPassword(String email,String password) {
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet rs = null;
+        try {
+            connection = wrapperConnection.getConnection();
+            statement = connection.prepareStatement(SqlConstants.SQL_PASSWORD_VERIFICATION);
+            statement.setString(1,email);
+            statement.setString(2,password);
+            rs = statement.executeQuery();
+            while (rs.next()) {
+                return true;
+            }
+
+        } catch (SQLException | ClassNotFoundException throwables) {
+            logger.error(throwables.getMessage());
+        } finally {
+            wrapperConnection.close(rs);
+            wrapperConnection.close(statement);
+            wrapperConnection.close(connection);
+        }
+        return false;
+    }
+
+    @Override
     public int getUserId(String email, String password) {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
@@ -201,6 +226,7 @@ public class UserDaoImpl implements UserDao<Integer> {
             statement.execute(SqlConstants.DELETE_USER_BY_ID + id);
             connection.commit();
         } catch (SQLException | ClassNotFoundException throwables) {
+            WrapperConnector.rollback(connection);
             logger.error(throwables.getMessage());
         } finally {
             wrapperConnection.close(statement);
@@ -210,8 +236,6 @@ public class UserDaoImpl implements UserDao<Integer> {
 
     @Override
     public List<User> findAllUserWithManagerRole() {
-
-
         return null;
     }
 

@@ -100,3 +100,50 @@ Stacktrace:
 18:13:22.224 [http-nio-8080-exec-3] ERROR com.project.daoImpl.RoleDaoImpl - Parameter index out of range (1 > number of parameters, which is 0).
 18:13:22.263 [http-nio-8080-exec-3] ERROR com.project.daoImpl.UserDaoImpl - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?37' at line 1
 18:26:20.631 [http-nio-8080-exec-2] ERROR com.project.controllers.ControllerService - null
+16:36:10.077 [http-nio-8080-exec-4] ERROR com.project.utils.WrapperConnector - D:\Project\Java\FinalProjectForEpam\src\main\resources\database.properties (The system cannot find the path specified)
+16:36:10.085 [http-nio-8080-exec-4] ERROR com.project.controllers.ControllerService - null
+23:25:56.776 [http-nio-8080-exec-4] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+23:29:55.753 [http-nio-8080-exec-3] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+23:29:59.218 [http-nio-8080-exec-6] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+23:35:03.481 [http-nio-8080-exec-4] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+23:35:47.933 [http-nio-8080-exec-3] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+23:36:42.182 [http-nio-8080-exec-2] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+23:42:40.210 [http-nio-8080-exec-3] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+23:44:15.031 [http-nio-8080-exec-3] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+23:44:18.908 [http-nio-8080-exec-5] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+23:45:01.703 [http-nio-8080-exec-3] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+23:45:04.075 [http-nio-8080-exec-5] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+23:45:42.388 [http-nio-8080-exec-4] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+23:45:44.692 [http-nio-8080-exec-6] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+23:47:52.246 [http-nio-8080-exec-3] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+23:47:54.722 [http-nio-8080-exec-5] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+17:45:06.189 [http-nio-8080-exec-4] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+17:45:09.841 [http-nio-8080-exec-7] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+17:46:15.717 [http-nio-8080-exec-3] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+17:46:18.128 [http-nio-8080-exec-7] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+17:47:31.761 [http-nio-8080-exec-4] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+17:47:34.235 [http-nio-8080-exec-8] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+17:48:55.818 [http-nio-8080-exec-3] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+17:48:58.980 [http-nio-8080-exec-6] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+17:50:19.628 [http-nio-8080-exec-3] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+17:50:51.540 [http-nio-8080-exec-10] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+17:51:24.979 [http-nio-8080-exec-3] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+17:51:28.596 [http-nio-8080-exec-7] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+17:53:31.642 [http-nio-8080-exec-3] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+17:53:36.326 [http-nio-8080-exec-7] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+17:54:32.209 [http-nio-8080-exec-1] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+17:55:02.084 [http-nio-8080-exec-1] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+17:57:58.712 [http-nio-8080-exec-4] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+17:58:00.942 [http-nio-8080-exec-7] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+18:11:40.891 [http-nio-8080-exec-5] ERROR com.project.daoImpl.UserDaoImpl - No value specified for parameter 2
+18:11:40.985 [http-nio-8080-exec-5] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+18:12:00.019 [http-nio-8080-exec-1] ERROR com.project.daoImpl.UserDaoImpl - No value specified for parameter 2
+18:12:00.117 [http-nio-8080-exec-1] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+18:12:50.157 [http-nio-8080-exec-1] ERROR com.project.daoImpl.UserDaoImpl - No value specified for parameter 2
+18:12:50.252 [http-nio-8080-exec-1] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+18:12:54.771 [http-nio-8080-exec-5] ERROR com.project.daoImpl.UserDaoImpl - No value specified for parameter 2
+18:12:54.789 [http-nio-8080-exec-5] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+18:13:55.585 [http-nio-8080-exec-4] ERROR com.project.daoImpl.UserDaoImpl - No value specified for parameter 2
+18:13:55.680 [http-nio-8080-exec-4] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed
+18:15:37.194 [http-nio-8080-exec-1] ERROR com.project.daoImpl.UserDaoImpl - No value specified for parameter 2
+18:15:37.333 [http-nio-8080-exec-1] ERROR com.project.controllers.ControllerService - Cannot create a session after the response has been committed

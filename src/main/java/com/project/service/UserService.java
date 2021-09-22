@@ -23,6 +23,10 @@ public class UserService {
         return userDao.searchUserByEmail(email);
     }
 
+    public boolean userPasswordVerification(String email, String password) {
+        return userDao.verificationPassword(email,password);
+    }
+
     public int getUserIdByEmail(String email) {
         return userDao.getUserIdByEmail(email);
     }
