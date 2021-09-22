@@ -97,10 +97,5 @@
         </div>
     </div>
 </header>
-
-<main></main>
-
-<footer></footer>
-<footer></footer>
 </body>
 </html>

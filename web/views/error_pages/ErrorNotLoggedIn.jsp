@@ -7,13 +7,11 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<style>
+    <%@ include file="/views/style/style_error_page_not_loggedIn.css" %>
+</style>
 <head>
     <title>Error</title>
-    <style>
-        .text {
-            text-align:  center;
-        }
-    </style>
 </head>
 <body>
 <div class = "text_content">
@@ -35,5 +33,6 @@
         <h4><%=message%></h4>
         <h4>Session ID = <%=sessionID %></h4>
 </div>
+
 </body>
 </html>
