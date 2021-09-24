@@ -1,18 +1,19 @@
 package com.project.controllers;
 
+import com.project.constants.UrlConstants;
 import com.project.model.Role;
+import com.project.service.RequestService;
 import com.project.service.RoleService;
-import com.project.service.SessionAndRequestService;
 import com.project.service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class DeleteUserController implements Controller{
+public class DeleteUserController implements Controller {
 
-    UserService userService;
-    RoleService roleService;
+    private final UserService userService;
+    private final RoleService roleService;
 
     public DeleteUserController() {
         userService = new UserService();
@@ -30,9 +31,9 @@ public class DeleteUserController implements Controller{
 
         Role role = (Role) session.getAttribute("userRole");
 
-        if(role.getName().equals("ADMIN")) {
-            SessionAndRequestService.setManagersToRequest(request);
-            request.getRequestDispatcher("/views/admin_view/admin.jsp").forward(request, response);
+        if (role.getName().equals("ADMIN")) {
+            RequestService.setManagersToRequest(roleService, userService, request);
+            request.getRequestDispatcher(UrlConstants.ADMIN_PAGE_URL).forward(request, response);
         }
     }
 }

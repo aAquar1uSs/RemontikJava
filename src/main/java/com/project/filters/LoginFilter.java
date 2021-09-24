@@ -1,5 +1,6 @@
 package com.project.filters;
 
+import com.project.constants.UrlConstants;
 import com.project.model.Role;
 
 import javax.servlet.*;
@@ -17,25 +18,24 @@ public class LoginFilter implements Filter {
 
     /**
      * The filter tracks whether the user is registered or not
-     *
      * @param request
      * @param response
      * @param chain
      * @throws ServletException
      * @throws IOException
      */
+
     @Override
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException,
+            IOException {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
 
         String servletPath = req.getServletPath().substring(8);
-        String loginURL = req.getContextPath() + "/views/login.jsp";
-
 
         Role role = (Role) req.getSession().getAttribute("userRole");
         if (role == null) {
-            res.sendRedirect(loginURL);
+            req.getRequestDispatcher(UrlConstants.LOGIN_PAGE_URL).forward(req,res);
         } else {
             res.sendRedirect(req.getContextPath() + servletPath);
         }

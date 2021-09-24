@@ -1,5 +1,7 @@
 package com.project.controllers;
 
+import com.project.constants.UrlConstants;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -12,6 +14,6 @@ public class LogoutController implements Controller{
             session.invalidate();
         }
 
-        response.sendRedirect(request.getContextPath() + "/views/login.jsp");
+        request.getRequestDispatcher(UrlConstants.LOGIN_PAGE_URL).forward(request,response);
     }
 }

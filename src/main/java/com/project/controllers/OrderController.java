@@ -1,5 +1,6 @@
 package com.project.controllers;
 
+import com.project.constants.UrlConstants;
 import com.project.service.OrderService;
 import com.sun.istack.internal.NotNull;
 
@@ -11,7 +12,7 @@ import java.util.Calendar;
 import java.util.Objects;
 
 public class OrderController implements Controller{
-    private OrderService orderService;
+    private final OrderService orderService;
 
     public OrderController() {
         orderService = new OrderService();
@@ -23,7 +24,7 @@ public class OrderController implements Controller{
         @NotNull String describeOrder = request.getParameter("describe");
 
         if(Objects.equals(describeOrder, "")) {
-            request.getRequestDispatcher("/views/ErrorPages/syntaxError.jsp").forward(request,response);
+            request.getRequestDispatcher(UrlConstants.SYNTAX_ERROR_PAGE_URL).forward(request,response);
             return;
         }
 
@@ -35,8 +36,7 @@ public class OrderController implements Controller{
 
         orderService.insertNewOrder(orderService.setNewOrder(describeOrder,idUser,timeNow));
 
-        String mainUrl = request.getContextPath() + "/views/main_window.jsp";
-        response.sendRedirect(mainUrl);
+        request.getRequestDispatcher(UrlConstants.MAIN_WINDOW_URL).forward(request,response);
 
     }
 }

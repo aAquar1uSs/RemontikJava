@@ -1,0 +1,203 @@
+@font-face {
+    font-family: Ubuntu-Medium;
+    src: url(fonts/Ubuntu-Medium.ttf);
+}
+
+* {
+    margin: 0 auto;
+    padding: 0;
+
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-color: #14141b;
+
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.name {
+    width: 100%;
+    font-family: Ubuntu-Medium;
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    margin-top: 9%;
+    color: #4d648d;
+}
+
+form {
+    margin-top: 40px;
+}
+
+.registration {
+    max-width: 500px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+
+#signin input:first-of-type {
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+#signin input:last-of-type {
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+#signin input[type="text"],
+#signin input[type="password"] {
+    background: rgb(28, 30, 33);
+    box-shadow: inset -100px -100px 0 rgb(28, 30, 33);
+    /*Prevent yellow autofill color*/
+    color: #d0e1f9;
+}
+
+#signin input[type="text"],
+#signin input[type="password"] {
+    position: relative;
+    display: block;
+    max-width: 400px;
+    min-width: 350px;
+    height: 60px;
+    border: 0;
+    outline: 0;
+    top: -2px;
+    padding: 0 0 0 20px;
+    font-weight: 700;
+}
+
+#signin input[type="text"]:focus,
+#signin input[type="password"]:focus {
+    color: rgb(255, 255, 255);
+}
+
+#signin p {
+    color: rgb(79, 85, 97);
+    padding: 0 20px;
+    font-weight: 700;
+    font-size: 12px;
+    margin: 5px 0 0 0;
+}
+
+#signin p>a {
+    color: rgb(111, 119, 135);
+    text-decoration: none;
+}
+
+#signin p>a:hover {
+    border-bottom: 1px solid;
+}
+
+#signin input[type=submit] {
+    background: rgb(28, 30, 33);
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 30px;
+    margin: 10px 36%;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #4d648d;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    color: #4d648d;
+    transition: .2s ease-in-out;
+}
+
+#signin input[type="submit"]:before {
+    content: "";
+    background: #011f38;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: -8px;
+    left: -75px;
+    transform: skewX(-45deg);
+}
+
+#signin input[type="submit"]:hover {
+    background-color: #4d648d;
+    background-color: #fff;
+}
+
+#signin p {
+    color: rgb(79, 85, 97);
+    padding: 0 20px;
+    font-weight: 700;
+    font-size: 12px;
+    margin: 5px 0 0 0;
+}
+
+#signin p>a {
+    color: rgb(111, 119, 135);
+    text-decoration: none;
+}
+
+#signin p>a:hover {
+    border-bottom: 1px solid;
+}
+
+#back input[type=submit] {
+    background: rgb(28, 30, 33);
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 30px;
+    margin-left: 7%;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #4d648d;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    color: #4d648d;
+    transition: .2s ease-in-out;
+}
+
+#back input[type="submit"]:before {
+    content: "";
+    background: #011f38;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: -8px;
+    left: -75px;
+    transform: skewX(-45deg);
+}
+
+#back input[type="submit"]:hover {
+    background-color: #4d648d;
+    background-color: #fff;
+}
+
+#back  p {
+    color: rgb(79, 85, 97);
+    padding: 0 20px;
+    font-weight: 700;
+    font-size: 12px;
+    margin: 5px 0 0 0;
+}
+
+#back  p>a {
+    color: rgb(111, 119, 135);
+    text-decoration: none;
+}
+
+#back p>a:hover {
+    border-bottom: 1px solid;
+}

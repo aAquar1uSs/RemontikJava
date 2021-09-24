@@ -31,7 +31,7 @@ public class WrapperConnector {
         Properties connectionProperties = new Properties();
         FileInputStream fis = null;
         try {
-            fis = new FileInputStream("D:\\Project\\FinalProjectForEpam\\src\\main\\resources\\database.properties");
+            fis = new FileInputStream("D:\\Project\\Java\\FinalProjectForEpam\\src\\main\\resources\\database.properties");
             connectionProperties.load(fis);
         } catch (IOException e) {
             logger.error(e.getMessage());

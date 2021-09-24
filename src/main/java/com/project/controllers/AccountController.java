@@ -1,10 +1,8 @@
 package com.project.controllers;
 
+import com.project.constants.UrlConstants;
 import com.project.model.Role;
-import com.project.service.OrderService;
-import com.project.service.RoleService;
-import com.project.service.SessionAndRequestService;
-import com.project.service.UserService;
+import com.project.service.*;
 import com.sun.istack.internal.NotNull;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +15,7 @@ public class AccountController implements Controller {
     private final RoleService roleService;
     private final UserService userService;
 
+
     public AccountController() {
         orderService = new OrderService();
         roleService = new RoleService();
@@ -25,6 +24,7 @@ public class AccountController implements Controller {
 
     /**
      * If button "Account" is pressed and this controller will redirect to private account for role.
+     *
      * @param request
      * @param response
      * @throws Exception
@@ -38,11 +38,11 @@ public class AccountController implements Controller {
             case "USER":
                 @NotNull int idUser = (int) session.getAttribute("id_user");
                 request.setAttribute("listOrders", orderService.findUserOrders(idUser));
-                request.getRequestDispatcher("/views/user_view/private_office.jsp").forward(request, response);
+                request.getRequestDispatcher(UrlConstants.PRIVATE_ACCOUNT_URL).forward(request, response);
                 break;
             case "ADMIN":
-                SessionAndRequestService.setManagersToRequest(request);
-                request.getRequestDispatcher("/views/admin_view/admin.jsp").forward(request, response);
+                RequestService.setManagersToRequest(roleService, userService, request);
+                request.getRequestDispatcher(UrlConstants.ADMIN_PAGE_URL).forward(request, response);
                 break;
             case "MANAGER":
 

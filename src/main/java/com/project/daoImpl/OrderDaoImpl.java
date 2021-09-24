@@ -55,7 +55,7 @@ public class OrderDaoImpl implements OrderDao {
         try {
             connection = wrapperConnection.getConnection();
             connection.setAutoCommit(false);
-            preparedStatement = connection.prepareStatement(SqlConstants.INSERT_NEW_ORDER,
+            preparedStatement = connection.prepareStatement(SqlConstants.SQL_INSERT_NEW_ORDER,
                     Statement.RETURN_GENERATED_KEYS);
 
             preparedStatement.setString(1, order.getOrderName());

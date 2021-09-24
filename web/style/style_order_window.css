@@ -1,0 +1,73 @@
+@font-face {
+    font-family: Ubuntu-Medium;
+    src: url(fonts/Ubuntu-Medium.ttf);
+}
+
+body {
+    background-color: #14141b;
+
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h2 {
+ text-align: center;
+}
+
+.order {
+    margin-top: 3%;
+}
+
+.inf {
+    text-align: center;
+    font-family: Ubuntu-Medium, serif;
+    font-size: 28px;
+    color: #4d648d;
+}
+
+#set_order input[type="submit"] {
+    background: rgb(28, 30, 33);
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 30px;
+    margin: 10px 20px;
+    margin-left: 30%;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #4d648d;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    color: #4d648d;
+    transition: .2s ease-in-out;
+}
+
+#set_order input[type="submit"]:before {
+    content: "";
+    background: #011f38;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: -8px;
+    left: -75px;
+    transform: skewX(-45deg);
+}
+
+#set_order input[type="submit"]:hover {
+    background-color: #4d648d;
+    background-color: #fff;
+}
+
+
+#set_order textarea {
+    position: center;
+    background: #fce9c0; /* Цвет фона */
+    border: 2px solid #a9c358; /* Параметры рамки */
+    padding: 10px; /* Поля */
+    width: 100%; /* Ширина */
+    height: 200px; /* Высота */
+    box-sizing: border-box; /* Алгоритм расчёта ширины */
+    font-size: 14px; /* Размер шрифта */
+}

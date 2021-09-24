@@ -111,7 +111,7 @@ public class UserDaoImpl implements UserDao<Integer> {
         ResultSet rs = null;
         try {
             connection = wrapperConnection.getConnection();
-            statement = connection.prepareStatement(SqlConstants.SEARCH_USER_BY_EMAIL);
+            statement = connection.prepareStatement(SqlConstants.SQL_SEARCH_USER_BY_EMAIL);
 
             statement.setString(1,email);
 
@@ -166,7 +166,7 @@ public class UserDaoImpl implements UserDao<Integer> {
         try {
             connection = wrapperConnection.getConnection();
             connection.setAutoCommit(false);
-            preparedStatement = connection.prepareStatement(SqlConstants.GET_ID_USERS);
+            preparedStatement = connection.prepareStatement(SqlConstants.SQL_GET_ID_USERS);
             preparedStatement.setString(1, email);
             preparedStatement.setString(2, password);
             rs = preparedStatement.executeQuery();
@@ -194,7 +194,7 @@ public class UserDaoImpl implements UserDao<Integer> {
         try {
             connection = wrapperConnection.getConnection();
             connection.setAutoCommit(false);
-            statement = connection.prepareStatement(SqlConstants.FIND_USER_BY_EMAIL);
+            statement = connection.prepareStatement(SqlConstants.SQL_FIND_USER_BY_EMAIL);
 
             statement.setString(1,email);
 
@@ -223,7 +223,7 @@ public class UserDaoImpl implements UserDao<Integer> {
             connection = wrapperConnection.getConnection();
             connection.setAutoCommit(false);
             statement = connection.createStatement();
-            statement.execute(SqlConstants.DELETE_USER_BY_ID + id);
+            statement.execute(SqlConstants.SQL_DELETE_USER_BY_ID + id);
             connection.commit();
         } catch (SQLException | ClassNotFoundException throwables) {
             WrapperConnector.rollback(connection);

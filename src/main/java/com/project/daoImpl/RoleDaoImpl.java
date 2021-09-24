@@ -9,7 +9,6 @@ import org.apache.logging.log4j.Logger;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class RoleDaoImpl implements RoleDao {
@@ -54,7 +53,7 @@ public class RoleDaoImpl implements RoleDao {
         try {
             connection = wrapperConnection.getConnection();
             connection.setAutoCommit(false);
-            statement = connection.prepareStatement(SqlConstants.GET_ROLE_ID_BY_NAME);
+            statement = connection.prepareStatement(SqlConstants.SQL_GET_ROLE_ID_BY_NAME);
             statement.setString(1, roleName);
             resultSet = statement.executeQuery();
             resultSet.next();
@@ -80,7 +79,7 @@ public class RoleDaoImpl implements RoleDao {
         try {
             connection = wrapperConnection.getConnection();
             connection.setAutoCommit(false);
-            preparedStatement = connection.prepareStatement(SqlConstants.SET_NEW_ROLE_FOR_USER,
+            preparedStatement = connection.prepareStatement(SqlConstants.SQL_SET_NEW_ROLE_FOR_USER,
                     Statement.RETURN_GENERATED_KEYS);
 
             preparedStatement.setString(1,userRole);
@@ -113,7 +112,7 @@ public class RoleDaoImpl implements RoleDao {
         String role = null;
         try {
             connection = wrapperConnection.getConnection();
-            preparedStatement = connection.prepareStatement(SqlConstants.GET_USER_ROLE);
+            preparedStatement = connection.prepareStatement(SqlConstants.SQL_GET_USER_ROLE);
             preparedStatement.setInt(1, id);
             rs = preparedStatement.executeQuery();
             while (rs.next()) {
@@ -139,7 +138,7 @@ public class RoleDaoImpl implements RoleDao {
             connection = wrapperConnection.getConnection();
             connection.setAutoCommit(false);
             statement = connection.createStatement();
-            statement.execute(SqlConstants.DELETE_USER_ROLE_BY_ID + userId);
+            statement.execute(SqlConstants.SQL_DELETE_USER_ROLE_BY_ID + userId);
             connection.commit();
         } catch (SQLException | ClassNotFoundException throwables) {
             WrapperConnector.rollback(connection);
@@ -159,7 +158,7 @@ public class RoleDaoImpl implements RoleDao {
         try {
             connection = wrapperConnection.getConnection();
             connection.setAutoCommit(false);
-            preparedStatement = connection.prepareStatement(SqlConstants.FIND_USERS_ID_BY_ROLES);
+            preparedStatement = connection.prepareStatement(SqlConstants.SQL_FIND_USERS_ID_BY_ROLES);
             preparedStatement.setString(1, role);
             rs = preparedStatement.executeQuery();
             while (rs.next()) {
