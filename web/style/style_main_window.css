@@ -31,7 +31,7 @@ body {
 }
 
 .upper-line a:visited {
-    color: black;
+    color: white;
 }
 
 .upper-line a:hover {
@@ -89,9 +89,24 @@ body {
     overflow: hidden;
 }
 
-#listLanguage {
+.localization {
     margin-right: 4%;
     margin-top: 10px;
+    width:auto;
+}
+
+.localization a {
+    font-family: Ubuntu-Medium, serif;
+    font-size: 15px;
+    color: white;
+}
+
+.localization a :visited {
+    color: #cecece;
+}
+
+.localization a :active{
+    color: #ffff00;
 }
 
 .name-company {

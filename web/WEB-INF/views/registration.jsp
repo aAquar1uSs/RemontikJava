@@ -1,3 +1,4 @@
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%--
   Created by IntelliJ IDEA.
   User: panch
@@ -6,6 +7,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<fmt:setLocale value="${sessionScope.lang}"/>
+<fmt:setBundle basename="language"/>
+
 <html>
 
 <head>
@@ -13,11 +18,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/style_registration_window.css">
-    <title>Registration</title>
+    <title><fmt:message key="title.registration.page"/></title>
 </head>
 <body>
 <div class="name">
-    <p>REGISTRATION</p>
+    <p><fmt:message key="label.registration.upper.case"/></p>
 </div>
 <div class="registration">
     <form id="signin" method="POST" action="${pageContext.request.contextPath}/signIn" autocomplete="off">
@@ -25,30 +30,33 @@
                 type="text"
                 id="firstname"
                 name="firstname"
-                placeholder="Firstname"
+                placeholder=<fmt:message key="placeholder.firstname"/>
         />
         <input
                 type="text"
                 id="lastname"
                 name="lastname"
-                placeholder="Lastname"
+                placeholder=<fmt:message key="placeholder.lastname"/>
         />
         <input
                 type="text"
                 id="email"
                 name="email"
-                placeholder="Email" />
+                placeholder=<fmt:message key="placeholder.email"/>
+        />
         <input
                 type="password"
                 id="pass"
                 name="pass"
-                placeholder="Password" />
+                placeholder=<fmt:message key="placeholder.password"/>
+        />
 
-        <input type="submit" value="Sign in!"/>
+        <input type="submit" value=<fmt:message key="button.enter"/>
+        />
     </form>
 
     <form id ="back" method="GET" action="" autocomplete="off">
-        <input type="submit" value="Back" onclick="history.back()"/>
+        <input type="submit" value=<fmt:message key="button.back"/> onclick="history.back()"/>
     </form>
 </div>
 </body>

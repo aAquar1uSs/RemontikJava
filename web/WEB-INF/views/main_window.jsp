@@ -9,6 +9,9 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
+<fmt:setLocale value="${sessionScope.lang}"/>
+<fmt:setBundle basename="language"/>
+
 <html>
 <head>
     <meta charset="UTF-8"/>
@@ -17,7 +20,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/style_main_window.css">
     <script src="https://kit.fontawesome.com/e7cb8c5be7.js" crossorigin="anonymous"></script>
 
-    <title>Remontik</title>
+    <title><fmt:message key="label.company.name"/></title>
 </head>
 <body>
 <header>
@@ -30,16 +33,16 @@
                 <span></span>
                 <ul id="menu">
                     <a href="#">
-                        <li>About us</li>
+                        <li><fmt:message key="href.about.us"/></li>
                     </a>
                     <a href="#">
-                        <li>Contacts</li>
+                        <li><fmt:message key="href.contacts"/></li>
                     </a>
                     <a href="#">
-                        <li>Leave Feedback</li>
+                        <li><fmt:message key = "href.leave.feedback"/></li>
                     </a>
                     <a href="https://erikterwan.com/" target="_blank">
-                        <li>Show me more</li>
+                        <li><fmt:message key="href.show.me.more"/></li>
                     </a>
                 </ul>
             </div>
@@ -50,7 +53,7 @@
                     <a
                             href="${pageContext.request.contextPath}/secured/about_page"
                             class="btn btn-sm animated-button thar-two"
-                    >About us</a>
+                    ><fmt:message key="href.about.us"/></a>
                 </form>
             </div>
             <div class="contacts">
@@ -58,7 +61,7 @@
                     <a
                             href="${pageContext.request.contextPath}/secured/contacts_page"
                             class="btn btn-sm animated-button thar-two"
-                    >Contacts</a>
+                    ><fmt:message key="href.contacts"/></a>
                 </form>
             </div>
             <div class="feedback">
@@ -66,18 +69,16 @@
                     <a
                             href="http://google.com"
                             class="btn btn-sm animated-button thar-two"
-                    >Leave Feedback</a>
+                    ><fmt:message key = "href.leave.feedback"/></a>
                 </form>
             </div>
 
         </div>
-        <form id = "listLanguage" method="GET" action="">
-            <select id="language" name="language" onchange="submit()">
-                <option value="en">English</option>
-                <option value="nl">Russian</option>
-                <option value="es">Ukrainian</option>
-            </select>
-        </form>
+        <div class="localization">
+            <a href="?lang=en">ENG</a>
+            <a href="?lang=ru">RUS</a>
+            <a href="?lang=ua">UA</a>
+        </div>
         <div class="account">
             <a href="${pageContext.request.contextPath}/secured/private_account"><i class="fas fa-user-circle"></i></a></button>
         </div>
@@ -85,11 +86,11 @@
 
     <div class="head">
         <div class="name-company">
-            <h1>Remontik</h1>
-            <h3>Repair of computer, mobile and household equipment.</h3>
+            <h1><fmt:message key="label.company.name"/></h1>
+            <h3><fmt:message key = "label.company.description"/></h3>
         </div>
         <div class ="set_order">
-            <a href="${pageContext.request.contextPath}/set_new_order_secured/*" class="pressed-button">Submit a request for repair</a>
+            <a href="${pageContext.request.contextPath}/set_new_order_secured/*" class="pressed-button"><fmt:message key="button.set.order"/></a>
         </div>
     </div>
 </header>

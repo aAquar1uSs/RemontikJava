@@ -1,5 +1,6 @@
-package com.project.controllers;
+package com.project.service;
 
+import com.project.controllers.Controller;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -8,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class ControllerService {
 
-    private static Logger logger = LogManager.getLogger(ControllerService.class.getName());
+    private static final Logger logger = LogManager.getLogger(ControllerService.class.getName());
 
     Controller loginController;
     Controller logoutController;

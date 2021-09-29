@@ -1,0 +1,11 @@
+
+l	java:S116"WRename this field "cash_account" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( «ÿ
+z
+java:S1149Z"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(ÑÒ–Ëøÿÿÿÿ
+h	java:S100D"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸æİ¡üÿÿÿÿ
+c	java:S100H"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëÎ÷Š
+h	java:S100T"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰ÇÚ¸ÿÿÿÿÿ
+a
+java:S1764p"KCorrect one of the identical sub-expressions on both sides of operator "=="(Ûı€
+e	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³ª 
+k	java:S117D"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸æİ¡üÿÿÿÿ

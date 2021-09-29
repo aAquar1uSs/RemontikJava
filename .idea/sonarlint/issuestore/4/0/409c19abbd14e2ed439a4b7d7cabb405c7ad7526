@@ -1,0 +1,15 @@
+
+P
+java:S1161":Add the "@Override" annotation above this method signature(®´š¥
+‡
+java:S1989"lHandle the following exception that could be thrown by "setCharacterEncoding": UnsupportedEncodingException.(áò‰øÿÿÿÿ
+<	java:S131""Add a default case to this switch.(œÈõ‹úÿÿÿÿ
+i
+java:S1989#"SHandle the following exception that could be thrown by "sendRedirect": IOException.(Ä½—ß
+n
+java:S1989&"SHandle the following exception that could be thrown by "sendRedirect": IOException.(îÌß©üÿÿÿÿ
+‡
+java:S19896"lHandle the following exception that could be thrown by "setCharacterEncoding": UnsupportedEncodingException.(áò‰øÿÿÿÿ
+<	java:S1318""Add a default case to this switch.(œÈõ‹úÿÿÿÿ
+@
+java:S1068"*Remove this unused "logger" private field.(ª¥è®
