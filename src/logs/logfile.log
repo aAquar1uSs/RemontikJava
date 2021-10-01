@@ -147,3 +147,7 @@ Stacktrace:
 18:13:55.680 [http-nio-8080-exec-4] ERROR com.project.service.ControllerService - Cannot create a session after the response has been committed
 18:15:37.194 [http-nio-8080-exec-1] ERROR com.project.daoImpl.UserDaoImpl - No value specified for parameter 2
 18:15:37.333 [http-nio-8080-exec-1] ERROR com.project.service.ControllerService - Cannot create a session after the response has been committed
+18:17:54.982 [http-nio-8080-exec-8] ERROR com.project.service.ControllerService - Cannot create a session after the response has been committed
+18:48:12.675 [http-nio-8080-exec-9] ERROR com.project.service.ControllerService - Cannot create a session after the response has been committed
+19:01:11.053 [http-nio-8080-exec-1] ERROR com.project.service.ControllerService - null
+19:01:43.457 [http-nio-8080-exec-7] ERROR com.project.service.ControllerService - null

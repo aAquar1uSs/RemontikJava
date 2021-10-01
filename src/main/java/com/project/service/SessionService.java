@@ -24,12 +24,4 @@ public class SessionService {
         session.setAttribute("cashAcc",user.getCash_account());
         session.setAttribute("id_user", userId);
     }
-
-    /*public static void setOrdersToSession(HttpServletRequest request) {
-        HttpSession session = request.getSession(true);
-        OrderService orderService = new OrderService();
-        @NotNull int idUser = (int) session.getAttribute("id_user");
-        session.setAttribute("listOrders", orderService.findUserOrders(idUser));
-    }*/
-
 }

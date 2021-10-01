@@ -6,8 +6,6 @@ public class UrlConstants {
 
     public static final String MAIN_WINDOW_URL = "/WEB-INF/views/main_window.jsp";
     public static final String LOGIN_PAGE_URL = "/WEB-INF/views/login.jsp";
-    public static final String ABOUT_US_PAGE = "/WEB-INF/views/aboutPage.jsp";
-    public static final String CONTACTS_PAGE_URL = "/WEB-INF/views/contacts_page.jsp";
     public static final String REGISTRATION_PAGE_URL = "/WEB-INF/views/registration.jsp";
     public static final String PRIVATE_ACCOUNT_URL = "/WEB-INF/views/user_view/private_office.jsp";
     public static final String ADMIN_PAGE_URL = "/WEB-INF/views/admin_view/admin.jsp";

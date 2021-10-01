@@ -43,14 +43,11 @@ public class Dispatcher extends HttpServlet {
             case "/registration_page":
                 request.getRequestDispatcher(UrlConstants.REGISTRATION_PAGE_URL).forward(request,response);
                 break;
-            case "/about_page":
-                request.getRequestDispatcher(UrlConstants.ABOUT_US_PAGE).forward(request,response);
-                break;
-            case "/contacts_page":
-                request.getRequestDispatcher(UrlConstants.CONTACTS_PAGE_URL).forward(request,response);
-                break;
             case "/private_account":
                 controllerService.causeAccountController(request,response);
+                break;
+            case "/set_new_order":
+                request.getRequestDispatcher(UrlConstants.ORDER_PAGE_URL).forward(request,response);
                 break;
             case "/logout":
                 controllerService.causeLogoutController(request, response);

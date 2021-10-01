@@ -1,5 +1,7 @@
 package com.project.filters;
 
+import com.project.service.SessionService;
+
 import javax.servlet.*;
 import javax.servlet.annotation.*;
 import javax.servlet.http.HttpServletRequest;
@@ -22,8 +24,6 @@ public class LocalizationFilter implements Filter {
         if (req.getParameter("lang") != null) {
             req.getSession().setAttribute("lang", req.getParameter("lang"));
             Locale.setDefault(new Locale(req.getParameter("lang")));
-        } else {
-            req.getSession().setAttribute("lang", "en");
         }
 
         chain.doFilter(request, response);

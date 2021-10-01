@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: panch
-  Date: 03/09/2021
-  Time: 18:19
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -23,6 +17,7 @@
     <title><fmt:message key="label.company.name"/></title>
 </head>
 <body>
+<!- HEADER -->
 <header>
     <div class="upper-line">
         <nav role="navigation">
@@ -32,13 +27,13 @@
                 <span></span>
                 <span></span>
                 <ul id="menu">
-                    <a href="#">
+                    <a href="#aboutUs">
                         <li><fmt:message key="href.about.us"/></li>
                     </a>
-                    <a href="#">
+                    <a href="#contacts">
                         <li><fmt:message key="href.contacts"/></li>
                     </a>
-                    <a href="#">
+                    <a href="#feedback">
                         <li><fmt:message key = "href.leave.feedback"/></li>
                     </a>
                     <a href="https://erikterwan.com/" target="_blank">
@@ -51,7 +46,7 @@
             <div class="info">
                 <form method="GET" action="">
                     <a
-                            href="${pageContext.request.contextPath}/secured/about_page"
+                            href="#aboutUs"
                             class="btn btn-sm animated-button thar-two"
                     ><fmt:message key="href.about.us"/></a>
                 </form>
@@ -59,7 +54,7 @@
             <div class="contacts">
                 <form method="GET" action="">
                     <a
-                            href="${pageContext.request.contextPath}/secured/contacts_page"
+                            href="#contacts"
                             class="btn btn-sm animated-button thar-two"
                     ><fmt:message key="href.contacts"/></a>
                 </form>
@@ -67,7 +62,7 @@
             <div class="feedback">
                 <form method="GET" action="ServletName">
                     <a
-                            href="http://google.com"
+                            href="#feedback"
                             class="btn btn-sm animated-button thar-two"
                     ><fmt:message key = "href.leave.feedback"/></a>
                 </form>
@@ -90,9 +85,42 @@
             <h3><fmt:message key = "label.company.description"/></h3>
         </div>
         <div class ="set_order">
-            <a href="${pageContext.request.contextPath}/set_new_order_secured/*" class="pressed-button"><fmt:message key="button.set.order"/></a>
-        </div>
+        <c:choose>
+            <c:when test="${sessionScope.userRole.name.equals('USER')}">
+                <a href="${pageContext.request.contextPath}/set_new_order" class="pressed-button"><fmt:message key="button.set.order"/></a>
+            </c:when>
+            <c:when test="${sessionScope.userRole.name.equals('ADMIN')}">
+                <a href="${pageContext.request.contextPath}/secured/private_account" class="pressed-button"><fmt:message key="button.to.private.account"/></a>
+            </c:when>
+            <c:otherwise>
+                <a href="${pageContext.request.contextPath}/secured/private_account" class="pressed-button"><fmt:message key="title.login.page"/></a>
+            </c:otherwise>
+        </c:choose>
+            </div>
     </div>
 </header>
+
+<!- MAIN -->
+    <main>
+        <div id = "aboutUs">
+            <div class = "text_about_us">
+                <h3>
+                    <p><fmt:message key="label.description.company1"/></p>
+                    <p><fmt:message key="label.description.company2"/></p>
+                </h3>
+            </div>
+        </div>
+
+        <div id = "contacts">
+
+
+        </div>
+
+        <div id = "feedback">
+
+
+        </div>
+    </main>
+
 </body>
 </html>

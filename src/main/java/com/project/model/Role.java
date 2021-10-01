@@ -2,7 +2,6 @@ package com.project.model;
 
 import java.io.Serializable;
 import java.util.Objects;
-import java.util.Set;
 
 public class Role implements  Serializable{
 
