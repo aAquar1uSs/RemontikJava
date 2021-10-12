@@ -13,8 +13,8 @@ import java.util.List;
 
 public class OrderDaoImpl implements OrderDao {
 
-    private static Logger logger = LogManager.getLogger(OrderDaoImpl.class.getName());
-    private WrapperConnector wrapperConnection;
+    private static final Logger logger = LogManager.getLogger(OrderDaoImpl.class.getName());
+    private final WrapperConnector wrapperConnection;
 
     public OrderDaoImpl() {
         wrapperConnection = WrapperConnector.getInstance();

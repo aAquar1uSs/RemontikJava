@@ -45,7 +45,7 @@ public class AccountController implements Controller {
                 request.getRequestDispatcher(UrlConstants.ADMIN_PAGE_URL).forward(request, response);
                 break;
             case "MANAGER":
-
+                request.getRequestDispatcher(UrlConstants.MANAGER_PAGE_URL).forward(request,response);
                 break;
             case "MASTER":
 
