@@ -24,7 +24,8 @@
         <url-pattern>/set_order</url-pattern>
         <url-pattern>/private_account</url-pattern>
         <url-pattern>/delete_users</url-pattern>
-        <url-pattern>/set_new_order</url-pattern>
+        <url-pattern>/set_new_order_page</url-pattern>
+        <url-pattern>/success</url-pattern>
     </servlet-mapping>
 
     <filter>
@@ -47,15 +48,50 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
+    <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>com.project.filters.EncodingFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!--Error pages -->
+    <error-page>
+        <error-code>401</error-code>
+        <location>/WEB-INF/views/info_pages/ErrorNotLoggedIn.jsp</location>
+    </error-page>
+
+    <error-page>
+        <location>/WEB-INF/views/info_pages/ErrorNotLoggedIn.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>204</error-code>
+        <location>/WEB-INF/views/info_pages/syntaxError.jsp</location>
+    </error-page>
+
+    <error-page>
+        <location>/WEB-INF/views/info_pages/syntaxError.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/WEB-INF/views/info_pages/registrationError.jsp</location>
+    </error-page>
+
+    <error-page>
+        <location>/WEB-INF/views/info_pages/registrationError.jsp</location>
+    </error-page>
+
     <welcome-file-list>
         <welcome-file>main_window.jsp</welcome-file>
         <welcome-file>login.jsp</welcome-file>
         <welcome-file>registration.jsp</welcome-file>
         <welcome-file>admin.jsp</welcome-file>
         <welcome-file>manager_page.jsp</welcome-file>
-        <welcome-file>syntaxError.jsp</welcome-file>
-        <welcome-file>ErrorNotLoggedIn.jsp</welcome-file>
-        <welcome-file>aboutPage.jsp</welcome-file>
         <welcome-file>order_window.jsp</welcome-file>
         <welcome-file>private_office.jsp</welcome-file>
     </welcome-file-list>

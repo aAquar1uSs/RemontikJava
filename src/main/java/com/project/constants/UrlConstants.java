@@ -10,9 +10,10 @@ public class UrlConstants {
     public static final String PRIVATE_ACCOUNT_URL = "/WEB-INF/views/user_view/private_office.jsp";
     public static final String ADMIN_PAGE_URL = "/WEB-INF/views/admin_view/admin.jsp";
     public static final String MANAGER_PAGE_URL = "/WEB-INF/views/manager_view/manager_page.jsp";
-    public static final String ERROR_PAGE_IF_NOT_LOGGED_URL = "/WEB-INF/views/error_pages/ErrorNotLoggedIn.jsp";
-    public static final String SYNTAX_ERROR_PAGE_URL = "/WEB-INF/views/ErrorPages/syntaxError.jsp";
-    public static final String ERROR_REGISTRATION_PAGE_URL = "/WEB-INF/views/error_pages/registrationError.jsp";
+    public static final String ERROR_PAGE_IF_NOT_LOGGED_URL = "/WEB-INF/views/info_pages/ErrorNotLoggedIn.jsp";
+    public static final String SYNTAX_ERROR_PAGE_URL = "/WEB-INF/views/info_pages/syntaxError.jsp";
+    public static final String ERROR_REGISTRATION_PAGE_URL = "/WEB-INF/views/info_pages/registrationError.jsp";
+    public static final String SUCCESS_PAGE_URL = "/WEB-INF/views/info_pages/success_page.jsp";
     public static final String ORDER_PAGE_URL = "/WEB-INF/views/user_view/order_window.jsp";
 
 }

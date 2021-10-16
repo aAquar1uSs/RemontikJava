@@ -27,8 +27,6 @@ public class Dispatcher extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException,
             IOException {
-
-        request.setCharacterEncoding("UTF-8");
         String path = request.getServletPath();
 
         switch (path) {
@@ -41,16 +39,19 @@ public class Dispatcher extends HttpServlet {
                 controllerService.causeLoginController(request, response);
                 break;
             case "/registration_page":
-                request.getRequestDispatcher(UrlConstants.REGISTRATION_PAGE_URL).forward(request,response);
+                request.getRequestDispatcher(UrlConstants.REGISTRATION_PAGE_URL).forward(request, response);
                 break;
             case "/private_account":
-                controllerService.causeAccountController(request,response);
+                controllerService.causeAccountController(request, response);
                 break;
-            case "/set_new_order":
-                request.getRequestDispatcher(UrlConstants.ORDER_PAGE_URL).forward(request,response);
+            case "/set_new_order_page":
+                request.getRequestDispatcher(UrlConstants.ORDER_PAGE_URL).forward(request, response);
                 break;
             case "/logout":
                 controllerService.causeLogoutController(request, response);
+                break;
+            case "/success":
+                request.getRequestDispatcher(UrlConstants.SUCCESS_PAGE_URL).forward(request,response);
                 break;
         }
     }
@@ -58,9 +59,8 @@ public class Dispatcher extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,
             IOException {
-
-        request.setCharacterEncoding("UTF-8");
         String path = request.getServletPath();
+
         switch (path) {
             case "/signIn":
                 controllerService.causeRegistrationController(request, response);
@@ -69,9 +69,8 @@ public class Dispatcher extends HttpServlet {
                 controllerService.causeOrderController(request, response);
                 break;
             case "/delete_users":
-                controllerService.causeDeleteUserController(request,response);
+                controllerService.causeDeleteUserController(request, response);
                 break;
         }
-
     }
 }

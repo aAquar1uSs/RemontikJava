@@ -60,7 +60,7 @@
                 </form>
             </div>
             <div class="feedback">
-                <form method="GET" action="ServletName">
+                <form method="GET" action="">
                     <a
                             href="#feedback"
                             class="btn btn-sm animated-button thar-two"
@@ -87,10 +87,13 @@
         <div class ="set_order">
         <c:choose>
             <c:when test="${sessionScope.userRole.name.equals('USER')}">
-                <a href="${pageContext.request.contextPath}/set_new_order" class="pressed-button"><fmt:message key="button.set.order"/></a>
+                <a href="${pageContext.request.contextPath}/set_new_order_page" class="pressed-button"><fmt:message key="button.set.order"/></a>
             </c:when>
             <c:when test="${sessionScope.userRole.name.equals('ADMIN')}">
                 <a href="${pageContext.request.contextPath}/secured/private_account" class="pressed-button"><fmt:message key="button.to.private.account"/></a>
+            </c:when>
+            <c:when test = "${sessionScope.userRole.name.equals('MANAGER')}">
+                <a href="${pageContext.request.contextPath}/secured/private_account" class="pressed-button"><fmt:message key="title.manager.page"/></a>
             </c:when>
             <c:otherwise>
                 <a href="${pageContext.request.contextPath}/secured/private_account" class="pressed-button"><fmt:message key="title.login.page"/></a>
@@ -121,6 +124,5 @@
 
         </div>
     </main>
-
 </body>
 </html>
