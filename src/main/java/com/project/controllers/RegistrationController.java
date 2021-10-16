@@ -17,18 +17,15 @@ import javax.servlet.http.HttpSession;
 public class RegistrationController implements Controller {
     private final UserService userService;
     private final RoleService roleService;
-    private final ValidationManager validationManager;
 
     public RegistrationController() {
         userService = new UserService();
         roleService = new RoleService();
-        validationManager = new ValidationManager();
     }
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        request.setCharacterEncoding("UTF-8");
-        HttpSession session = request.getSession(false);
+
         @NotNull String firstName = request.getParameter("firstname");
         @NotNull String lastName = request.getParameter("lastname");
         @NotNull String email = request.getParameter("email");
@@ -40,6 +37,8 @@ public class RegistrationController implements Controller {
             response.addCookie(message);
             request.getRequestDispatcher(UrlConstants.ERROR_REGISTRATION_PAGE_URL).forward(request, response);
         }
+
+        HttpSession session = request.getSession(false);
 
         Role role = (Role) session.getAttribute("userRole");
 
@@ -58,9 +57,9 @@ public class RegistrationController implements Controller {
     }
 
     private boolean checkValidation(String email,String firstName,String lastName) {
-         return !validationManager.isValidEmail(email) ||
-                !validationManager.isValidName(firstName) ||
-                !validationManager.isValidName(lastName) ||
+         return !ValidationManager.isValidEmail(email) ||
+                !ValidationManager.isValidName(firstName) ||
+                !ValidationManager.isValidName(lastName) ||
                 userService.searchUserByEmail(email);
     }
 

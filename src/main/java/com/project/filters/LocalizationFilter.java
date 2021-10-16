@@ -1,14 +1,12 @@
 package com.project.filters;
 
-import com.project.service.SessionService;
 
 import javax.servlet.*;
-import javax.servlet.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.Locale;
 
-@WebFilter(filterName = "LocalizationFilter")
+
 public class LocalizationFilter implements Filter {
     public void init(FilterConfig config) throws ServletException {
     }

@@ -15,22 +15,19 @@ import java.io.IOException;
 
 public class LoginController implements Controller {
     private final UserService userService;
-    private final ValidationManager validationManager;
 
     public LoginController() {
         userService = new UserService();
-        validationManager = new ValidationManager();
     }
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        request.setCharacterEncoding("UTF-8");
         @NotNull String email = request.getParameter("email");
         @NotNull String password = request.getParameter("pass");
 
         String hashPassword = PasswordHashManager.passwordEncryption(password);
 
-        if (!validationManager.isValidEmail(email) || !userService.searchUserByEmail(email)
+        if (!ValidationManager.isValidEmail(email) || !userService.searchUserByEmail(email)
                 || !userService.userPasswordVerification(email,hashPassword)) {
             Cookie message = new Cookie("message", "Error");
             response.addCookie(message);

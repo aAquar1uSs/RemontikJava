@@ -1,51 +1,56 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<fmt:setLocale value="${sessionScope.lang}"/>
+<fmt:setBundle basename="language"/>
+
 <html>
 <head>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/style_admin_page.css">
-    <title>ADMIN-Title</title>
+    <title><fmt:message key="title.admin.page"/> </title>
 </head>
 <body>
 <div class = "addManager">
 
-    <h2>Add manager</h2>
+    <h2><fmt:message key="label.add.managers"/> </h2>
 
     <form id="add_manager" method="POST" action="${pageContext.request.contextPath}/signIn" autocomplete="off">
         <input
                 type="text"
                 id="firstname"
                 name="firstname"
-                placeholder="Firstname"
+                placeholder=<fmt:message key="placeholder.firstname"/>
         />
         <input
                 type="text"
                 id="lastname"
                 name="lastname"
-                placeholder="Lastname"
+                placeholder=<fmt:message key="placeholder.lastname"/>
         />
         <input
                 type="text"
                 id="email"
                 name="email"
-                placeholder="Email" />
+                placeholder=<fmt:message key="placeholder.email"/> />
         <input
                 type="password"
                 id="pass"
                 name="pass"
-                placeholder="Password" />
+                placeholder=<fmt:message key="placeholder.password"/> />
 
         <input type="submit" value="Sign in!"/>
     </form>
     <div class="managers">
-        <h1>All Managers</h1>
+        <h1><fmt:message key="label.all.managers"/></h1>
         <table>
             <thead>
             <tr>
                 <th>#</th>
-                <th>First name</th>
-                <th>Last name</th>
-                <th>Email: </th>
+                <th><fmt:message key="placeholder.firstname"/></th>
+                <th><fmt:message key="placeholder.lastname"/></th>
+                <th><fmt:message key="placeholder.email"/> </th>
                 <th></th>
             </tr>
             </thead>
