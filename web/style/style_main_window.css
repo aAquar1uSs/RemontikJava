@@ -38,22 +38,20 @@ body {
     color: #800000;
 }
 
+.buttons {
+    width: 93%;
+    display: flex;
+    justify-content: space-around;
+}
+
+
 .info {
     float: left;
     display: block;
     text-align: center;
     width: 100px;
     height: 50px;
-}
-
-.info form {
-    padding-top: 10px;
-}
-
-.buttons {
-    width: 93%;
-    display: flex;
-    justify-content: space-around;
+    padding-top: 5px;
 }
 
 .contacts {
@@ -62,10 +60,7 @@ body {
     text-align: center;
     width: 100px;
     height: 50px;
-}
-
-.contacts form {
-    padding-top: 10px;
+    padding-top: 5px;
 }
 
 .feedback {
@@ -74,10 +69,7 @@ body {
     text-align: center;
     width: 150px;
     height: 50px;
-}
-
-.feedback form {
-    padding-top: 10px;
+    padding-top: 5px;
 }
 
 .head {

@@ -44,28 +44,23 @@
         </nav>
         <div class="buttons">
             <div class="info">
-                <form method="GET" action="">
-                    <a
-                            href="#aboutUs"
-                            class="btn btn-sm animated-button thar-two"
-                    ><fmt:message key="href.about.us"/></a>
-                </form>
+                <a
+                        href="#aboutUs"
+                        class="btn btn-sm animated-button thar-two"
+                ><fmt:message key="href.about.us"/></a>
             </div>
             <div class="contacts">
-                <form method="GET" action="">
-                    <a
-                            href="#contacts"
-                            class="btn btn-sm animated-button thar-two"
-                    ><fmt:message key="href.contacts"/></a>
-                </form>
+                <a
+                        href="#contacts"
+                        class="btn btn-sm animated-button thar-two"
+                ><fmt:message key="href.contacts"/></a>
             </div>
             <div class="feedback">
-                <form method="GET" action="">
-                    <a
-                            href="#feedback"
-                            class="btn btn-sm animated-button thar-two"
-                    ><fmt:message key = "href.leave.feedback"/></a>
-                </form>
+                <a
+                        href="#feedback"
+                        class="btn btn-sm animated-button thar-two"
+                ><fmt:message key = "href.leave.feedback"/></a>
+
             </div>
 
         </div>

@@ -46,9 +46,7 @@
 
         <input type="submit" value=<fmt:message key="button.enter"/>
         />
-    </form>
 
-    <form id ="back" method="GET" action="" autocomplete="off">
         <input type="submit" value=<fmt:message key="button.back"/> onclick="history.back()"/>
     </form>
 </div>
