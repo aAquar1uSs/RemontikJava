@@ -18,7 +18,7 @@
     <p><fmt:message key="label.registration.upper.case"/></p>
 </div>
 <div class="registration">
-    <form id="signin" method="POST" action="${pageContext.request.contextPath}/signIn" autocomplete="off">
+    <form id="registration_form" method="POST" action="${pageContext.request.contextPath}/signIn" autocomplete="off">
         <input
                 type="text"
                 id="firstname"
@@ -32,20 +32,24 @@
                 placeholder=<fmt:message key="placeholder.lastname"/>
         />
         <input
-                type="text"
+                type="email"
                 id="email"
                 name="email"
                 placeholder=<fmt:message key="placeholder.email"/>
-        />
+        /> <span class="form_error_message_for_email">
+                <fmt:message key="label.describe.problem.about.validation.email"/>
+            </span>
         <input
                 type="password"
                 id="pass"
                 name="pass"
+                pattern="(\w{4,})"
                 placeholder=<fmt:message key="placeholder.password"/>
-        />
+        /> <span class="form_error_message_for_password">
+                <fmt:message key="label.describe.problem.about.validation.password"/>
+            </span>
 
-        <input type="submit" value=<fmt:message key="button.enter"/>
-        />
+        <input type="submit" value=<fmt:message key="button.enter"/>/>
 
         <input type="submit" value=<fmt:message key="button.back"/> onclick="history.back()"/>
     </form>

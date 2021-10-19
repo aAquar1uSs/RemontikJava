@@ -32,12 +32,12 @@ body {
 }
 
 form {
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .login {
     max-width: 500px;
-    height: 600px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,50 +50,47 @@ form {
 }
 
 
-#signin input:first-of-type {
+#sign_in input:first-of-type {
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
 }
 
-#signin input:last-of-type {
+#sign_in input:last-of-type {
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
 }
 
-#signin input[type="text"],
-#signin input[type="password"] {
+#sign_in input[type="email"],
+#sign_in input[type="password"] {
     background: rgb(28, 30, 33);
     box-shadow: inset -100px -100px 0 rgb(28, 30, 33);
     /*Prevent yellow autofill color*/
     color: #d0e1f9;
-}
 
-#signin input[type="text"],
-#signin input[type="password"] {
     position: relative;
     display: block;
     max-width: 400px;
     min-width: 350px;
     height: 60px;
-    border: 0;
+    border: 0px;
+    border-bottom: thick double #32a1ce;
     outline: 0;
     top: -2px;
     padding: 0 0 0 20px;
     font-weight: 700;
 }
 
-#signin input[type="text"]:focus,
-#signin input[type="password"]:focus {
+#sign_in input[type="email"]:focus,
+#sign_in input[type="password"]:focus {
     color: rgb(255, 255, 255);
 }
 
-#signin input[type="submit"] {
+#sign_in input[type="submit"] {
     background: rgb(28, 30, 33);
     text-decoration: none;
     display: inline-block;
     padding: 10px 30px;
-    margin: 10px 20px;
-    margin-left: 36%;
+    margin: 10px 20px 10px 36%;
     position: relative;
     overflow: hidden;
     border: 2px solid #4d648d;
@@ -103,7 +100,7 @@ form {
     transition: .2s ease-in-out;
 }
 
-#signin input[type="submit"]:before {
+#sign_in input[type="submit"]:before {
     content: "";
     background: #011f38;
     height: 50px;
@@ -114,12 +111,37 @@ form {
     transform: skewX(-45deg);
 }
 
-#signin input[type="submit"]:hover {
+#sign_in input[type="submit"]:hover {
     background-color: #4d648d;
     background-color: #fff;
 }
 
-#signin p {
+.form_error_for_email, .form_error_for_password {
+    color: red;
+    text-align: left;
+    font-size: 12px;
+    display: block;
+    margin-top: 3px;
+    display: none;
+}
+
+#sign_in input[type="email"]:valid:not(:placeholder-shown),
+#sign_in input[type="password"]:valid:not(:placeholder-shown) {
+    border-bottom-color: green;
+}
+
+#sign_in input[type="email"]:invalid:not(:placeholder-shown),
+#sign_in input[type="password"]:invalid:not(:placeholder-shown) {
+    border-bottom-color: red;
+}
+
+#sign_in input[type="email"]:invalid:not(:placeholder-shown) + .form_error_for_email,
+#sign_in input[type="password"]:invalid:not(:placeholder-shown) + .form_error_for_password{
+    display: block;
+}
+
+
+#sign_in p {
     color: rgb(79, 85, 97);
     padding: 0 20px;
     font-weight: 700;
@@ -127,12 +149,12 @@ form {
     margin: 5px 0 0 0;
 }
 
-#signin p>a {
+#sign_in p>a {
     color: rgb(111, 119, 135);
     text-decoration: none;
 }
 
-#signin p>a:hover {
+#sign_in p>a:hover {
     border-bottom: 1px solid;
 }
 

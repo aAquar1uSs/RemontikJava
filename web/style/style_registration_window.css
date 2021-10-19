@@ -39,7 +39,7 @@ form {
 
 .registration {
     max-width: 500px;
-    height: 600px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,26 +51,24 @@ form {
     margin: auto;
 }
 
-#signin input:first-of-type {
+#registration_form input:first-of-type {
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
 }
 
-#signin input:last-of-type {
+#registration_form input:last-of-type {
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
 }
 
-#signin input[type="text"],
-#signin input[type="password"] {
+#registration_form input[type="email"],
+#registration_form input[type="text"],
+#registration_form input[type="password"] {
     background: rgb(28, 30, 33);
     box-shadow: inset -100px -100px 0 rgb(28, 30, 33);
     /*Prevent yellow autofill color*/
     color: #d0e1f9;
-}
 
-#signin input[type="text"],
-#signin input[type="password"] {
     position: relative;
     display: block;
     max-width: 400px;
@@ -83,12 +81,41 @@ form {
     font-weight: 700;
 }
 
-#signin input[type="text"]:focus,
-#signin input[type="password"]:focus {
+#registration_form input[type="email"]:focus,
+#registration_form input[type="text"]:focus,
+#registration_form input[type="password"]:focus {
     color: rgb(255, 255, 255);
 }
+#registration_form input[type="email"],
+#registration_form input[type="password"] {
+    border-bottom: thick double #32a1ce;
+}
 
-#signin p {
+#registration_form input[type="email"]:valid:not(:placeholder-shown),
+#registration_form input[type="password"]:valid:not(:placeholder-shown) {
+    border-bottom-color: green;
+}
+
+#registration_form input[type="email"]:invalid:not(:placeholder-shown),
+#registration_form input[type="password"]:invalid:not(:placeholder-shown) {
+    border-bottom-color: red;
+}
+
+.form_error_message_for_email, .form_error_message_for_password {
+    color: red;
+    text-align: left;
+    font-size: 12px;
+    display: block;
+    margin-top: 3px;
+    display: none;
+}
+
+#registration_form input[type="email"]:invalid:not(:placeholder-shown) + .form_error_message_for_email,
+#registration_form input[type="password"]:invalid:not(:placeholder-shown) + .form_error_message_for_password {
+    display: block;
+}
+
+#registration_form p {
     color: rgb(79, 85, 97);
     padding: 0 20px;
     font-weight: 700;
@@ -96,16 +123,16 @@ form {
     margin: 5px 0 0 0;
 }
 
-#signin p>a {
+#registration_form p>a {
     color: rgb(111, 119, 135);
     text-decoration: none;
 }
 
-#signin p>a:hover {
+#registration_form p>a:hover {
     border-bottom: 1px solid;
 }
 
-#signin input[type=submit] {
+#registration_form input[type=submit] {
     background: rgb(28, 30, 33);
     text-decoration: none;
     display: inline-block;
@@ -120,7 +147,7 @@ form {
     transition: .2s ease-in-out;
 }
 
-#signin input[type="submit"]:before {
+#registration_form input[type="submit"]:before {
     content: "";
     background: #011f38;
     height: 50px;
@@ -131,12 +158,12 @@ form {
     transform: skewX(-45deg);
 }
 
-#signin input[type="submit"]:hover {
+#registration_form input[type="submit"]:hover {
     background-color: #4d648d;
     background-color: #fff;
 }
 
-#signin p {
+#registration_form p {
     color: rgb(79, 85, 97);
     padding: 0 20px;
     font-weight: 700;
@@ -144,12 +171,12 @@ form {
     margin: 5px 0 0 0;
 }
 
-#signin p>a {
+#registration_form p>a {
     color: rgb(111, 119, 135);
     text-decoration: none;
 }
 
-#signin p>a:hover {
+#registration_form p>a:hover {
     border-bottom: 1px solid;
 }
 

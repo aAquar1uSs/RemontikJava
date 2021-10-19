@@ -18,19 +18,21 @@
     <p><fmt:message key="title.login.upper.case"/> </p>
 </div>
 <div class="login">
-    <form id="signin" method="GET" action="${pageContext.request.contextPath}/authorization" autocomplete="off">
-        <input
-                type="text"
+    <form id="sign_in" method="GET" action="${pageContext.request.contextPath}/authorization" autocomplete="off">
+        <input  required
+                type="email"
                 id="email"
                 name="email"
                 placeholder=<fmt:message key="placeholder.email"/>
-        />
-        <input
+        /><span class="form_error_for_email"><fmt:message key="label.describe.problem.about.validation.email"/> </span>
+
+        <input  required
                 type="password"
                 id="pass"
                 name="pass"
+                pattern="(\w{4,})"
                 placeholder=<fmt:message key="placeholder.password"/>
-        />
+        /><span class="form_error_for_password"><fmt:message key="label.describe.problem.about.validation.password"/> </span>
         <input
                 type="submit"
                 value=<fmt:message key="button.enter"/>
