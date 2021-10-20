@@ -31,7 +31,23 @@ public class UserDaoImpl implements UserDao<Integer> {
 
     @Override
     public boolean delete(Integer integer) {
-        return false;
+        Connection connection = null;
+        Statement statement = null;
+        try {
+            connection = wrapperConnection.getConnection();
+            connection.setAutoCommit(false);
+            statement = connection.createStatement();
+            statement.execute(SqlConstants.SQL_DELETE_USER_BY_ID + integer);
+            connection.commit();
+        } catch (SQLException | ClassNotFoundException throwables) {
+            WrapperConnector.rollback(connection);
+            logger.error(throwables.getMessage());
+            return false;
+        } finally {
+            wrapperConnection.close(statement);
+            wrapperConnection.close(connection);
+        }
+        return true;
     }
 
     @Override
@@ -213,25 +229,6 @@ public class UserDaoImpl implements UserDao<Integer> {
             wrapperConnection.close(connection);
         }
         return id;
-    }
-
-    @Override
-    public void deleteUserById(int id) {
-        Connection connection = null;
-        Statement statement = null;
-        try {
-            connection = wrapperConnection.getConnection();
-            connection.setAutoCommit(false);
-            statement = connection.createStatement();
-            statement.execute(SqlConstants.SQL_DELETE_USER_BY_ID + id);
-            connection.commit();
-        } catch (SQLException | ClassNotFoundException throwables) {
-            WrapperConnector.rollback(connection);
-            logger.error(throwables.getMessage());
-        } finally {
-            wrapperConnection.close(statement);
-            wrapperConnection.close(connection);
-        }
     }
 
     @Override

@@ -17,7 +17,5 @@ public interface UserDao<K> extends AbstarctDao<K, User> {
 
     int getUserIdByEmail(String email);
 
-    void deleteUserById(int id);
-
     List<User> findAllUserWithManagerRole();
 }
