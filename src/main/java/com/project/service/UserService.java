@@ -1,7 +1,7 @@
 package com.project.service;
 
-import com.project.daobd.UserDao;
-import com.project.daoImpl.UserDaoImpl;
+import com.project.DAO.UserDao;
+import com.project.DAO.daoImpl.UserDaoImpl;
 import com.project.model.User;
 
 public class UserService {

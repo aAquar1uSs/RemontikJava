@@ -1,7 +1,7 @@
-package com.project.daoImpl;
+package com.project.DAO.daoImpl;
 
 import com.project.constants.SqlConstants;
-import com.project.daobd.OrderDao;
+import com.project.DAO.OrderDao;
 import com.project.model.Order;
 import com.project.utils.WrapperConnector;
 import org.apache.logging.log4j.LogManager;
@@ -23,7 +23,29 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public List<Order> getAll() {
-        return null;
+        List<Order> orderList = new LinkedList<>();
+        Connection conn = null;
+        Statement statement = null;
+        ResultSet rs = null;
+        try {
+            conn = wrapperConnection.getConnection();
+            conn.setAutoCommit(false);
+
+            statement = conn.createStatement();
+            rs = statement.executeQuery(SqlConstants.SQL_FIND_ALL_ORDERS);
+            while (rs.next()) {
+                orderList.add(buildOrder(rs));
+            }
+            conn.commit();
+        } catch (SQLException | ClassNotFoundException throwables) {
+            logger.error(throwables.getMessage());
+            WrapperConnector.rollback(conn);
+        } finally {
+            wrapperConnection.close(rs);
+            wrapperConnection.close(statement);
+            wrapperConnection.close(conn);
+        }
+        return orderList;
     }
 
     @Override
@@ -84,34 +106,7 @@ public class OrderDaoImpl implements OrderDao {
     }
 
     @Override
-    public List findAllOrders() {
-        List<Order> orderList = new LinkedList<>();
-        Connection conn = null;
-        Statement statement = null;
-        ResultSet rs = null;
-        try {
-            conn = wrapperConnection.getConnection();
-            conn.setAutoCommit(false);
-
-            statement = conn.createStatement();
-            rs = statement.executeQuery(SqlConstants.SQL_FIND_ALL_ORDERS);
-            while (rs.next()) {
-                orderList.add(buildOrder(rs));
-            }
-            conn.commit();
-        } catch (SQLException | ClassNotFoundException throwables) {
-            logger.error(throwables.getMessage());
-            WrapperConnector.rollback(conn);
-        } finally {
-            wrapperConnection.close(rs);
-            wrapperConnection.close(statement);
-            wrapperConnection.close(conn);
-        }
-        return orderList;
-    }
-
-    @Override
-    public List findUserOrders(int userId) {
+    public List<Order> findUserOrders(int userId) {
         List<Order> orderList = new LinkedList<>();
         Connection conn = null;
         PreparedStatement statement = null;

@@ -1,7 +1,7 @@
-package com.project.daoImpl;
+package com.project.DAO.daoImpl;
 
 import com.project.constants.SqlConstants;
-import com.project.daobd.RoleDao;
+import com.project.DAO.RoleDao;
 import com.project.model.Role;
 import com.project.utils.WrapperConnector;
 import org.apache.logging.log4j.LogManager;
@@ -31,7 +31,25 @@ public class RoleDaoImpl implements RoleDao {
 
     @Override
     public boolean delete(Integer integer) {
-        return false;
+        Connection connection = null;
+        Statement statement = null;
+        try {
+            connection = wrapperConnection.getConnection();
+            connection.setAutoCommit(false);
+            connection = wrapperConnection.getConnection();
+            connection.setAutoCommit(false);
+            statement = connection.createStatement();
+            statement.execute(SqlConstants.SQL_DELETE_USER_ROLE_BY_ID + integer);
+            connection.commit();
+        } catch (SQLException | ClassNotFoundException throwables) {
+            WrapperConnector.rollback(connection);
+            logger.error(throwables.getMessage());
+            return false;
+        } finally {
+            wrapperConnection.close(statement);
+            wrapperConnection.close(connection);
+        }
+        return true;
     }
 
     @Override
@@ -100,7 +118,6 @@ public class RoleDaoImpl implements RoleDao {
             wrapperConnection.close(preparedStatement);
             wrapperConnection.close(connection);
         }
-
         return role;
     }
 
@@ -126,27 +143,6 @@ public class RoleDaoImpl implements RoleDao {
             wrapperConnection.close(connection);
         }
         return role;
-    }
-
-    @Override
-    public void deleteUserRoleById(int userId) {
-        Connection connection = null;
-        Statement statement = null;
-        try {
-            connection = wrapperConnection.getConnection();
-            connection.setAutoCommit(false);
-            connection = wrapperConnection.getConnection();
-            connection.setAutoCommit(false);
-            statement = connection.createStatement();
-            statement.execute(SqlConstants.SQL_DELETE_USER_ROLE_BY_ID + userId);
-            connection.commit();
-        } catch (SQLException | ClassNotFoundException throwables) {
-            WrapperConnector.rollback(connection);
-            logger.error(throwables.getMessage());
-        } finally {
-            wrapperConnection.close(statement);
-            wrapperConnection.close(connection);
-        }
     }
 
     @Override

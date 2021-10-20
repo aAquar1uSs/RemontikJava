@@ -1,7 +1,7 @@
-package com.project.daoImpl;
+package com.project.DAO.daoImpl;
 
 import com.project.constants.SqlConstants;
-import com.project.daobd.UserDao;
+import com.project.DAO.UserDao;
 import com.project.model.Role;
 import com.project.model.User;
 import com.project.utils.WrapperConnector;

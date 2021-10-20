@@ -1,4 +1,4 @@
-package com.project.daobd;
+package com.project.DAO;
 
 import com.project.model.Role;
 
@@ -11,8 +11,6 @@ public interface RoleDao extends AbstarctDao<Integer, Role> {
     Role setUserRole(int id,String userRole);
 
     String getUserRoleById(int id);
-
-    void deleteUserRoleById(int userId);
 
     List<Integer> findUsersIdByRole(String role);
 

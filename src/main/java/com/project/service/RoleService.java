@@ -1,7 +1,7 @@
 package com.project.service;
 
-import com.project.daobd.RoleDao;
-import com.project.daoImpl.RoleDaoImpl;
+import com.project.DAO.RoleDao;
+import com.project.DAO.daoImpl.RoleDaoImpl;
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ public class RoleService {
     }
 
     public void deleteRoleByUserId(int id){
-        roleDao.deleteUserRoleById(id);
+        roleDao.delete(id);
     }
 
     public String getUserRoleById(int id) {

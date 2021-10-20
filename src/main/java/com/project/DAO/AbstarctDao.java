@@ -1,4 +1,4 @@
-package com.project.daobd;
+package com.project.DAO;
 
 import java.util.List;
 
