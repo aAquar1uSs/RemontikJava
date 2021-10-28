@@ -8,6 +8,7 @@
 
 <html>
 <head>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/style/style_fonts.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/style_private_office.css">
     <title><fmt:message key="title.private.account"/></title>
 </head>
@@ -43,6 +44,7 @@
         </tr>
         </thead>
         <tbody>
+        <jsp:useBean id="listOrders" scope="request" type="java.util.List"/>
         <c:forEach var="order" items="${listOrders}">
         <tr>
             <td></td>
@@ -52,7 +54,7 @@
             <td>${order.orderStatus}</td>
             <td>${order.paymantStatus}</td>
             <td>
-                <form method="GET" action="${pageContext.request.contextPath}/delete_order">
+                <form method="GET" action="${pageContext.request.contextPath}">
                     <input type="submit" name="Delete" value=<fmt:message key="button.delete"/> />
                 </form>
             </td>

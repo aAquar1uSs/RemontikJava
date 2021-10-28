@@ -1,13 +1,3 @@
-@font-face {
-    font-family: Abel;
-    src: url(fonts/Abel-Regular.ttf);
-}
-
-@font-face {
-    font-family: Ubuntu-Medium;
-    src: url(fonts/Ubuntu-Medium.ttf);
-}
-
 /*======================HEADER STYLE==========================*/
 body {
     margin: 0;

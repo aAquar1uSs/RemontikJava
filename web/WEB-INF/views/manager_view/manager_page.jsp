@@ -18,19 +18,27 @@
             <th>#</th>
             <th><fmt:message key="placeholder.firstname"/> </th>
             <th><fmt:message key="placeholder.lastname"/></th>
+            <th><fmt:message key="placeholder.email"/></th>
             <th><fmt:message key="label.describe.problem"/></th>
             <th><fmt:message key="label.price"/></th>
             <th><fmt:message key="label.status.order"/></th>
+            <th><fmt:message key="label.payment.status"/></th>
             <th></th>
         </tr>
         </thead>
         <tbody>
-        <c:forEach var="manager" items="${listOrders}">
+
+        <jsp:useBean id="ordersList" scope="request" type="java.util.List"/>
+        <c:forEach var="order" items="${ordersList}">
             <tr>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
+                <td>${order.orderName}</td>
+                <td>${order.orderPrice}</td>
+                <td>${order.orderStatus}</td>
+                <td>${order.paymantStatus}</td>
             </tr>
         </c:forEach>
         </tbody>

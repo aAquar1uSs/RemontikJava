@@ -10,6 +10,7 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/style/style_fonts.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/style_login_window.css">
     <title><fmt:message key="title.login.page"/></title>
 </head>

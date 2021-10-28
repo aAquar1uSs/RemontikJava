@@ -9,6 +9,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/style/style_fonts.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/style_order_window.css">
     <title><fmt:message key="title.order.page"/></title>
 </head>

@@ -11,6 +11,7 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/style/style_fonts.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/style_main_window.css">
     <script src="https://kit.fontawesome.com/e7cb8c5be7.js" crossorigin="anonymous"></script>
 

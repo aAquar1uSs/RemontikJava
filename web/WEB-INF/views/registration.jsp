@@ -10,6 +10,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/style/style_fonts.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/style_registration_window.css">
     <title><fmt:message key="title.registration.page"/></title>
 </head>
@@ -39,7 +40,7 @@
         /> <span class="form_error_message_for_email">
                 <fmt:message key="label.describe.problem.about.validation.email"/>
             </span>
-        <input
+        <label for="pass"></label><input
                 type="password"
                 id="pass"
                 name="pass"
@@ -49,7 +50,7 @@
                 <fmt:message key="label.describe.problem.about.validation.password"/>
             </span>
 
-        <input type="submit" value=<fmt:message key="button.enter"/>/>
+        <input type="submit" value=<fmt:message key="button.enter" />/>
 
         <input type="submit" value=<fmt:message key="button.back"/> onclick="history.back()"/>
     </form>

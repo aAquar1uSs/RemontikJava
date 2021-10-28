@@ -1,8 +1,3 @@
-@font-face {
-    font-family: Ubuntu-Medium;
-    src: url(fonts/Ubuntu-Medium.ttf);
-}
-
 * {
     margin: 0 auto;
     padding: 0;
@@ -48,7 +43,6 @@ form {
     left: 0;
     margin: auto;
 }
-
 
 #sign_in input:first-of-type {
     border-top-right-radius: 8px;

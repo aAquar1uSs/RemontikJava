@@ -8,6 +8,7 @@
 
 <html>
 <head>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/style/style_fonts.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/style_admin_page.css">
     <title><fmt:message key="title.admin.page"/> </title>
 </head>
@@ -55,6 +56,7 @@
             </tr>
             </thead>
             <tbody>
+            <jsp:useBean id="listManagers" scope="request" type="java.util.List"/>
             <c:forEach var="manager" items="${listManagers}">
                 <tr>
                     <td></td>
